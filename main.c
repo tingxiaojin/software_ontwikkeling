@@ -68,7 +68,23 @@ void lijn(int x, int y, int x1, int y1, int size, int kleur){
 
 		size--;
 	}
+	int rc;
+	int i;
+	int j;
+	int som = y;
+	int len_dif;
 
+	rc = y_dif / (x_dif+1);
+
+	for(i=x; i<=x1; i++)
+	{
+		for(j=0; j<rc; j++)
+		{
+			UB_VGA_SetPixel(i,y,kleur);
+			y++;
+		}
+		rc = (y1-y)/(x1-x+1);
+	}
 
 
 }
@@ -101,20 +117,13 @@ int main(void)
 
 	UB_VGA_FillScreen(VGA_COL_BLUE);
 
-  //lijn(10,99,50,99,1,VGA_COL_GREEN);
-
-	  delay(10000);
 	  //		xklein ygroot xgroot yklein
 	  rechthoek(10,150,50,100,VGA_COL_MAGENTA);
 	  lijn(10,100,50,100,1,VGA_COL_GREEN);
 
   while(1)
   {
-	  /*lijn(10,100,50,100,1,VGA_COL_GREEN);
-	  delay(10000);
-	  //		xklein ygroot xgroot yklein
-	  rechthoek(10,150,50,100,VGA_COL_MAGENTA);*/
-	  //test();
+
 	  // put the code here
   }
 }
