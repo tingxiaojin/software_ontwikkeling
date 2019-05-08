@@ -15,6 +15,22 @@
 #include <math.h>
 #include <strings.h>
 
+int abs(float getal){
+	int abs_getal = getal;
+
+	while(getal>=1)
+		getal--;
+	int getal2;
+	getal2 = getal * 10;
+
+	if(getal2 >= 5){
+		return abs_getal+1;
+	}
+	else {
+		return abs_getal;
+	}
+}
+
 void delay(int time){
 	while(time)
 		time--;
@@ -38,55 +54,59 @@ void lijn(int x, int y, int x1, int y1, int size, int kleur){
 
 	int x_dif;
 	int y_dif;
-	if(x1 >= x)
-		x_dif = x1 - x;
-	else
-		x_dif = x - x1;
+	int buffer;
 
-	if(y1 >= y)
-		y_dif = y1 - y;
-	else
-		y_dif = y - y1;
-
-	while(size)
+	//Deze twee if-statements is voor het plaatsen van een lijn van links naar recht
+	//buffer zorgt ervoor dat x is gewisseld
+	//het verschil tussen x coordinaten is voor het bepalen van welke berekening uitgevoerd moet worden
+	if(x1 < x)
 	{
-		if(x_dif && y_dif==0)
-		{
-			int i;
-			for(i=x; i<x1; i++)
-				UB_VGA_SetPixel(i,y,kleur);
-			y++;
-		}
-
-		if(y_dif && x_dif==0)
-		{
-			int i;
-			for(i=y; i<y1; i++)
-				UB_VGA_SetPixel(x,i,kleur);
-			x++;
-		}
-
-		size--;
+		buffer = x;
+		x = x1;
+		x1 = buffer;
 	}
+	x_dif = x1 - x;
+
+	if(y1 < y)
+	{
+		buffer = y;
+		y = y1;
+		y1 = buffer;
+	}
+	y_dif = y1 - y;
+
 	int rc;
-	int i;
+	int i ;
 	int j;
-	int som = y;
-	int len_dif;
 
-	rc = y_dif / (x_dif+1);
-
-	for(i=x; i<=x1; i++)
+	//berekening voor het maken van 0 tot 45 graden
+	if(y_dif<x_dif)
 	{
-		for(j=0; j<rc; j++)
+		for(i=y; i<=y1; i++)
 		{
-			UB_VGA_SetPixel(i,y,kleur);
-			y++;
+			rc = abs((x1-x)/(y1-i+1));
+			for(j=0; j<=rc; j++)
+			{
+				UB_VGA_SetPixel(x,i,kleur);
+				x++;
+			}
+
 		}
-		rc = (y1-y)/(x1-x+1);
 	}
+	//berekening voor het maken van 45 tot 90 graden
+	if(y_dif>=x_dif)
+	{
+		for(i=x; i<=x1; i++)
+		{
+			rc = (y1-y)/(x1-i+1);
+			for(j=0; j<=rc; j++)
+			{
+				UB_VGA_SetPixel(i,y,kleur);
+				y++;
+			}
 
-
+		}
+	}
 }
 
 void rechthoek(int x_lo, int y_lo, int x_rb, int y_rb, int kleur){
@@ -116,10 +136,14 @@ int main(void)
 	UB_VGA_Screen_Init(); // Init VGA-Screen
 
 	UB_VGA_FillScreen(VGA_COL_BLUE);
+	UB_VGA_SetPixel(100,100,VGA_COL_YELLOW);
+	UB_VGA_SetPixel(150,200,VGA_COL_YELLOW);
+	//		xklein ygroot xgroot yklein
+	rechthoek(10,150,50,100,VGA_COL_MAGENTA);
+	lijn(0,0,319,239,1,VGA_COL_GREEN);
+	UB_VGA_SetPixel(0,0,VGA_COL_RED);
+		UB_VGA_SetPixel(319,239,VGA_COL_RED);
 
-	  //		xklein ygroot xgroot yklein
-	  rechthoek(10,150,50,100,VGA_COL_MAGENTA);
-	  lijn(10,100,50,100,1,VGA_COL_GREEN);
 
   while(1)
   {
