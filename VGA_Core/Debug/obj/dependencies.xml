@@ -64,10 +64,6 @@
       </source>
       <source file="..\..\..\cmsis\core_cmFunc.h" lastModified="16a96a035fb">
       </source>
-      <source file="..\..\..\main.c" lastModified="16a9745a502">
-         <include file="..\..\..\main.h"/>
-         <include file="..\..\..\ub_lib\stm32_ub_vga_screen.h"/>
-      </source>
       <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="16a96a03232">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
       </source>

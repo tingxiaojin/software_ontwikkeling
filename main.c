@@ -15,37 +15,129 @@
 #include <math.h>
 #include <strings.h>
 
-int abs(float getal){
-	int abs_getal = getal;
+//In deze functie wordt er nagegaan welke write functie gebruikt gaat worden voor het maken van een lijn.
+//parameters:
+// x,y begin en x,y eind
+// return value:
+// eerste drie bits of x +, -, =
+// tweede drie bits of y +, -, =
 
-	while(getal>=1)
-		getal--;
-	int getal2;
-	getal2 = getal * 10;
+int get_rc(int rc_dif, int noemer, int teller)
+{
+	int rc = (((float)teller+1)/((float)noemer+1))*100;	//berekening van helling
 
-	if(getal2 >= 5){
-		return abs_getal+1;
-	}
-	else {
-		return abs_getal;
-	}
+	if(rc<rc_dif)
+		return rc/100;		//afronden naar beneden
+	if(rc>=rc_dif)
+		return (rc/100)+1;	//afronden naar boven
 }
 
-void delay(int time){
-	while(time)
-		time--;
+int switch_state(int x_dif, int y_dif){
+	char switch_value = 0;
+
+	if(x_dif>0)
+		switch_value |= 1;	//1e bit +
+	if(x_dif<0)
+		switch_value |= 2;	//2e bit -
+	if(x_dif==0)
+		switch_value |= 4;	//3e bit =
+	if(y_dif>0)
+		switch_value |= 8;	//4e bit +
+	if(y_dif<0)
+		switch_value |= 16;	//5e bit -
+	if(y_dif==0)
+		switch_value |= 32;	//6e bit =
+
+	return switch_value;
 }
+//											noemer		teller	noemer	teller
+void lijn_hoek(float teller, float noemer, int BP1, int EP1, int BP2, int EP2, int kleur)
+{
+	int i = BP1;
+	int j = EP1;
+	int k;
+	int rc;
 
-void test(){
-	int i;
-
-	for(i=10; i<20; i++)
+	int rc_dif = (teller/noemer)*100;
+	for(i=BP1; i<= BP2; i++)
 	{
-		UB_VGA_SetPixel(i,i,VGA_COL_MAGENTA);
+						//tellery noemerx
+		rc = get_rc(rc_dif, EP2-j, EP2-i);
+		for(k=0; k<rc; k++)
+		{
+			UB_VGA_SetPixel(i,j,kleur);
+			j++;
+		}
+
 	}
+
+	/*rc_dif = ((float)y_dif/(float)x_dif)*100;
+				for(x=x_1; x<=x_2; x++)
+				{
+					rc = get_rc(rc_dif, x_2-x, y_2-y);
+					for(i=0; i<rc; i++)
+					{
+						UB_VGA_SetPixel(x,y,color);
+						y++;
+					}
+				}*/
 
 }
 
+int API_draw_line(int x_1, int y_1, int x_2, int y_2, int color, int weight, int reserved){
+	int x_dif = x_2-x_1;
+	int y_dif = y_2-y_1;
+
+	char state;
+	state = switch_state(x_dif, y_dif);
+
+	int rc;
+	int rc_dif;
+	int i;
+	int x = x_1;
+	int y = y_1;
+
+	switch(state){
+	case 9://++
+		x_dif = x_2-x_1;
+		y_dif = y_2-y_1;
+		if(x_dif <= y_dif)
+		{
+			/*rc_dif = ((float)y_dif/(float)x_dif)*100;
+			for(x=x_1; x<=x_2; x++)
+			{
+				rc = get_rc(rc_dif, x_2-x, y_2-y);
+				for(i=0; i<rc; i++)
+				{
+					UB_VGA_SetPixel(x,y,color);
+					y++;
+				}
+			}*/
+			//						noemer		teller	noemer	teller
+			lijn_hoek(y_dif, x_dif, x_1, y_1, x_2, y_2,color);
+		}
+		if(x_dif > y_dif)
+		{
+			/*rc_dif = ((float)x_dif/(float)y_dif)*100;
+			for(y=y_1; y<=y_2; y++)
+			{
+				rc = get_rc(rc_dif, y_2-y, x_2-x);
+				for(i=0; i<rc; i++)
+				{
+					UB_VGA_SetPixel(x,y,color);
+					x++;
+				}
+			}*/
+//						noemer		teller	noemer	teller
+			lijn_hoek(x_dif, y_dif, y_1, x_1, y_2, x_2,color);
+		}
+		break;
+	default:
+		UB_VGA_SetPixel(100,100,VGA_COL_MAGENTA);
+		break;
+	}
+
+}
 
 //
 //parameter: x,y x',y' dikte kleur
@@ -84,10 +176,11 @@ void lijn(int x, int y, int x1, int y1, int size, int kleur){
 	{
 		for(i=y; i<=y1; i++)
 		{
-			rc = abs((x1-x)/(y1-i+1));
-			for(j=0; j<=rc; j++)
+	 		rc = (x1-x)/(y1-i+1);
+
+	 		for(j=0; j<=rc; j++)
 			{
-				UB_VGA_SetPixel(x,i,kleur);
+				UB_VGA_SetPixel((int)x,i,kleur);
 				x++;
 			}
 
@@ -136,18 +229,20 @@ int main(void)
 	UB_VGA_Screen_Init(); // Init VGA-Screen
 
 	UB_VGA_FillScreen(VGA_COL_BLUE);
-	UB_VGA_SetPixel(100,100,VGA_COL_YELLOW);
-	UB_VGA_SetPixel(150,200,VGA_COL_YELLOW);
-	//		xklein ygroot xgroot yklein
-	rechthoek(10,150,50,100,VGA_COL_MAGENTA);
-	lijn(0,0,319,239,1,VGA_COL_GREEN);
+
+
+
+	API_draw_line(0,0,0,239,VGA_COL_CYAN,1,0);
 	UB_VGA_SetPixel(0,0,VGA_COL_RED);
-		UB_VGA_SetPixel(319,239,VGA_COL_RED);
+	UB_VGA_SetPixel(319,239,VGA_COL_RED);
+	API_draw_line(0,0,100,239,VGA_COL_GREEN,1,0);
+	API_draw_line(0,0,319,239,VGA_COL_YELLOW,1,0);
 
 
   while(1)
   {
-
+		//lijn(0,0,10,10,1,VGA_COL_GREEN);
+		//lijn(0,10,10,0,1,VGA_COL_MAGENTA);
 	  // put the code here
   }
 }
