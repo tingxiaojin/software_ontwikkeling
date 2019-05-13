@@ -44,7 +44,7 @@ int get_rc(signed int rc_dif, int teller, int noemer)
 
 	if(rc_dif<0)
 	{
-		if(teller>0 && noemer<0)
+		if(teller>0 && noemer<=0)
 		{
 			rc = (((float)teller+1)/((float)noemer-1))*100;
 			if(rc>=rc_dif)
@@ -53,7 +53,7 @@ int get_rc(signed int rc_dif, int teller, int noemer)
 				return (rc*-1)/100;
 		}
 
-		if(teller<0 && noemer>0)
+		if(teller<=0 && noemer>0)
 		{
 			rc = (((float)teller-1)/((float)noemer+1))*100;
 			if(rc>=rc_dif)
@@ -123,7 +123,7 @@ void lijn_hoek_negatief(float teller, float noemer, int BP1, int EP1, int BP2, i
 	int rc;
 
 	signed int rc_dif = (teller/noemer)*100;
-	for(i=BP1; i>BP2; i--)
+	for(i=BP1; i>=BP2; i--)
 	{
 		if(graden == 2)
 			rc = 1;
@@ -136,7 +136,7 @@ void lijn_hoek_negatief(float teller, float noemer, int BP1, int EP1, int BP2, i
 				UB_VGA_SetPixel(i,j,kleur);
 			if(graden == 0)
 				UB_VGA_SetPixel(j,i,kleur);
-			if(j>=VGA_DISPLAY_X-1 || j>EP2)
+			if(j>=VGA_DISPLAY_X-1)
 				break;
 			j++;
 		}
@@ -170,39 +170,16 @@ int API_draw_line(int x_1, int y_1, int x_2, int y_2, int color, int weight, int
 
 		if(make_pos(x_dif) > make_pos(y_dif))//			noemer teller noemer teller
 			lijn_hoek_negatief(x_dif, y_dif, y_1, x_1, y_2, x_2,color, 0);
-		if(make_pos(x_dif) < make_pos(y_dif))//			noemer teller noemer teller
-		{
-			int i;
-			int j;
-			int k;
-			int rc;
-
-			signed int rc_dif = (teller/noemer)*100;
-			for(i=x_2; i>x_1; i--)
-			{
-				rc = get_rc(rc_dif, EP2-j, x_1-i);
-
-				for(k=0; k<rc; k++)
-				{
-					if(graden > 0)
-						UB_VGA_SetPixel(i,j,kleur);
-					if(graden == 0)
-						UB_VGA_SetPixel(j,i,kleur);
-					if(j>=VGA_DISPLAY_X-1 || j>EP2)
-						break;
-					j++;
-				}
-
-			}
-		}
-
-		//if(x_dif == y_dif)
-			//lijn_hoek(y_dif, x_dif, x_1, y_1, x_2, y_2,color, 2);*/
+			//lijn_hoek_negatief(x_dif, y_dif, y_2, x_2, y_1, x_1,color, 0);
 		break;
 	case 33://+= horizontale lijn
 		lijn_hoek(x_dif, y_dif, y_1, x_1, y_2, x_2,color, 0);
 		break;
 	case 10://-+
+		x_dif = x_2-x_1;
+		y_dif = y_2-y_1;
+		if(make_pos(y_dif)>make_pos(x_dif))
+			lijn_hoek_negatief(y_dif, x_dif, x_1, y_1, x_2, y_2,color, 1);
 		break;
 	case 18://--
 		x_dif = x_1-x_2;
@@ -273,8 +250,8 @@ int main(void)
 	//API_draw_line(0,0,319,239,VGA_COL_YELLOW,1,0);
 	//API_draw_line(10,239,10,10,VGA_COL_MAGENTA,1,0);
 	//API_draw_line(319,10,10,10,VGA_COL_CYAN,1,0);
-	API_draw_line(0,10,5,0,VGA_COL_WHITE,1,0);
-	//API_draw_line(0,1,319,0,VGA_COL_GREEN,1,0);
+	API_draw_line(238,0,0,239,VGA_COL_WHITE,1,0);
+	//API_draw_line(0,100,319,0,VGA_COL_GREEN,1,0);
 
   while(1)
   {
