@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
    <processor signature="4.8.3 -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=VGA_Core.map -O0 --gc-sections -lm -LC:\CooCox\CoIDE\configuration\ProgramData\VGA_Core -TC:\CooCox\CoIDE\configuration\ProgramData\VGA_Core/arm-gcc-link.ld -g -L..\..\.. -lm">
-      <target file="VGA_Core.elf" lastModified="16aad8463d9">
+      <target file="VGA_Core.elf" lastModified="16aaffbc5e1">
          <source file="..\obj\startup_stm32f4xx.o" lastModified="16a9c159b68"/>
-         <source file="..\obj\main.o" lastModified="16aad84614d"/>
+         <source file="..\obj\main.o" lastModified="16aaffbc297"/>
          <source file="..\obj\stm32f4xx_rcc.o" lastModified="16a9c159d54"/>
          <source file="..\obj\stm32f4xx_gpio.o" lastModified="16a9c159e39"/>
          <source file="..\obj\system_stm32f4xx.o" lastModified="16a9c159ecf"/>
