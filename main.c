@@ -156,12 +156,13 @@ int API_draw_line(int x_1, int y_1, int x_2, int y_2, int color, int weight, int
 			lijn_hoek(y_dif, x_dif, x_1, y_1, x_2, y_2,color, 1);
 		break;
 	case 17://+- switch lijn'/'
-		x_dif = x_2-x_1;
-		y_dif = y_2-y_1;
+		x_dif = x_1-x_2;
+		y_dif = y_1-y_2;
 
-		if(make_pos(x_dif) > make_pos(y_dif))//			noemer teller noemer teller
+		if(make_pos(y_dif)>make_pos(x_dif))
+			lijn_hoek_negatief(y_dif, x_dif, x_1, y_1, x_2, y_2,color, 1);
+		if(make_pos(y_dif)<make_pos(x_dif))
 			lijn_hoek_negatief(x_dif, y_dif, y_1, x_1, y_2, x_2,color, 0);
-			//lijn_hoek_negatief(x_dif, y_dif, y_2, x_2, y_1, x_1,color, 0);
 		break;
 	case 33://+= horizontale lijn
 		lijn_hoek(x_dif, y_dif, y_1, x_1, y_2, x_2,color, 0);
@@ -169,10 +170,11 @@ int API_draw_line(int x_1, int y_1, int x_2, int y_2, int color, int weight, int
 	case 10://-+ lijn'/'
 		x_dif = x_2-x_1;
 		y_dif = y_2-y_1;
+
 		if(make_pos(y_dif)>make_pos(x_dif))
 			lijn_hoek_negatief(y_dif, x_dif, x_1, y_1, x_2, y_2,color, 1);
 		if(make_pos(y_dif)<make_pos(x_dif))
-			lijn_hoek_negatief(x_dif, y_dif, y_1, x_1, y_2, x_2,color, 0);
+			lijn_hoek_negatief(x_dif, y_dif, y_2, x_2, y_1, x_1,color, 0);
 		break;
 	case 18://-- switch lijn'\'
 		x_dif = x_1-x_2;
@@ -182,8 +184,6 @@ int API_draw_line(int x_1, int y_1, int x_2, int y_2, int color, int weight, int
 			lijn_hoek(x_dif, y_dif, y_2, x_2, y_1, x_1,color, 0);
 		if(x_dif < y_dif)//			noemer teller noemer teller
 			lijn_hoek(y_dif, x_dif, x_2, y_2, x_1, y_1,color, 1);
-		if(x_dif == y_dif)
-			lijn_hoek(y_dif, x_dif, x_2, y_2, x_1, y_1,color, 2);
 		break;
 	case 34://-= switch hor
 		lijn_hoek(x_dif, y_dif, y_2, x_2, y_1, x_1,color, 0);
@@ -234,40 +234,47 @@ int main(void)
 
 	UB_VGA_FillScreen(VGA_COL_WHITE);
 
-
+	//API_draw_line(319,0,80,238,VGA_COL_GREEN,1,0);
 
 	// VGA scherm max x=319 max y=239
-	API_draw_line(0,0,319,0,VGA_COL_RED,1,0);
-	API_draw_line(0,230,319,230,VGA_COL_RED,1,0);
 
-
-
-
-	API_draw_line(0,239,319,0,VGA_COL_GREEN,1,0);
 	int teller = 0;
+	int teller2 = 0;
   while(1)
   {
-	  /*API_draw_line(teller,0,0,239,VGA_COL_WHITE,1,0);
-		if(teller>238)
-			teller=0;
-		else
-			teller++;
-		delay(1000000);
-		API_draw_line(teller-1,0,0,239,VGA_COL_BLUE,1,0);
-
-
 	  // test lijn lo naar rechtsonder
-	  API_draw_line(0,0,319,teller,VGA_COL_GREEN,1,0);
-	  API_draw_line(0,0,teller,239,VGA_COL_YELLOW,1,0);
-	  if(teller>238)
+	  API_draw_line(0,0,319,teller,VGA_COL_BLUE,1,0);
+	  API_draw_line(0,0,teller2,239,VGA_COL_YELLOW,1,0);
+	  API_draw_line(319,0,319-teller2,239,VGA_COL_MAGENTA,1,0);
+	  API_draw_line(319,0,0,teller,VGA_COL_CYAN,1,0);
+
+	  if(teller>239-1)
 		teller=0;
 	  else
 		teller++;
-		delay(1000000);
-	  API_draw_line(0,0,319,teller-1,VGA_COL_BLUE,1,0);
-	  API_draw_line(0,0,teller-1,239,VGA_COL_BLUE,1,0);
-	  delay(1000000);*/
+
+	  if(teller2>319-1)
+		  teller2=0;
+	  else
+		  teller2++;
+	  delay(1000000);
+
+	  API_draw_line(0,0,319,teller-1,VGA_COL_WHITE,1,0);
+	  API_draw_line(0,0,teller2-1,239,VGA_COL_WHITE,1,0);
+	  API_draw_line(319,0,319-teller2+1,239,VGA_COL_WHITE,1,0);
+	  API_draw_line(319,0,0,teller-1,VGA_COL_WHITE,1,0);
+	  //delay(1000000);
 	  // put the code here
+
+		API_draw_line(0,0,319,0,VGA_COL_RED,1,0);
+		API_draw_line(0,230,319,230,VGA_COL_RED,1,0);
+		API_draw_line(0,0,0,230,VGA_COL_RED,1,0);
+		API_draw_line(319,0,319,230,VGA_COL_RED,1,0);
+
+
+
+		API_draw_line(319,0,0,239,VGA_COL_GREEN,1,0);
+		API_draw_line(0,0,319,239,VGA_COL_GREEN,1,0);
   }
 }
 
