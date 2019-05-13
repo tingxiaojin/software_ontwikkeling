@@ -206,23 +206,6 @@ int API_draw_line(int x_1, int y_1, int x_2, int y_2, int color, int weight, int
 	return 0;
 }
 
-void rechthoek(int x_lo, int y_lo, int x_rb, int y_rb, int kleur){
-	int i;
-	int j;
-
-	if(x_lo < x_rb && y_rb < y_lo)
-	{
-		for(j=y_rb; j<y_lo; j++)
-		{
-			for(i=x_lo; i<x_rb; i++)
-			{
-				UB_VGA_SetPixel(i,j,kleur);
-			}
-		}
-	}
-
-}
-
 int main(void)
 {
 
@@ -238,20 +221,34 @@ int main(void)
 
 	// VGA scherm max x=319 max y=239
 
-	int teller = 0;
+	int tellerbx = 319;
+	int tellerby = 0;
 	int teller2 = 0;
   while(1)
   {
 	  // test lijn lo naar rechtsonder
-	  API_draw_line(0,0,319,teller,VGA_COL_BLUE,1,0);
+	  API_draw_line(0,0,tellerbx,tellerby,VGA_COL_BLUE,1,0);
 	  API_draw_line(0,0,teller2,239,VGA_COL_YELLOW,1,0);
 	  API_draw_line(319,0,319-teller2,239,VGA_COL_MAGENTA,1,0);
-	  API_draw_line(319,0,0,teller,VGA_COL_CYAN,1,0);
+	  API_draw_line(319,0,0,tellerby,VGA_COL_CYAN,1,0);
 
-	  if(teller>239-1)
-		teller=0;
+	  if(tellerby>239-1)
+	  {
+		  tellerby=239;
+		  if(tellerbx<0)
+		  {
+			  tellerby=0;
+			  tellerbx=319;
+		  }
+		  else
+			  tellerbx--;
+
+	  }
 	  else
-		teller++;
+	  {
+		  tellerbx=319;
+		  tellerby++;
+	  }
 
 	  if(teller2>319-1)
 		  teller2=0;
@@ -259,10 +256,10 @@ int main(void)
 		  teller2++;
 	  delay(1000000);
 
-	  API_draw_line(0,0,319,teller-1,VGA_COL_WHITE,1,0);
+	  API_draw_line(0,0,tellerbx-1,tellerby-1,VGA_COL_WHITE,1,0);
 	  API_draw_line(0,0,teller2-1,239,VGA_COL_WHITE,1,0);
 	  API_draw_line(319,0,319-teller2+1,239,VGA_COL_WHITE,1,0);
-	  API_draw_line(319,0,0,teller-1,VGA_COL_WHITE,1,0);
+	  API_draw_line(319,0,0,tellerby-1,VGA_COL_WHITE,1,0);
 	  //delay(1000000);
 	  // put the code here
 
@@ -274,7 +271,10 @@ int main(void)
 
 
 		API_draw_line(319,0,0,239,VGA_COL_GREEN,1,0);
-		API_draw_line(0,0,319,239,VGA_COL_GREEN,1,0);
+		API_draw_line(319,239,0,0,VGA_COL_GREEN,1,0);
+
+		API_draw_line(319,120,0,120,VGA_COL_BLACK,1,0);
+		API_draw_line(160,0,160,239,VGA_COL_BLACK,1,0);
   }
 }
 
