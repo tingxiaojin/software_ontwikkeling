@@ -15,6 +15,17 @@
 //            DMA2, Channel6, Stream5
 //--------------------------------------------------------------
 
+/**
+  ******************************************************************************
+  * @file    misc.c
+  * @author  Raymoendow
+  * @version V1.0.0
+  * @date    30-September-2011
+  * @brief   This file provides all the miscellaneous firmware functions (add-on
+  *          to CMSIS functions).
+
+  */
+
 
 //--------------------------------------------------------------
 // Includes
