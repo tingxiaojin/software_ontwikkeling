@@ -15,62 +15,195 @@
 #include <math.h>
 #include <strings.h>
 
-void delay(int time){
-	while(time)
-		time--;
+//In deze functie wordt er nagegaan welke write functie gebruikt gaat worden voor het maken van een lijn.
+//parameters:
+// x,y begin en x,y eind
+// return value:
+// eerste drie bits of x +, -, =
+// tweede drie bits of y +, -, =
+
+void delay(int count){
+	while(count)
+		count --;
 }
 
-void test(){
-	int i;
+int make_pos(signed int getal){
+	if(getal<0)
+		return getal*-1;
+	if(getal>1)
+		return getal;
+	return 0;
+}
 
-	for(i=10; i<20; i++)
+int get_rc(signed int rc_dif, int teller, int noemer)
+{
+	int rc;
+	if(rc_dif>=0)
 	{
-		UB_VGA_SetPixel(i,i,VGA_COL_MAGENTA);
+		rc = (((float)teller+1)/((float)noemer+1))*100;	//berekening van helling
+		if(rc<rc_dif || rc_dif==0)
+			return rc/100;		//afronden naar beneden
+		if(rc>=rc_dif)
+			return (rc/100)+1;	//afronden naar boven
+	}
+
+	if(rc_dif<0)
+	{
+		rc = (((float)teller+1)/((float)noemer-1))*100;
+		if(rc<rc_dif)
+			return ((rc*-1)/100)+1;	//afronden naar boven
+		else
+			return (rc*-1)/100;
+	}
+
+	return 0;
+}
+
+int switch_state(int x_dif, int y_dif){
+	char switch_value = 0;
+
+	if(x_dif>0)
+		switch_value |= 1;	//1e bit +
+	if(x_dif<0)
+		switch_value |= 2;	//2e bit -
+	if(x_dif==0)
+		switch_value |= 4;	//3e bit =
+	if(y_dif>0)
+		switch_value |= 8;	//4e bit +
+	if(y_dif<0)
+		switch_value |= 16;	//5e bit -
+	if(y_dif==0)
+		switch_value |= 32;	//6e bit =
+
+	return switch_value;
+}
+//											noemer		teller	noemer	teller
+void lijn_hoek(float teller, float noemer, int BP1, int EP1, int BP2, int EP2, int kleur, int graden)
+{
+	int i = BP1;
+	int j = EP1;
+	int k;
+	int rc;
+
+	int rc_dif = (teller/noemer)*100;
+	for(i=BP1; i<= BP2; i++)
+	{
+		if(graden == 2)
+			rc = 1;
+		else					//tellery noemerx
+			rc = get_rc(rc_dif, EP2-j, BP2-i);
+
+		for(k=0; k<rc; k++)
+		{
+			if(graden > 0)
+				UB_VGA_SetPixel(i,j,kleur);
+			if(graden == 0)
+				UB_VGA_SetPixel(j,i,kleur);
+			if(j>=VGA_DISPLAY_X-1 || j>EP2)
+				break;
+			j++;
+		}
+
 	}
 
 }
 
+void lijn_hoek_negatief(float teller, float noemer, int BP1, int EP1, int BP2, int EP2, int kleur, int graden)
+{
+	int i = BP1;
+	int j = EP1;
+	int k;
+	int rc;
 
-//
-//parameter: x,y x',y' dikte kleur
-//
-void lijn(int x, int y, int x1, int y1, int size, int kleur){
-
-	int x_dif;
-	int y_dif;
-	if(x1 >= x)
-		x_dif = x1 - x;
-	else
-		x_dif = x - x1;
-
-	if(y1 >= y)
-		y_dif = y1 - y;
-	else
-		y_dif = y - y1;
-
-	while(size)
+	signed int rc_dif = (teller/noemer)*100;
+	for(i=BP1; i>=BP2; i--)
 	{
-		if(x_dif && y_dif==0)
+		if(graden == 2)
+			rc = 1;
+		else					//tellery noemerx
+			rc = get_rc(rc_dif, EP2-j, BP2-i);
+
+		for(k=0; k<rc; k++)
 		{
-			int i;
-			for(i=x; i<x1; i++)
-				UB_VGA_SetPixel(i,y,kleur);
-			y++;
+			if(graden > 0)
+				UB_VGA_SetPixel(i,j,kleur);
+			if(graden == 0)
+				UB_VGA_SetPixel(j,i,kleur);
+			if(j>=VGA_DISPLAY_X-1)
+				break;
+			j++;
 		}
 
-		if(y_dif && x_dif==0)
-		{
-			int i;
-			for(i=y; i<y1; i++)
-				UB_VGA_SetPixel(x,i,kleur);
-			x++;
-		}
-
-		size--;
 	}
 
+}
 
+int API_draw_line(int x_1, int y_1, int x_2, int y_2, int color, int weight, int reserved){
+	int x_dif = x_2-x_1;
+	int y_dif = y_2-y_1;
 
+	char state;
+	state = switch_state(x_dif, y_dif);
+
+	switch(state){
+	case 9://++ lijn'\'
+		x_dif = x_2-x_1;
+		y_dif = y_2-y_1;
+
+		if(x_dif > y_dif)//			noemer teller noemer teller
+			lijn_hoek(x_dif, y_dif, y_1, x_1, y_2, x_2,color, 0);
+		if(x_dif < y_dif)//			noemer teller noemer teller
+			lijn_hoek(y_dif, x_dif, x_1, y_1, x_2, y_2,color, 1);
+		break;
+	case 17://+- switch lijn'/'
+		x_dif = x_1-x_2;
+		y_dif = y_1-y_2;
+
+		if(make_pos(y_dif)>make_pos(x_dif))
+			lijn_hoek_negatief(y_dif, x_dif, x_1, y_1, x_2, y_2,color, 1);
+		if(make_pos(y_dif)<make_pos(x_dif))
+			lijn_hoek_negatief(x_dif, y_dif, y_1, x_1, y_2, x_2,color, 0);
+		break;
+	case 33://+= horizontale lijn
+		lijn_hoek(x_dif, y_dif, y_1, x_1, y_2, x_2,color, 0);
+		break;
+	case 10://-+ lijn'/'
+		x_dif = x_2-x_1;
+		y_dif = y_2-y_1;
+
+		if(make_pos(y_dif)>make_pos(x_dif))
+			lijn_hoek_negatief(y_dif, x_dif, x_1, y_1, x_2, y_2,color, 1);
+		if(make_pos(y_dif)<make_pos(x_dif))
+			lijn_hoek_negatief(x_dif, y_dif, y_2, x_2, y_1, x_1,color, 0);
+		break;
+	case 18://-- switch lijn'\'
+		x_dif = x_1-x_2;
+		y_dif = y_1-y_2;
+
+		if(x_dif > y_dif)//			noemer teller noemer teller
+			lijn_hoek(x_dif, y_dif, y_2, x_2, y_1, x_1,color, 0);
+		if(x_dif < y_dif)//			noemer teller noemer teller
+			lijn_hoek(y_dif, x_dif, x_2, y_2, x_1, y_1,color, 1);
+		break;
+	case 34://-= switch hor
+		lijn_hoek(x_dif, y_dif, y_2, x_2, y_1, x_1,color, 0);
+		break;
+	case 12://=+ verticale lijn
+		lijn_hoek(x_dif, y_dif, x_1, y_1, x_2, y_2,color, 1);
+		break;
+	case 20://=- switch ver
+		lijn_hoek(x_dif, y_dif, x_2, y_2, x_1, y_1,color, 1);
+		break;
+	// in deze case is ydif en xdif gelijk dus kan één pixel putten of error?
+	/*case 36://==
+
+		break;
+	 */
+	default:
+		UB_VGA_SetPixel(100,100,VGA_COL_MAGENTA);
+		break;
+	}
+	return 0;
 }
 
 void rechthoek(int x_lo, int y_lo, int x_rb, int y_rb, int kleur){
@@ -99,23 +232,49 @@ int main(void)
 
 	UB_VGA_Screen_Init(); // Init VGA-Screen
 
-	UB_VGA_FillScreen(VGA_COL_BLUE);
+	UB_VGA_FillScreen(VGA_COL_WHITE);
 
-  //lijn(10,99,50,99,1,VGA_COL_GREEN);
+	//API_draw_line(319,0,80,238,VGA_COL_GREEN,1,0);
 
-	  delay(10000);
-	  //		xklein ygroot xgroot yklein
-	  rechthoek(10,150,50,100,VGA_COL_MAGENTA);
-	  lijn(10,100,50,100,1,VGA_COL_GREEN);
+	// VGA scherm max x=319 max y=239
 
+	int teller = 0;
+	int teller2 = 0;
   while(1)
   {
-	  /*lijn(10,100,50,100,1,VGA_COL_GREEN);
-	  delay(10000);
-	  //		xklein ygroot xgroot yklein
-	  rechthoek(10,150,50,100,VGA_COL_MAGENTA);*/
-	  //test();
+	  // test lijn lo naar rechtsonder
+	  API_draw_line(0,0,319,teller,VGA_COL_BLUE,1,0);
+	  API_draw_line(0,0,teller2,239,VGA_COL_YELLOW,1,0);
+	  API_draw_line(319,0,319-teller2,239,VGA_COL_MAGENTA,1,0);
+	  API_draw_line(319,0,0,teller,VGA_COL_CYAN,1,0);
+
+	  if(teller>239-1)
+		teller=0;
+	  else
+		teller++;
+
+	  if(teller2>319-1)
+		  teller2=0;
+	  else
+		  teller2++;
+	  delay(1000000);
+
+	  API_draw_line(0,0,319,teller-1,VGA_COL_WHITE,1,0);
+	  API_draw_line(0,0,teller2-1,239,VGA_COL_WHITE,1,0);
+	  API_draw_line(319,0,319-teller2+1,239,VGA_COL_WHITE,1,0);
+	  API_draw_line(319,0,0,teller-1,VGA_COL_WHITE,1,0);
+	  //delay(1000000);
 	  // put the code here
+
+		API_draw_line(0,0,319,0,VGA_COL_RED,1,0);
+		API_draw_line(0,230,319,230,VGA_COL_RED,1,0);
+		API_draw_line(0,0,0,230,VGA_COL_RED,1,0);
+		API_draw_line(319,0,319,230,VGA_COL_RED,1,0);
+
+
+
+		API_draw_line(319,0,0,239,VGA_COL_GREEN,1,0);
+		API_draw_line(0,0,319,239,VGA_COL_GREEN,1,0);
   }
 }
 
