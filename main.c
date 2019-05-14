@@ -43,8 +43,10 @@ int get_rc(signed int rc_dif, int teller, int noemer)
 		rc = (((float)teller+1)/((float)noemer+1))*100;	//berekening van helling
 		if(rc<rc_dif || rc_dif==0)
 			return rc/100;		//afronden naar beneden
-		if(rc>=rc_dif)
+		if(rc>rc_dif)
 			return (rc/100)+1;	//afronden naar boven
+		if(rc==100 && rc_dif==100)
+			return rc/100;//Voor 45 graden hoek anders worden het stapjes van twee
 	}
 
 	if(rc_dif<0)
@@ -52,8 +54,10 @@ int get_rc(signed int rc_dif, int teller, int noemer)
 		rc = (((float)teller+1)/((float)noemer-1))*100;
 		if(rc<rc_dif)
 			return ((rc*-1)/100)+1;	//afronden naar boven
-		else
+		if(rc>rc_dif)
 			return (rc*-1)/100;
+		if(rc==-100 && rc_dif==-100)
+			return (rc*-1)/100;//Voor 45 graden hoek anders worden het stapjes van twee
 	}
 
 	return 0;
@@ -87,11 +91,8 @@ void lijn_hoek(float teller, float noemer, int BP1, int EP1, int BP2, int EP2, i
 
 	int rc_dif = (teller/noemer)*100;
 	for(i=BP1; i<= BP2; i++)
-	{
-		if(graden == 2)
-			rc = 1;
-		else					//tellery noemerx
-			rc = get_rc(rc_dif, EP2-j, BP2-i);
+	{							//tellery noemerx
+		rc = get_rc(rc_dif, EP2-j, BP2-i);
 
 		for(k=0; k<rc; k++)
 		{
@@ -117,11 +118,8 @@ void lijn_hoek_negatief(float teller, float noemer, int BP1, int EP1, int BP2, i
 
 	signed int rc_dif = (teller/noemer)*100;
 	for(i=BP1; i>=BP2; i--)
-	{
-		if(graden == 2)
-			rc = 1;
-		else					//tellery noemerx
-			rc = get_rc(rc_dif, EP2-j, BP2-i);
+	{					//tellery noemerx
+		rc = get_rc(rc_dif, EP2-j, BP2-i);
 
 		for(k=0; k<rc; k++)
 		{
@@ -138,19 +136,16 @@ void lijn_hoek_negatief(float teller, float noemer, int BP1, int EP1, int BP2, i
 
 }
 
-int API_draw_line(int x_1, int y_1, int x_2, int y_2, int color, int weight, int reserved){
+void line_decision(char state, int x_1, int y_1, int x_2, int y_2, int color)
+{
 	int x_dif = x_2-x_1;
 	int y_dif = y_2-y_1;
-
-	char state;
-	state = switch_state(x_dif, y_dif);
-
 	switch(state){
 	case 9://++ lijn'\'
 		x_dif = x_2-x_1;
 		y_dif = y_2-y_1;
 
-		if(x_dif > y_dif)//			noemer teller noemer teller
+		if(x_dif >= y_dif)//			noemer teller noemer teller
 			lijn_hoek(x_dif, y_dif, y_1, x_1, y_2, x_2,color, 0);
 		if(x_dif < y_dif)//			noemer teller noemer teller
 			lijn_hoek(y_dif, x_dif, x_1, y_1, x_2, y_2,color, 1);
@@ -161,7 +156,7 @@ int API_draw_line(int x_1, int y_1, int x_2, int y_2, int color, int weight, int
 
 		if(make_pos(y_dif)>make_pos(x_dif))
 			lijn_hoek_negatief(y_dif, x_dif, x_1, y_1, x_2, y_2,color, 1);
-		if(make_pos(y_dif)<make_pos(x_dif))
+		if(make_pos(y_dif)<=make_pos(x_dif))
 			lijn_hoek_negatief(x_dif, y_dif, y_1, x_1, y_2, x_2,color, 0);
 		break;
 	case 33://+= horizontale lijn
@@ -173,14 +168,14 @@ int API_draw_line(int x_1, int y_1, int x_2, int y_2, int color, int weight, int
 
 		if(make_pos(y_dif)>make_pos(x_dif))
 			lijn_hoek_negatief(y_dif, x_dif, x_1, y_1, x_2, y_2,color, 1);
-		if(make_pos(y_dif)<make_pos(x_dif))
+		if(make_pos(y_dif)<=make_pos(x_dif))
 			lijn_hoek_negatief(x_dif, y_dif, y_2, x_2, y_1, x_1,color, 0);
 		break;
 	case 18://-- switch lijn'\'
 		x_dif = x_1-x_2;
 		y_dif = y_1-y_2;
 
-		if(x_dif > y_dif)//			noemer teller noemer teller
+		if(x_dif >= y_dif)//			noemer teller noemer teller
 			lijn_hoek(x_dif, y_dif, y_2, x_2, y_1, x_1,color, 0);
 		if(x_dif < y_dif)//			noemer teller noemer teller
 			lijn_hoek(y_dif, x_dif, x_2, y_2, x_1, y_1,color, 1);
@@ -203,6 +198,52 @@ int API_draw_line(int x_1, int y_1, int x_2, int y_2, int color, int weight, int
 		UB_VGA_SetPixel(100,100,VGA_COL_MAGENTA);
 		break;
 	}
+}
+
+int API_draw_line(int x_1, int y_1, int x_2, int y_2, int color, int weight, int reserved){
+	int x_dif = x_2-x_1;
+	int y_dif = y_2-y_1;
+
+	char state = switch_state(x_dif, y_dif);
+	line_decision(state,x_1,y_1,x_2,y_2,color);
+
+
+
+	if(weight>1)
+	{
+		int i;
+
+		switch(state){
+		case 33:// += 319-0 100-100
+		//case 34:
+			for(i=0; i<weight-1; i++)
+			{
+				int y1_up_teller = y_1;
+				int y1_down_teller = y_1;
+				int y2_up_teller = y_2;
+				int y2_down_teller = y_2;
+
+				if(i%2)
+				{
+					y1_up_teller++;
+					y2_up_teller++;
+					line_decision(state,x_1,y1_up_teller,x_2,y1_up_teller,color);
+
+				}
+				else
+				{
+					y1_down_teller--;
+					y2_down_teller--;
+					line_decision(state,x_1,y1_down_teller,x_2,y1_down_teller,color);
+				}
+			}
+			break;
+		default:
+			UB_VGA_SetPixel(160,120,0x13);
+			break;
+		}
+
+	}
 	return 0;
 }
 
@@ -215,18 +256,20 @@ int main(void)
 
 	UB_VGA_Screen_Init(); // Init VGA-Screen
 
-	UB_VGA_FillScreen(VGA_COL_WHITE);
+	UB_VGA_FillScreen(0x83);
 
-	//API_draw_line(319,0,80,238,VGA_COL_GREEN,1,0);
-
+	API_draw_line(3,100,319,100,VGA_COL_GREEN,10,0);
+	API_draw_line(319,100,0,100,VGA_COL_RED,5,0);
+	//API_draw_line(0,0,100,100,VGA_COL_GREEN,1,0);
 	// VGA scherm max x=319 max y=239
 
+	int teller=0;
 	int tellerbx = 319;
 	int tellerby = 0;
 	int teller2 = 0;
   while(1)
   {
-	  // test lijn lo naar rechtsonder
+	  /*// test lijn lo naar rechtsonder
 	  API_draw_line(0,0,tellerbx,tellerby,VGA_COL_BLUE,1,0);
 	  API_draw_line(0,0,teller2,239,VGA_COL_YELLOW,1,0);
 	  API_draw_line(319,0,319-teller2,239,VGA_COL_MAGENTA,1,0);
@@ -274,7 +317,7 @@ int main(void)
 		API_draw_line(319,239,0,0,VGA_COL_GREEN,1,0);
 
 		API_draw_line(319,120,0,120,VGA_COL_BLACK,1,0);
-		API_draw_line(160,0,160,239,VGA_COL_BLACK,1,0);
+		API_draw_line(160,0,160,239,VGA_COL_BLACK,1,0);*/
   }
 }
 
