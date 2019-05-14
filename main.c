@@ -15,41 +15,47 @@
 #include <math.h>
 
 
-int API_draw_line(int startx, int starty, int eindx, int eindy, char kleur)
+
+int API_draw_line(int x_1, int y_1, int x_2, int y_2, int color, int weight, int reserved)
 {
+  int i;
   int x, y;
   float dx, dy, a;
 
-  dx = eindx - startx;
-  dy = eindy - starty;
+  dx = x_2 - x_1;
+  dy = y_2 - y_1;
   a  = dy/dx;
+for(i=weight/2; weight>0; i--, weight--)
+{
 
-  if (fabs(a)<=1)
-    if (startx < eindx)
-      for (x=startx; x<eindx; x++)
+	if (fabs(a)<=1)
+    if (x_1 < x_2)
+      for (x=x_1; x<x_2; x++)
       {
-        y = (int)(a*(x-startx)+starty); // y = ax + b
-        UB_VGA_SetPixel(x,y,kleur);
+        y = (int)(a*(x-x_1)+y_1+i); // y = ax + b
+        UB_VGA_SetPixel(x,y,color);
       }
     else
-      for (x=eindx; x<startx; x++)
+      for (x=x_2; x<x_1; x++)
       {
-        y = (int)(a*(x-startx)+starty); // y = ax + b
-        UB_VGA_SetPixel(x,y,kleur);
+        y = (int)(a*(x-x_1)+y_1+i); // y = ax + b
+        UB_VGA_SetPixel(x,y,color);
       }
 
   else
-    if (starty < eindy)
-      for (y=starty; y<eindy; y++)
+    if (y_1 < y_2)
+      for (y=y_1; y<y_2; y++)
       {
-        x = (int)((1/a)*(y-starty)+startx); // x = (y - b)/a
-        UB_VGA_SetPixel(x,y,kleur);
+        x = (int)((1/a)*(y-y_1)+x_1+i); // x = (y - b)/a
+        UB_VGA_SetPixel(x,y,color);
       } else
-      for (y=eindy; y<starty; y++)
+      for (y=y_2; y<y_1; y++)
       {
-        x = (int)((1/a)*(y-starty)+startx); // y = ax + b
-        UB_VGA_SetPixel(x,y,kleur);
+        x = (int)((1/a)*(y-y_1)+x_1+i); // y = ax + b
+        UB_VGA_SetPixel(x,y,color);
       }
+}
+
   return 0;
 }
 
@@ -70,9 +76,11 @@ int main(void)
 
 //	UB_VGA_SetPixel(10,10,10);
 
-//	API_draw_line(0, 0, 319, 239, VGA_COL_WHITE);
-	API_draw_line(0, 0, 200, 200, VGA_COL_WHITE);
 
+	API_draw_line(0, 0, 319, 239, VGA_COL_WHITE, 10, 0);
+	API_draw_line(319, 0, 0, 239, VGA_COL_WHITE, 10, 0);
+	API_draw_line(0, 0, 319, 239, VGA_COL_RED, 1, 0);
+	API_draw_line(319, 0, 0, 239, VGA_COL_RED, 1, 0);
 
 
   while(1)
