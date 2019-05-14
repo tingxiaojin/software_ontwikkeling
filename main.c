@@ -13,6 +13,7 @@
 #include "main.h"
 #include "stm32_ub_vga_screen.h"
 #include <math.h>
+<<<<<<< HEAD
 #include <strings.h>
 
 //In deze functie wordt er nagegaan welke write functie gebruikt gaat worden voor het maken van een lijn.
@@ -221,6 +222,46 @@ void rechthoek(int x_lo, int y_lo, int x_rb, int y_rb, int kleur){
 		}
 	}
 
+=======
+
+
+int API_draw_line(int startx, int starty, int eindx, int eindy, char kleur)
+{
+  int x, y;
+  float dx, dy, a;
+
+  dx = eindx - startx;
+  dy = eindy - starty;
+  a  = dy/dx;
+
+  if (fabs(a)<=1)
+    if (startx < eindx)
+      for (x=startx; x<eindx; x++)
+      {
+        y = (int)(a*(x-startx)+starty); // y = ax + b
+        UB_VGA_SetPixel(x,y,kleur);
+      }
+    else
+      for (x=eindx; x<startx; x++)
+      {
+        y = (int)(a*(x-startx)+starty); // y = ax + b
+        UB_VGA_SetPixel(x,y,kleur);
+      }
+
+  else
+    if (starty < eindy)
+      for (y=starty; y<eindy; y++)
+      {
+        x = (int)((1/a)*(y-starty)+startx); // x = (y - b)/a
+        UB_VGA_SetPixel(x,y,kleur);
+      } else
+      for (y=eindy; y<starty; y++)
+      {
+        x = (int)((1/a)*(y-starty)+startx); // y = ax + b
+        UB_VGA_SetPixel(x,y,kleur);
+      }
+  return 0;
+>>>>>>> e807678d2152e1974d42088add79350c1247de45
 }
 
 int main(void)
@@ -232,6 +273,7 @@ int main(void)
 
 	UB_VGA_Screen_Init(); // Init VGA-Screen
 
+<<<<<<< HEAD
 	UB_VGA_FillScreen(VGA_COL_WHITE);
 
 	//API_draw_line(319,0,80,238,VGA_COL_GREEN,1,0);
@@ -275,6 +317,24 @@ int main(void)
 
 		API_draw_line(319,0,0,239,VGA_COL_GREEN,1,0);
 		API_draw_line(0,0,319,239,VGA_COL_GREEN,1,0);
+=======
+	UB_VGA_FillScreen(VGA_COL_BLACK);
+
+
+
+
+
+//	UB_VGA_SetPixel(10,10,10);
+
+//	API_draw_line(0, 0, 319, 239, VGA_COL_WHITE);
+	API_draw_line(0, 0, 100, 100, VGA_COL_WHITE);
+
+
+
+  while(1)
+  {
+	  // put the code here
+>>>>>>> e807678d2152e1974d42088add79350c1247de45
   }
 }
 
