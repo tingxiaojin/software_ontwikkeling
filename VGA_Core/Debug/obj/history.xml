@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
+<<<<<<< HEAD
    <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F407VG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont\GitHub -I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont -I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont\GitHub\cmsis_lib -I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont\GitHub\cmsis_boot -I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont\GitHub\ub_lib -I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont\GitHub\cmsis_lib\include -I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont\GitHub\cmsis">
       <target file="stm32f4xx_gpio.o" lastModified="16ab004861d">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="16a96a03230"/>
@@ -27,6 +28,35 @@
       </target>
       <target file="misc.o" lastModified="16ab004880d">
          <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="16a96a0322d"/>
+=======
+   <processor signature="arm-none-eabi-gcc 4.9.2 x86_64-w64-mingw32 -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F407VG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -I..\..\..\..\..\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D\Software ontwikkeling\REPOSITORY\cmsis_lib\include -I..\..\..\..\..\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D\Software ontwikkeling\REPOSITORY\ub_lib -I..\..\..\..\..\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D\Software ontwikkeling -I..\..\..\..\..\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D\Software ontwikkeling\REPOSITORY\cmsis_lib -I..\..\..\..\..\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D\Software ontwikkeling\REPOSITORY -I..\..\..\..\..\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D\Software ontwikkeling\REPOSITORY\cmsis_boot -I..\..\..\..\..\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D\Software ontwikkeling\REPOSITORY\cmsis">
+      <target file="stm32f4xx_gpio.o" lastModified="16ab660caf7">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="16a96a2de34"/>
+      </target>
+      <target file="stm32_ub_vga_screen.o" lastModified="16ab660cd32">
+         <source file="..\..\..\ub_lib\stm32_ub_vga_screen.c" lastModified="16a97386b5f"/>
+      </target>
+      <target file="stm32f4xx_dma.o" lastModified="16ab660cc80">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_dma.c" lastModified="16a96a2de33"/>
+      </target>
+      <target file="stm32f4xx_tim.o" lastModified="16ab660cf24">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="16a96a2de38"/>
+      </target>
+      <target file="system_stm32f4xx.o" lastModified="16ab660cba9">
+         <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="16a96a2de28"/>
+      </target>
+      <target file="startup_stm32f4xx.o" lastModified="16ab660c65d">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="16a96a2de20"/>
+      </target>
+      <target file="main.o" lastModified="16ab6674501">
+         <source file="..\..\..\main.c" lastModified="16ab6673b08"/>
+      </target>
+      <target file="stm32f4xx_rcc.o" lastModified="16ab660ca36">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="16a96a2de36"/>
+      </target>
+      <target file="misc.o" lastModified="16ab660cdf5">
+         <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="16a96a2de32"/>
+>>>>>>> e807678d2152e1974d42088add79350c1247de45
       </target>
    </processor>
 </history>

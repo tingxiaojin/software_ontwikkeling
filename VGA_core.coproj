@@ -22,7 +22,10 @@
         <Option name="UserEditLinkder" value=""/>
         <Option name="UseMemoryLayout" value="1"/>
         <Option name="Library" value="Not use C Library"/>
+<<<<<<< HEAD
         <Option name="UserEditLinker" value="-lm; "/>
+=======
+>>>>>>> e807678d2152e1974d42088add79350c1247de45
         <LinkedLibraries>
           <Libset dir="" libs="m"/>
         </LinkedLibraries>
@@ -32,7 +35,11 @@
           <Memory name="IROM2" type="ReadOnly" size="" startValue=""/>
           <Memory name="IRAM2" type="ReadWrite" size="0x00010000" startValue="0x10000000"/>
         </MemoryAreas>
+<<<<<<< HEAD
         <LocateLinkFile path="../../../../../../../coocox/coide/configuration/programdata/vga_core/arm-gcc-link.ld" type="0"/>
+=======
+        <LocateLinkFile path="c:/coocox/coide/configuration/programdata/VGA_Core/arm-gcc-link.ld" type="0"/>
+>>>>>>> e807678d2152e1974d42088add79350c1247de45
       </Link>
       <Output>
         <Option name="OutputFileType" value="0"/>
