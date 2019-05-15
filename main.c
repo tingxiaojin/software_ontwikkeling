@@ -61,30 +61,30 @@ int API_draw_line(int x_1, int y_1, int x_2, int y_2, int color, int weight, int
 	return 0;
 }
 
-int API_draw_rectangle(int x, int y, int width, int height, int color, int filled, int reserved, int reserved1)
+int API_draw_rectangle(int x, int y, int width, int height, int color, int filled, int weight, int border_color)
 {
+	int flag = 0;
 	int i;
 	int j;
-	int rand;
+	int rand = 1;
 
 	for(j=y; j<=y+height; j++)
 	{
-		if(y<rand || y>y+h-rand)
-			continue;
+		if(j<rand+y || j>y+height-rand ||filled ==1)
+			flag = 1;
 		else
-			if(filled == 1)
-				continue;
-			else
-				break;
+			flag = 0;
 		for(i=x; i<=x+width; i++)
 		{
-			if(x<rand || x>x+w-rand)
-				UB_VGA_SetPixel(i,j,color);
-			else
-				if(filled == 1)
+			switch(flag){
+			case 0:
+				if(i<x+rand || i>x+width-rand)
 					UB_VGA_SetPixel(i,j,color);
-				else
-					break;
+				break;
+			case 1:
+				UB_VGA_SetPixel(i,j,color);
+				break;
+			}
 		}
 	}
 
@@ -107,8 +107,9 @@ int main(void)
 
 	UB_VGA_Screen_Init(); // Init VGA-Screen
 
-	UB_VGA_FillScreen(VGA_COL_BLACK);
+	//UB_VGA_FillScreen(VGA_COL_BLACK);
 
+	API_clearscreen(VGA_COL_WHITE);
 
 
 
@@ -120,7 +121,7 @@ int main(void)
 	API_draw_line(0, 0, 319, 239, VGA_COL_RED, 1, 0);
 	API_draw_line(319, 0, 0, 239, VGA_COL_RED, 1, 0);
 
-	API_draw_rectangle(10,10,50,100,VGA_COL_CYAN,0,0,0);
+	API_draw_rectangle(10,10,300,200,VGA_COL_CYAN,1,0,0);
 
 
   while(1)
