@@ -80,7 +80,10 @@
 <attrib name="path" value="/"/>
 <attrib name="org.eclipse.cdt.debug.core.sourceHandle" value=""/>
 <attrib name="org.eclipse.debug.core.enabled" value="true"/>
+<<<<<<< HEAD
 <attrib name="org.eclipse.cdt.debug.core.ignoreCount" value="0"/>
+=======
+>>>>>>> 8ee92f439be26788cae8f37c019c9e760e86314c
 </marker>
 </breakpoint>
 </breakpoints>

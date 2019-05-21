@@ -56,6 +56,9 @@
       <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="16ab7fdc2ba">
          <include file="..\..\..\cmsis_lib\include\misc.h"/>
       </source>
+      <source file="..\..\..\main.h" lastModified="16ab7fdc2ca">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_dma.h" lastModified="16ab7fdc2af">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>

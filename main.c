@@ -17,6 +17,20 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
+
+uint8_t array[] = {0x9, 0x0, 0x0, 0x0, 0xb, 0x0, 0x0, 0x0,
+0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
+0xff, 0xff, 0xff, 0xff, 0x0, 0xff, 0xff, 0xff, 0xff,
+0xff, 0xff, 0xff, 0x0, 0xff, 0x0, 0xff, 0xff, 0xff,
+0xff, 0xff, 0x0, 0xff, 0xff, 0xff, 0x0, 0xff, 0xff,
+0xff, 0x0, 0xff, 0xff, 0xff, 0xff, 0xff, 0x0, 0xff,
+0x0, 0x0, 0x0, 0xff, 0xff, 0xff, 0x0, 0x0, 0x0,
+0xff, 0xff, 0x0, 0xff, 0xff, 0xff, 0x0, 0xff, 0xff,
+0xff, 0xff, 0x0, 0xff, 0xff, 0xff, 0x0, 0xff, 0xff,
+0xff, 0xff, 0x0, 0xff, 0xff, 0xff, 0x0, 0xff, 0xff,
+0xff, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0xff, 0xff,
+0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff};
 
 int API_draw_line(int x_1, int y_1, int x_2, int y_2, int color, int weight, int reserved)
 {
@@ -66,14 +80,16 @@ int API_draw_rectangle(int x, int y, int width, int height, int color, int fille
 	int flag = 0;
 	int i;
 	int j;
-	int rand = 1;
+	int rand = weight;
 
 	for(j=y; j<=y+height; j++)
 	{
-		if(j<rand+y || j>y+height-rand ||filled ==1)
-			flag = 1;
-		else
+		if(j<rand+y || j>y+height-rand && filled ==0)
 			flag = 0;
+
+		if(j>=rand+y || j<=y+height-rand && filled ==1)
+			flag = 1;
+
 		for(i=x; i<=x+width; i++)
 		{
 			switch(flag){
@@ -82,10 +98,39 @@ int API_draw_rectangle(int x, int y, int width, int height, int color, int fille
 					UB_VGA_SetPixel(i,j,color);
 				break;
 			case 1:
-				UB_VGA_SetPixel(i,j,color);
+				if(filled == 1)
+					UB_VGA_SetPixel(i,j,color);
+				else {
+					//if(i>=x+rand || i<=x+width-rand && filled = 0)
+						//UB_VGA_SetPixel(i,j,color);
+				}
 				break;
 			}
 		}
+	}
+
+	return 0;
+}
+
+void get_size(char* gbmp, PPIXEL data){
+	int i;
+	for(i=0; i<sizeof(int); i++)
+	{
+		&data+i = &gbmp+i;
+	}
+}
+
+void IO_draw_bitmap(char* gbmp, int x, int y){
+	get_size(&gbmp, &data);
+
+}
+
+int API_draw_bitmap(int x_lup, int y_lup, int bm_nr)
+{
+	switch(bm_nr){
+	case 0:
+		IO_draw_bitmap(BMP, x_lup, y_lup);
+		break;
 	}
 
 	return 0;
@@ -118,11 +163,12 @@ int main(void)
 
 	API_draw_line(140, 100, 319, 239, VGA_COL_WHITE, 10, 0);
 	API_draw_line(319, 0, 0, 239, VGA_COL_WHITE, 10, 0);
-	API_draw_line(0, 0, 319, 239, VGA_COL_RED, 1, 0);
 	API_draw_line(319, 0, 0, 239, VGA_COL_RED, 1, 0);
 
-	API_draw_rectangle(10,10,300,200,VGA_COL_CYAN,1,0,0);
+	API_draw_rectangle(10,10,300,200,VGA_COL_CYAN,0,3,0);
+	API_draw_bitmap(100,100,0);
 
+	API_draw_line(100, 100, 110, 239, VGA_COL_RED, 10, 0);
 
   while(1)
   {
