@@ -23,6 +23,7 @@ int main(void)
 #include <stdlib.h>
 #include <stdint.h>
 
+<<<<<<< HEAD
 uint8_t array[] = {0x9, 0x0, 0x0, 0x0, 0xb, 0x0, 0x0, 0x0,
 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
 0xff, 0xff, 0xff, 0xff, 0x0, 0xff, 0xff, 0xff, 0xff,
@@ -147,6 +148,9 @@ int API_clearscreen (int color)
 	return 0;
 }
 
+=======
+#include "APIdraw.h"
+>>>>>>> ac82ea1ed485c60ab685ea7534270d18439bdce5
 
 int main(void)
 {
@@ -164,9 +168,18 @@ int main(void)
 >>>>>>> e5b3ed66269ba126d9a02853a9998f068dd1b61e
 
 	API_clearscreen(VGA_COL_WHITE);
+	API_draw_bitmap(0, 0, 0);
+	API_draw_bitmap(60, 0, 1);
+	API_draw_bitmap(120, 0, 2);
+	API_draw_bitmap(0, 60, 3);
+	API_draw_bitmap(0, 120, 4);
+	API_draw_bitmap(150, 150, 5);
+	//API_draw_bitmap(50, 50, 2);
+
+	//UB_VGA_SetPixel(10,10,10);
 
 
-
+<<<<<<< HEAD
 //	UB_VGA_SetPixel(10,10,10);
 
 
@@ -180,11 +193,14 @@ int main(void)
 	API_draw_line(319, 0, 0, 239, VGA_COL_WHITE, 10, 0);
 	API_draw_line(319, 0, 0, 239, VGA_COL_RED, 1, 0);
 >>>>>>> e5b3ed66269ba126d9a02853a9998f068dd1b61e
+=======
+	/*API_draw_line(140, 100, 319, 239, VGA_COL_WHITE, 10, 0);
+	API_draw_line(319, 0, 0, 239, VGA_COL_WHITE, 10, 0);
+	API_draw_line(319, 0, 0, 239, VGA_COL_RED, 1, 0);
+*/
+	//API_draw_rectangle(10,10,5,10,VGA_COL_CYAN,0,1,VGA_COL_BLACK);
+>>>>>>> ac82ea1ed485c60ab685ea7534270d18439bdce5
 
-	API_draw_rectangle(10,10,300,200,VGA_COL_CYAN,0,3,0);
-	API_draw_bitmap(100,100,0);
-
-	API_draw_line(100, 100, 110, 239, VGA_COL_RED, 10, 0);
 
   while(1)
   {
