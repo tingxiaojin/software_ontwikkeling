@@ -16,6 +16,8 @@
          <include file="..\..\..\cmsis\core_cmFunc.h"/>
          <include file="..\..\..\cmsis\core_cm4_simd.h"/>
       </source>
+      <source file="..\..\..\LL.c" lastModified="16ada4d88ab">
+      </source>
       <source file="..\..\..\ub_lib\stm32_ub_vga_screen.c" lastModified="16ab7fdc2e3">
          <include file="..\..\..\ub_lib\stm32_ub_vga_screen.h"/>
       </source>
@@ -66,6 +68,10 @@
       </source>
       <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="16ab7fdc2c3">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\UI.c" lastModified="16ada4d9c34">
+         <include file="..\..\..\main.h"/>
+         <include file="..\..\..\ub_lib\stm32_ub_vga_screen.h"/>
       </source>
       <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="16ab7fdc286">
       </source>
