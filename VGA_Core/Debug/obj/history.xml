@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
 <<<<<<< HEAD
+<<<<<<< HEAD
    <processor signature="arm-none-eabi-gcc 4.9.2 x86_64-w64-mingw32 -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F407VG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -I..\..\..\..\..\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D\Software ontwikkeling\REPOSITORY\cmsis_lib\include -I..\..\..\..\..\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D\Software ontwikkeling\REPOSITORY\ub_lib -I..\..\..\..\..\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D\Software ontwikkeling -I..\..\..\..\..\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D\Software ontwikkeling\REPOSITORY\cmsis_lib -I..\..\..\..\..\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D\Software ontwikkeling\REPOSITORY -I..\..\..\..\..\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D\Software ontwikkeling\REPOSITORY\cmsis_boot -I..\..\..\..\..\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D\Software ontwikkeling\REPOSITORY\cmsis">
       <target file="stm32f4xx_gpio.o" lastModified="16ada154799">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="16ab6b9df95"/>
@@ -34,36 +35,43 @@
 =======
    <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F407VG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont\GitHub -I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont -I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont\GitHub\cmsis_lib -I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont\GitHub\cmsis_boot -I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont\GitHub\ub_lib -I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont\GitHub\cmsis_lib\include -I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont\GitHub\cmsis">
       <target file="stm32f4xx_gpio.o" lastModified="16aba8374dc">
+=======
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F407VG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont\GitHub -I..\..\..\..\..\Users\tingx\Desktop\School\6D -I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont -I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont\GitHub\cmsis_lib -I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont\GitHub\cmsis_boot -I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont\GitHub\ub_lib -I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont\GitHub\cmsis_lib\include -I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont\GitHub\cmsis">
+      <target file="stm32f4xx_gpio.o" lastModified="16adafce0ff">
+>>>>>>> ac82ea1ed485c60ab685ea7534270d18439bdce5
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="16ab7fdc2bf"/>
       </target>
-      <target file="stm32_ub_vga_screen.o" lastModified="16aba837689">
+      <target file="stm32_ub_vga_screen.o" lastModified="16adafce280">
          <source file="..\..\..\ub_lib\stm32_ub_vga_screen.c" lastModified="16ab7fdc2e3"/>
       </target>
-      <target file="stm32f4xx_dma.o" lastModified="16aba8375ef">
+      <target file="stm32f4xx_dma.o" lastModified="16adafce1fd">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_dma.c" lastModified="16ab7fdc2be"/>
       </target>
-      <target file="stm32f4xx_tim.o" lastModified="16aba837827">
+      <target file="stm32f4xx_tim.o" lastModified="16adafce3e1">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="16ab7fdc2c8"/>
       </target>
-      <target file="system_stm32f4xx.o" lastModified="16aba837558">
+      <target file="system_stm32f4xx.o" lastModified="16adafce16d">
          <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="16ab7fdc2a3"/>
       </target>
-      <target file="startup_stm32f4xx.o" lastModified="16aba83729d">
+      <target file="startup_stm32f4xx.o" lastModified="16adafcde05">
          <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="16ab7fdc286"/>
       </target>
-      <target file="main.o" lastModified="16ad9e093b5">
-         <source file="..\..\..\main.c" lastModified="16ada2f73c4"/>
+      <target file="main.o" lastModified="16adb350333">
+         <source file="..\..\..\main.c" lastModified="16adb350096"/>
       </target>
-      <target file="LL.o" lastModified="16ada2f8553">
-         <source file="..\..\..\LL.c" lastModified="16ad9e0939d"/>
+      <target file="APIdraw.o" lastModified="16adb330e22">
+         <source file="..\..\..\APIdraw.c" lastModified="16adb32f636"/>
       </target>
-      <target file="UI.o" lastModified="16ada2f850b">
-         <source file="..\..\..\UI.c" lastModified="16ad9e0939f"/>
+      <target file="UI.o" lastModified="16adafcddae">
+         <source file="..\..\..\UI.c" lastModified="16ada4d88ac"/>
       </target>
-      <target file="stm32f4xx_rcc.o" lastModified="16aba83745a">
+      <target file="LL.o" lastModified="16adafcde4a">
+         <source file="..\..\..\LL.c" lastModified="16ada4d88ab"/>
+      </target>
+      <target file="stm32f4xx_rcc.o" lastModified="16adafce06d">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="16ab7fdc2c3"/>
       </target>
-      <target file="misc.o" lastModified="16aba837703">
+      <target file="misc.o" lastModified="16adafce2f6">
          <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="16ab7fdc2ba"/>
 >>>>>>> e5b3ed66269ba126d9a02853a9998f068dd1b61e
       </target>
