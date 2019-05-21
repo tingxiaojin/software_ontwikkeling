@@ -56,10 +56,17 @@
       <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="16ab7fdc2ba">
          <include file="..\..\..\cmsis_lib\include\misc.h"/>
       </source>
+      <source file="..\..\..\main.h" lastModified="16ab7fdc2ca">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_dma.h" lastModified="16ab7fdc2af">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
       <source file="..\..\..\cmsis\core_cmFunc.h" lastModified="16ab7fdc65c">
+      </source>
+      <source file="..\..\..\main.c" lastModified="16abb472140">
+         <include file="..\..\..\main.h"/>
+         <include file="..\..\..\ub_lib\stm32_ub_vga_screen.h"/>
       </source>
       <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="16ab7fdc2c3">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>

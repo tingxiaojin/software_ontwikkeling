@@ -19,8 +19,11 @@
       <target file="startup_stm32f4xx.o" lastModified="16aba83729d">
          <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="16ab7fdc286"/>
       </target>
-      <target file="main.o" lastModified="16aba985b61">
-         <source file="..\..\..\main.c" lastModified="16aba9858cf"/>
+      <target file="main.o" lastModified="16ac5fd1dc6">
+         <source file="..\..\..\main.c" lastModified="16abb470db8"/>
+      </target>
+      <target file="UI.o" lastModified="16ac5fdcb8d">
+         <source file="..\..\..\UI.c" lastModified="16ac5fdc8ea"/>
       </target>
       <target file="stm32f4xx_rcc.o" lastModified="16aba83745a">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="16ab7fdc2c3"/>
