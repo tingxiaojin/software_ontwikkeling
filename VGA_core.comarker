@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <breakpoints>
+<<<<<<< HEAD
 <breakpoint enabled="false" persistant="true" registered="true">
 <resource path="/" type="8"/>
 <marker charStart="-1" lineNumber="-1" type="org.eclipse.cdt.debug.core.cAddressBreakpointMarker">
@@ -22,6 +23,8 @@
 <attrib name="org.eclipse.cdt.debug.core.ignoreCount" value="0"/>
 </marker>
 </breakpoint>
+=======
+>>>>>>> e5b3ed66269ba126d9a02853a9998f068dd1b61e
 <breakpoint enabled="false" persistant="true" registered="true">
 <resource path="/" type="8"/>
 <marker charStart="-1" lineNumber="-1" type="org.eclipse.cdt.debug.core.cAddressBreakpointMarker">
@@ -42,29 +45,6 @@
 <attrib name="charEnd" value="-1"/>
 <attrib name="org.eclipse.cdt.debug.core.ignoreCount" value="0"/>
 <attrib name="org.eclipse.debug.core.enabled" value="false"/>
-</marker>
-</breakpoint>
-<breakpoint enabled="true" persistant="true" registered="true">
-<resource path="/" type="8"/>
-<marker type="org.eclipse.cdt.debug.core.cWatchpointMarker">
-<attrib name="enabled" value="true"/>
-<attrib name="org.eclipse.cdt.debug.core.condition" value=""/>
-<attrib name="org.eclipse.debug.core.id" value="org.eclipse.cdt.debug.core"/>
-<attrib name="org.eclipse.cdt.debug.core.read" value="false"/>
-<attrib name="workingset_name" value=""/>
-<attrib name="org.eclipse.cdt.debug.core.installCount" value="0"/>
-<attrib name="org.eclipse.cdt.debug.core.expression" value="*tBuffer[3]"/>
-<attrib name="type" value="org.eclipse.cdt.debug.core.cWatchpointMarker"/>
-<attrib name="persistant" value="true"/>
-<attrib name="org.eclipse.cdt.debug.core.write" value="true"/>
-<attrib name="workingset_id" value="org.eclipse.debug.ui.breakpointWorkingSet"/>
-<attrib name="message" value="Write watchpoint:  [expression: &apos;*tBuffer[3]&apos;]"/>
-<attrib name="org.eclipse.cdt.debug.core.range" value="0"/>
-<attrib name="registered" value="true"/>
-<attrib name="path" value="/"/>
-<attrib name="org.eclipse.cdt.debug.core.sourceHandle" value=""/>
-<attrib name="org.eclipse.debug.core.enabled" value="true"/>
-<attrib name="org.eclipse.cdt.debug.core.ignoreCount" value="0"/>
 </marker>
 </breakpoint>
 <breakpoint enabled="true" persistant="true" registered="true">
@@ -88,7 +68,11 @@
 </breakpoint>
 <breakpoint enabled="true" persistant="true" registered="true">
 <resource path="/" type="8"/>
+<<<<<<< HEAD
+<marker lineNumber="54" type="org.eclipse.cdt.debug.core.cLineBreakpointMarker">
+=======
 <marker lineNumber="55" type="org.eclipse.cdt.debug.core.cLineBreakpointMarker">
+>>>>>>> e5b3ed66269ba126d9a02853a9998f068dd1b61e
 <attrib name="enabled" value="true"/>
 <attrib name="org.eclipse.cdt.debug.core.condition" value=""/>
 <attrib name="org.eclipse.debug.core.id" value="org.eclipse.cdt.debug.core"/>
@@ -103,6 +87,36 @@
 <attrib name="org.eclipse.cdt.debug.core.sourceHandle" value="C:\Users\Marcin\Desktop\bmp library\math.h"/>
 <attrib name="org.eclipse.cdt.debug.core.ignoreCount" value="0"/>
 <attrib name="org.eclipse.debug.core.enabled" value="true"/>
+</marker>
+</breakpoint>
+<breakpoint enabled="true" persistant="true" registered="true">
+<resource path="/" type="8"/>
+<<<<<<< HEAD
+<marker lineNumber="55" type="org.eclipse.cdt.debug.core.cLineBreakpointMarker">
+=======
+<marker type="org.eclipse.cdt.debug.core.cWatchpointMarker">
+>>>>>>> e5b3ed66269ba126d9a02853a9998f068dd1b61e
+<attrib name="enabled" value="true"/>
+<attrib name="org.eclipse.cdt.debug.core.condition" value=""/>
+<attrib name="org.eclipse.debug.core.id" value="org.eclipse.cdt.debug.core"/>
+<attrib name="org.eclipse.cdt.debug.core.read" value="false"/>
+<attrib name="workingset_name" value=""/>
+<attrib name="org.eclipse.cdt.debug.core.installCount" value="0"/>
+<attrib name="org.eclipse.cdt.debug.core.expression" value="*tBuffer[3]"/>
+<attrib name="type" value="org.eclipse.cdt.debug.core.cWatchpointMarker"/>
+<attrib name="persistant" value="true"/>
+<attrib name="org.eclipse.cdt.debug.core.write" value="true"/>
+<attrib name="workingset_id" value="org.eclipse.debug.ui.breakpointWorkingSet"/>
+<attrib name="message" value="Write watchpoint:  [expression: &apos;*tBuffer[3]&apos;]"/>
+<attrib name="org.eclipse.cdt.debug.core.range" value="0"/>
+<attrib name="registered" value="true"/>
+<attrib name="path" value="/"/>
+<attrib name="org.eclipse.cdt.debug.core.sourceHandle" value=""/>
+<attrib name="org.eclipse.debug.core.enabled" value="true"/>
+<<<<<<< HEAD
+<attrib name="org.eclipse.cdt.debug.core.ignoreCount" value="0"/>
+=======
+>>>>>>> 8ee92f439be26788cae8f37c019c9e760e86314c
 </marker>
 </breakpoint>
 </breakpoints>
