@@ -1,2 +1,2 @@
 
-extern void LL_exe(FUNCTIE* input);
+//extern int LL_exe(FUNCTIE* input);

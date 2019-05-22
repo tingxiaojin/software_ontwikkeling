@@ -43,6 +43,10 @@ typedef struct
 	int starty;
 	int eindx;
 	int eindy;
+	int breedte;
+	int hoogte;
+	int nr;
+	int achtergrond;
 	int kleur;
 	int dikte;
 	int gevuld;
@@ -52,7 +56,7 @@ typedef struct
 	char* font;
 }FUNCTIE;
 
-extern void LL_exe(FUNCTIE* input);
+extern int LL_exe(FUNCTIE* input);
 extern void UI_rm_char(char* buffer, char c);
 
 
