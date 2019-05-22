@@ -11,6 +11,7 @@
 //--------------------------------------------------------------
 
 #include "UI.h"
+#include "LL.h"
 #include "API_IO.h"
 #include "API_DRAW.h"
 
@@ -55,6 +56,7 @@ int main(void)
 	memset(buffer, 0, sizeof(buffer));
 	int i;
 	API_IO_UART_puts("WELKOM MIJN CODE :D\n\r");
+	API_DRAW_line(1, 1, 1, 200, 50, 1);
 
 	while(1)
 	{
@@ -75,25 +77,39 @@ int main(void)
 			input.eindy   = atoi(UI_get_param(&buffer[0], 4));
 			input.kleur   = atoi(UI_get_param(&buffer[0], 5));
 			input.dikte   = atoi(UI_get_param(&buffer[0], 6));
-			LL_exe(&input);
-//			API_IO_UART_putint(input.functie);
-//			API_IO_UART_puts(" ");
-//			API_IO_UART_putint(input.startx);
-//			API_IO_UART_puts(" ");
-//			API_IO_UART_putint(input.starty);
-//			API_IO_UART_puts(" ");
-//			API_IO_UART_putint(input.eindx);
-//			API_IO_UART_puts(" ");
-//			API_IO_UART_putint(input.eindy);
-//			API_IO_UART_puts(" ");
-//			API_IO_UART_putint(input.kleur);
-//			API_IO_UART_puts(" ");
-//			API_IO_UART_putint(input.dikte);
+
+			API_IO_UART_puts("\n\rError: \n\r");
+			API_IO_UART_putint(LL_exe(&input));
+
 
 //			API_IO_UART_puts(UI_get_param(&buffer[0], 2));
 			API_IO_UART_puts("\n\n\r");
 //			API_IO_UART_puts(buffer);
 		}
+		else if (!(strncmp(buffer,"RECHTHOEK",strlen("RECHTHOEK")))==TRUE)
+		{
+			input.functie = RECHTHOEK;
+			input.startx  = atoi(UI_get_param(&buffer[0], 1));
+			input.starty  = atoi(UI_get_param(&buffer[0], 2));
+			input.breedte = atoi(UI_get_param(&buffer[0], 3));
+			input.hoogte  = atoi(UI_get_param(&buffer[0], 4));
+			input.kleur   = atoi(UI_get_param(&buffer[0], 5));
+			input.gevuld  = atoi(UI_get_param(&buffer[0], 6));
+
+
+			API_IO_UART_putint(LL_exe(&input));
+		}
+		else if (!(strncmp(buffer,"BITMAP",strlen("BITMAP")))==TRUE)
+		{
+			input.functie= BITMAP;
+			input.nr 	 = atoi(UI_get_param(&buffer[0], 1));
+			input.startx = atoi(UI_get_param(&buffer[0], 2));
+			input.starty = atoi(UI_get_param(&buffer[0], 3));
+			input.achtergrond = atoi(UI_get_param(&buffer[0], 4));
+
+			API_IO_UART_putint(LL_exe(&input));
+		}
 		memset(buffer, 0, sizeof(buffer));
+
 	}
 }
