@@ -1,48 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
-<<<<<<< HEAD
-   <processor signature="arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=VGA_Core.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\VGA_Core -TC:\CooCox\CoIDE\configuration\ProgramData\VGA_Core/arm-gcc-link.ld -g -L..\..\.. -lm">
-      <target file="VGA_Core.elf" lastModified="16ada154e83">
-         <source file="..\obj\startup_stm32f4xx.o" lastModified="16ada15452f"/>
-         <source file="..\obj\main.o" lastModified="16ada1545f8"/>
-         <source file="..\obj\stm32f4xx_rcc.o" lastModified="16ada1546dd"/>
-         <source file="..\obj\stm32f4xx_gpio.o" lastModified="16ada154799"/>
-         <source file="..\obj\system_stm32f4xx.o" lastModified="16ada15482d"/>
-         <source file="..\obj\stm32f4xx_dma.o" lastModified="16ada1548d8"/>
-         <source file="..\obj\stm32_ub_vga_screen.o" lastModified="16ada15497d"/>
-         <source file="..\obj\misc.o" lastModified="16ada154a0b"/>
-         <source file="..\obj\APIio.o" lastModified="16ada154ae1"/>
-         <source file="..\obj\stm32f4xx_tim.o" lastModified="16ada154bfe"/>
-=======
-   <processor signature="4.8.3 -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=VGA_Core.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\VGA_Core -TC:\CooCox\CoIDE\configuration\ProgramData\VGA_Core/arm-gcc-link.ld -g -L..\..\.. -lm">
-<<<<<<< HEAD
-      <target file="VGA_Core.elf" lastModified="16ac5fdce99">
-         <source file="..\obj\UI.o" lastModified="16ac5fdcb8d"/>
-         <source file="..\obj\startup_stm32f4xx.o" lastModified="16aba83729d"/>
-         <source file="..\obj\main.o" lastModified="16ac5fd1dc6"/>
-         <source file="..\obj\stm32f4xx_rcc.o" lastModified="16aba83745a"/>
-         <source file="..\obj\stm32f4xx_gpio.o" lastModified="16aba8374dc"/>
-         <source file="..\obj\system_stm32f4xx.o" lastModified="16aba837558"/>
-         <source file="..\obj\stm32f4xx_dma.o" lastModified="16aba8375ef"/>
-         <source file="..\obj\stm32_ub_vga_screen.o" lastModified="16aba837689"/>
-         <source file="..\obj\misc.o" lastModified="16aba837703"/>
-         <source file="..\obj\stm32f4xx_tim.o" lastModified="16aba837827"/>
->>>>>>> e5b3ed66269ba126d9a02853a9998f068dd1b61e
-=======
-      <target file="VGA_Core.elf" lastModified="16adb35060b">
-         <source file="..\obj\APIdraw.o" lastModified="16adb330e22"/>
-         <source file="..\obj\UI.o" lastModified="16adafcddae"/>
-         <source file="..\obj\startup_stm32f4xx.o" lastModified="16adafcde05"/>
-         <source file="..\obj\LL.o" lastModified="16adafcde4a"/>
-         <source file="..\obj\main.o" lastModified="16adb350333"/>
-         <source file="..\obj\stm32f4xx_rcc.o" lastModified="16adafce06d"/>
-         <source file="..\obj\stm32f4xx_gpio.o" lastModified="16adafce0ff"/>
-         <source file="..\obj\system_stm32f4xx.o" lastModified="16adafce16d"/>
-         <source file="..\obj\stm32f4xx_dma.o" lastModified="16adafce1fd"/>
-         <source file="..\obj\stm32_ub_vga_screen.o" lastModified="16adafce280"/>
-         <source file="..\obj\misc.o" lastModified="16adafce2f6"/>
-         <source file="..\obj\stm32f4xx_tim.o" lastModified="16adafce3e1"/>
->>>>>>> ac82ea1ed485c60ab685ea7534270d18439bdce5
+   <processor signature="arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=VGA_Core.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\VGA_Core -TC:\CooCox\CoIDE\configuration\ProgramData\VGA_Core/arm-gcc-link.ld -g -L..\..\.. -lm -L..\..\.. -lvga_api">
+      <target file="VGA_Core.elf" lastModified="16adf0d8294">
+         <source file="..\obj\UI.o" lastModified="16adf0d7ef7"/>
+         <source file="..\obj\stm32f4xx_usart.o" lastModified="16adf0be0c3"/>
+         <source file="..\obj\startup_stm32f4xx.o" lastModified="16adf0be148"/>
+         <source file="..\obj\LL.o" lastModified="16adf0d7fd5"/>
+         <source file="..\obj\stm32f4xx_rcc.o" lastModified="16adf0be2e2"/>
+         <source file="..\obj\stm32f4xx_gpio.o" lastModified="16adf0be391"/>
+         <source file="..\obj\system_stm32f4xx.o" lastModified="16adf0be42a"/>
+         <source file="..\obj\syscalls.o" lastModified="16adf0be4d1"/>
+         <source file="..\obj\stm32f4xx_dma.o" lastModified="16adf0be589"/>
+         <source file="..\obj\stm32_ub_vga_screen.o" lastModified="16adf0be631"/>
+         <source file="..\obj\misc.o" lastModified="16adf0be6cb"/>
+         <source file="..\obj\stm32f4xx_tim.o" lastModified="16adf0be7df"/>
       </target>
    </processor>
 </history>
