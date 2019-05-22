@@ -39,9 +39,6 @@
       <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="16ab7fdc2ba">
          <include file="..\..\..\cmsis_lib\include\misc.h"/>
       </source>
-      <source file="..\..\..\main.h" lastModified="16ab7fdc2ca">
-         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
-      </source>
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_dma.h" lastModified="16ab7fdc2af">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
@@ -81,7 +78,7 @@
       </source>
       <source file="..\..\..\cmsis_boot\system_stm32f4xx.h" lastModified="16ab7fdc2a5">
       </source>
-      <source file="..\..\..\APIbitmap.h" lastModified="16adb32d68e">
+      <source file="..\..\..\APIbitmap.h" lastModified="16adb3d42b4">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
       <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="16ab7fdc2a3">
@@ -119,25 +116,27 @@
       <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="16ab7fdc2ba">
          <include file="..\..\..\cmsis_lib\include\misc.h"/>
       </source>
-      <source file="..\..\..\main.h" lastModified="16ab7fdc2ca">
+      <source file="..\..\..\main.h" lastModified="16adb500250">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+         <include file="..\..\..\APIdraw.h"/>
       </source>
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_dma.h" lastModified="16ab7fdc2af">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
-      <source file="..\..\..\APIdraw.h" lastModified="16adb2c91e9">
+      <source file="..\..\..\APIdraw.h" lastModified="16adb500234">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
       <source file="..\..\..\cmsis\core_cmFunc.h" lastModified="16ab7fdc65c">
       </source>
+      <source file="..\..\..\main.c" lastModified="16adb4c3912">
+         <include file="..\..\..\main.h"/>
+         <include file="..\..\..\ub_lib\stm32_ub_vga_screen.h"/>
+         <include file="..\..\..\APIdraw.h"/>
+      </source>
       <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="16ab7fdc2c3">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
       </source>
-      <source file="..\..\..\UI.c" lastModified="16ada4d9c34">
-         <include file="..\..\..\main.h"/>
-         <include file="..\..\..\ub_lib\stm32_ub_vga_screen.h"/>
-      </source>
-      <source file="..\..\..\APIdraw.c" lastModified="16adb330da6">
+      <source file="..\..\..\APIdraw.c" lastModified="16adb501995">
          <include file="..\..\..\APIdraw.h"/>
          <include file="..\..\..\APIbitmap.h"/>
          <include file="..\..\..\ub_lib\stm32_ub_vga_screen.h"/>

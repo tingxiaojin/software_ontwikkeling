@@ -17,7 +17,9 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
-/*
+
+char buffer[]={"lijn, 10, 10, 50, 50, kleur, dikte"};
+
 int main(void)
 {
 
@@ -28,8 +30,9 @@ int main(void)
 	UB_VGA_Screen_Init(); // Init VGA-Screen
 
 	//UB_VGA_FillScreen(VGA_COL_BLACK);
-
 	API_clearscreen(VGA_COL_WHITE);
+	API_draw_line(319, 0, 0, 239, VGA_COL_CYAN, 2, 0);
+
 
 
 
@@ -41,4 +44,4 @@ int main(void)
 	  // put the code here
   }
 }
-*/
+

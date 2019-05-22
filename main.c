@@ -21,7 +21,7 @@
 
 #include "APIdraw.h"
 
-int main(void)
+/*int main(void)
 {
 \
 	//  uint32_t n;
@@ -47,7 +47,7 @@ int main(void)
 	/*API_draw_line(140, 100, 319, 239, VGA_COL_WHITE, 10, 0);
 	API_draw_line(319, 0, 0, 239, VGA_COL_WHITE, 10, 0);
 	API_draw_line(319, 0, 0, 239, VGA_COL_RED, 1, 0);
-*/
+
 	//API_draw_rectangle(10,10,5,10,VGA_COL_CYAN,0,1,VGA_COL_BLACK);
 
 
@@ -55,4 +55,4 @@ int main(void)
   {
 	  // put the code here
   }
-}
+}*/
