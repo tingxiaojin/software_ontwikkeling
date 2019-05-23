@@ -10,10 +10,12 @@
 // Function : VGA_core DMA LIB 320x240, 8bit color
 //--------------------------------------------------------------
 
+
 #include "UI.h"
 #include "LL.h"
 #include "API_IO.h"
 #include "API_DRAW.h"
+#include "IO_tekst_bitmap.h"
 
 // replaces a character in a buffer with another character
 void UI_rp_char(char* buffer, char old_char, char new_char)
@@ -47,6 +49,9 @@ void UI_rm_char(char* buffer, char c)
 	}
 }
 
+
+
+
 int main(void)
 {
 	API_IO_INIT();
@@ -57,7 +62,15 @@ int main(void)
 	int i;
 	API_IO_UART_puts("WELKOM MIJN CODE :D\n\r");
 	API_DRAW_line(1, 1, 1, 200, 50, 1);
+///////////////////////////////////////////////////////////
+	//UB_VGA_SetPixel(50,50, VGA_COL_BLACK);
 
+	API_DRAW_text(0, 100, VGA_COL_BLUE);
+
+
+
+
+/////////////////////////////////////////////////////////////
 	while(1)
 	{
 		API_IO_UART_gets(buffer);// get user input
