@@ -15,7 +15,8 @@
 #include "API_IO.h"
 #include "API_DRAW.h"
 
-void UI_put_error(int error)
+
+void UI_ERR_put(int error)
 {
 	if (!error) return;
 	API_IO_UART_puts("\n\rError: \n\r");
@@ -33,16 +34,25 @@ void UI_put_error(int error)
 	case FOUTOMVANG:
 		API_IO_UART_puts("\tBOTH X AND Y VALUE OVERSIZED!\n\rErrorcode: ");
 		API_IO_UART_putint(error);
+		break;
 	case INPUTERROR:
 		API_IO_UART_puts("\tINPUT UNRECOGNIZED!\n\rErrorcode: ");
 		API_IO_UART_putint(error);
+		break;
+	case STR_LEEG:
+		API_IO_UART_puts("\tINPUT EMPTY!\n\rErrorcode: ");
+		API_IO_UART_putint(error);
+		break;
+	default:
+		API_IO_UART_puts("\tUNKOWN ERRORCODE!\n\rErrorcode: 0x");
+		API_IO_UART_putnum(16, error);
 	}
 	API_IO_UART_puts("\n\r");
 }
 
 
 // replaces a character in a buffer with another character
-void UI_rp_char(char* buffer, char old_char, char new_char)
+void UI_CH_rp(char* buffer, char old_char, char new_char)
 {
 	while (*(buffer++) != '\0')
 		if(*(buffer)==old_char)
@@ -52,18 +62,9 @@ void UI_rp_char(char* buffer, char old_char, char new_char)
 		}
 }
 
-char* UI_get_param(char* buffer, int paramnum)
-{
-	for(;paramnum>0; paramnum--)
-	{
-		for (; *buffer!='\0'; buffer++);
-		buffer++;
-	}
-	return buffer;
-}
 
 
-void UI_rm_char(char* buffer, char c)
+void UI_CH_rm(char* buffer, char c)
 {
 	int j=0;
 	while (*(buffer++) != '\0')
@@ -72,74 +73,80 @@ void UI_rm_char(char* buffer, char c)
 		*(buffer) = *(buffer+j);
 	}
 }
+//
+//void LL_LINE_init(char* buffer, FUNCTIE* input)
+//{
+//	input->functie = LIJN;
+//	input->startx  = atoi(UI_get_param(&buffer[0], 1));
+//	input->starty  = atoi(UI_get_param(&buffer[0], 2));
+//	input->eindx	  = atoi(UI_get_param(&buffer[0], 3));
+//	input->eindy   = atoi(UI_get_param(&buffer[0], 4));
+//	input->kleur   = atoi(UI_get_param(&buffer[0], 5));
+//	input->dikte   = atoi(UI_get_param(&buffer[0], 6));
+//}
+
+
 
 int main(void)
 {
-	API_IO_INIT();
-	API_IO_clearscherm(VGA_COL_MAGENTA);
+	API_IO_init();
+	API_IO_clearscherm(VGA_COL_RED);
 	FUNCTIE input;
 	char buffer [50];
-	memset(buffer, 0, sizeof(buffer));
-	int i, error;
+	int i;
+	int error=-1;
+
+
+//	memset(buffer, 0, sizeof(buffer));
 //	API_IO_UART_puts("WELKOM MIJN CODE :D\n\r");
-//	API_DRAW_line(1, 1, 1, 200, 50, 1);
+//	API_IO_UART_putint(API_DRAW_line(1, 1, 1, 200, 50, 1));
 
 	while(1)
 	{
-		API_IO_UART_gets(buffer);// get user input
-		UI_rm_char(buffer, ' '); // remove spaces
-		UI_rp_char(buffer, ',', '\0'); // replace comma with a string terminator
+		API_IO_UART_gets(buffer); // get user input
+		UI_CH_rm(buffer, ' ');    // remove spaces
+		UI_CH_rm(buffer, 0x08);   // remove backspaces
+		UI_CH_rp(buffer, ',', '\0'); // replace comma with a string terminator
+
+		// if input = empty
+		if((strlen(buffer)==STR_EMPTY)||(buffer[0] == '\n'))
+		{
+			error = STR_LEEG;
+			UI_ERR_put(error);
+			continue;
+		}
 
 		// to-upper functienaam
 		for(i=0;*(buffer+i)!='\0'; i++)
 			*(buffer+i) = toupper(*(buffer+i));
 
-		if (!(strncmp(buffer,"LIJN",strlen("LIJN")))==TRUE)
-		{
-			input.functie = LIJN;
-			input.startx  = atoi(UI_get_param(&buffer[0], 1));
-			input.starty  = atoi(UI_get_param(&buffer[0], 2));
-			input.eindx	  = atoi(UI_get_param(&buffer[0], 3));
-			input.eindy   = atoi(UI_get_param(&buffer[0], 4));
-			input.kleur   = atoi(UI_get_param(&buffer[0], 5));
-			input.dikte   = atoi(UI_get_param(&buffer[0], 6));
-			error = LL_exe(&input);
 
-		}
-		else if (!(strncmp(buffer,"RECHTHOEK",strlen("RECHTHOEK")))==TRUE)
-		{
-			input.functie = RECHTHOEK;
-			input.startx  = atoi(UI_get_param(&buffer[0], 1));
-			input.starty  = atoi(UI_get_param(&buffer[0], 2));
-			input.breedte = atoi(UI_get_param(&buffer[0], 3));
-			input.hoogte  = atoi(UI_get_param(&buffer[0], 4));
-			input.kleur   = atoi(UI_get_param(&buffer[0], 5));
-			input.gevuld  = atoi(UI_get_param(&buffer[0], 6));
-			error = LL_exe(&input);
 
-		}
-		else if (!(strncmp(buffer,"BITMAP",strlen("BITMAP")))==TRUE)
-		{
-			input.functie= BITMAP;
-			input.nr 	 = atoi(UI_get_param(&buffer[0], 1));
-			input.startx = atoi(UI_get_param(&buffer[0], 2));
-			input.starty = atoi(UI_get_param(&buffer[0], 3));
-			input.achtergrond = atoi(UI_get_param(&buffer[0], 4));
-			error = LL_exe(&input);
 
-		}
-		else if (!(strncmp(buffer,"CLEARSCHERM",strlen("CLEARSCHERM")))==TRUE)
+		if (LL_STRING_check(buffer,"LIJN"))//!(strncmp(buffer,"LIJN",strlen("LIJN")))==TRUE)
 		{
-			input.functie= CLEARSCHERM;
-			input.kleur	 = atoi(UI_get_param(&buffer[0], 1));
+			LL_FIG_init(buffer, &input, LIJN);
+			error = LL_exe(&input);
+		}
+		else if (LL_STRING_check(buffer,"RECHTHOEK"))
+		{
+			LL_FIG_init(buffer, &input, RECHTHOEK);
+			error = LL_exe(&input);
+		}
+		else if (LL_STRING_check(buffer,"BITMAP"))
+		{
+			LL_FIG_init(buffer, &input, BITMAP);
+			error = LL_exe(&input);
+		}
+		else if (LL_STRING_check(buffer,"CLEARSCHERM"))
+		{
+			LL_FIG_init(buffer, &input, CLEARSCHERM);
 			error = LL_exe(&input);
 		}
 		else
 			error = INPUTERROR;
-//			API_IO_UART_puts("\n--ERROR:\n\tFunction not reqognized--\n\n\r"); // put errorcode
 
-
-		UI_put_error(error);
+		UI_ERR_put(error);
 		memset(buffer, 0, sizeof(buffer));
 
 	}

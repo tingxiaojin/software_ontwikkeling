@@ -22,6 +22,13 @@
 #define BITMAP		3
 #define CLEARSCHERM 4
 
+#define PARAM1		0
+#define PARAM2		1
+#define PARAM3		2
+#define PARAM4		3
+#define PARAM5		4
+#define PARAM6		5
+#define PARAM7		6
 
 #define  VGA_COL_BLACK          0x00
 #define  VGA_COL_BLUE           0x03
@@ -32,6 +39,8 @@
 #define  VGA_COL_CYAN           0x1F
 #define  VGA_COL_MAGENTA        0xE3
 #define  VGA_COL_YELLOW         0xFC
+
+#define STR_EMPTY				0
 
 //--------------------------------------------------------------
 // Structures
@@ -56,8 +65,10 @@ typedef struct
 	char* font;
 }FUNCTIE;
 
-extern int LL_exe(FUNCTIE* input);
-extern void UI_rm_char(char* buffer, char c);
+extern int  LL_exe		(FUNCTIE* input);
+extern void UI_ERR_put	(int error);
+extern void UI_CH_rm	(char* buffer, char c);
+extern void UI_CH_rp	(char* buffer, char old_char, char new_char);
 
 
 //--------------------------------------------------------------
