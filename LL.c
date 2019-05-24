@@ -65,7 +65,7 @@ void LL_FIG_init(char* buffer, FUNCTIE* input, int vorm)
 		input->nr 	  = atoi(LL_STRING_param(&buffer[0], 1));
 		input->startx = atoi(LL_STRING_param(&buffer[0], 2));
 		input->starty = atoi(LL_STRING_param(&buffer[0], 3));
-		input->achtergrond = (strlen(buffer)<=5)? atoi(LL_STRING_param(&buffer[0], 4)): 1;
+		input->achtergrond = (strlen(buffer)>=5)? atoi(LL_STRING_param(&buffer[0], 4)): 1;
 		break;
 
 	case CLEARSCHERM:

@@ -33,9 +33,9 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/VGA_Core/UI.h"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="499" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="LL.c" partName="LL.c" path="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/REPOSITORY/LL.c" title="LL.c" tooltip="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/REPOSITORY/LL.c" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="LL.c" partName="LL.c" path="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/Werkmap/Layers/Backup/LL.c" title="LL.c" tooltip="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/Werkmap/Layers/Backup/LL.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/VGA_Core/LL.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1941" selectionTopPixel="1190"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1679" selectionTopPixel="915"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="LL.h" partName="LL.h" path="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/REPOSITORY/LL.h" title="LL.h" tooltip="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/REPOSITORY/LL.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/VGA_Core/LL.h"/>
@@ -45,9 +45,9 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/VGA_Core/api/API_DRAW.h"/>
 <editorState selectionHorizontalPixel="0" selectionLength="5" selectionOffset="60" selectionTopPixel="0"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="UI.c" partName="UI.c" path="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/REPOSITORY/UI.c" title="UI.c" tooltip="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/REPOSITORY/UI.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="UI.c" partName="UI.c" path="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/Werkmap/Layers/Backup/UI.c" title="UI.c" tooltip="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/Werkmap/Layers/Backup/UI.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/VGA_Core/UI.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3537" selectionTopPixel="2148"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3333" selectionTopPixel="2094"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="API_IO.h" partName="API_IO.h" path="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/REPOSITORY/api/API_IO.h" title="API_IO.h" tooltip="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/REPOSITORY/api/API_IO.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/VGA_Core/api/API_IO.h"/>
@@ -267,7 +267,6 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/VGA_Core/api/API_DRAW.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/VGA_Core/UI.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/VGA_Core/LL.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/VGA_Core/UI.h"/>
@@ -281,154 +280,155 @@
 <org.coocox.builder.ui.editors.ConfigEditor horizontalPosition="0" subTagIndex="3" verticalPosition="0"/>
 </editor>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/VGA_Core/UI.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/VGA_Core/LL.c"/>
 </editors>
-<item historyLabel="API_DRAW.h" index="0">
-<position info="not_deleted" x="60" y="5"/>
-</item>
-<item historyLabel="UI.c" index="1">
-<position info="not_deleted" x="648" y="0"/>
-</item>
-<item historyLabel="UI.c" index="1">
+<item historyLabel="UI.c" index="0">
 <position info="not_deleted" x="2969" y="0"/>
 </item>
-<item historyLabel="LL.c" index="2">
+<item historyLabel="LL.c" index="1">
 <position info="not_deleted" x="3585" y="0"/>
 </item>
-<item historyLabel="UI.c" index="1">
+<item historyLabel="UI.c" index="0">
 <position info="not_deleted" x="2969" y="0"/>
 </item>
-<item historyLabel="UI.h" index="3">
+<item historyLabel="UI.h" index="2">
 <position info="not_deleted" x="1055" y="9"/>
 </item>
-<item historyLabel="LL.c" index="2">
+<item historyLabel="LL.c" index="1">
 <position info="not_deleted" x="3585" y="0"/>
 </item>
-<item historyLabel="LL.h" index="4">
+<item historyLabel="LL.h" index="3">
 <position info="not_deleted" x="66" y="0"/>
 </item>
-<item historyLabel="LL.c" index="2">
+<item historyLabel="LL.c" index="1">
 <position info="not_deleted" x="3486" y="0"/>
 </item>
-<item historyLabel="UI.h" index="3">
+<item historyLabel="UI.h" index="2">
 <position info="not_deleted" x="501" y="99"/>
 </item>
-<item historyLabel="LL.c" index="2">
+<item historyLabel="LL.c" index="1">
 <position info="not_deleted" x="2543" y="0"/>
 </item>
-<item historyLabel="UI.c" index="1">
+<item historyLabel="UI.c" index="0">
 <position info="not_deleted" x="2618" y="0"/>
 </item>
-<item historyLabel="LL.c" index="2">
+<item historyLabel="LL.c" index="1">
 <position info="not_deleted" x="2531" y="0"/>
 </item>
-<item historyLabel="UI.c" index="1">
+<item historyLabel="UI.c" index="0">
 <position info="not_deleted" x="3729" y="458"/>
 </item>
-<item historyLabel="UI.h" index="3">
+<item historyLabel="UI.h" index="2">
 <position info="not_deleted" x="640" y="0"/>
 </item>
-<item historyLabel="LL.c" index="2">
+<item historyLabel="LL.c" index="1">
 <position info="not_deleted" x="2531" y="0"/>
 </item>
-<item historyLabel="UI.h" index="3">
+<item historyLabel="UI.h" index="2">
 <position info="not_deleted" x="640" y="0"/>
 </item>
-<item historyLabel="LL.c" index="2">
+<item historyLabel="LL.c" index="1">
 <position info="not_deleted" x="675" y="0"/>
 </item>
-<item historyLabel="UI.c" index="1">
+<item historyLabel="UI.c" index="0">
 <position info="not_deleted" x="3729" y="386"/>
 </item>
-<item historyLabel="LL.c" index="2">
+<item historyLabel="LL.c" index="1">
 <position info="not_deleted" x="3154" y="0"/>
 </item>
-<item historyLabel="UI.c" index="1">
+<item historyLabel="UI.c" index="0">
 <position info="not_deleted" x="4251" y="262"/>
 </item>
-<item historyLabel="LL.c" index="2">
+<item historyLabel="LL.c" index="1">
 <position info="not_deleted" x="3486" y="0"/>
 </item>
-<item historyLabel="UI.c" index="1">
+<item historyLabel="UI.c" index="0">
 <position info="not_deleted" x="4652" y="160"/>
 </item>
-<item historyLabel="LL.c" index="2">
+<item historyLabel="LL.c" index="1">
 <position info="not_deleted" x="2896" y="0"/>
 </item>
-<item historyLabel="UI.c" index="1">
+<item historyLabel="UI.c" index="0">
 <position info="not_deleted" x="4812" y="0"/>
 </item>
-<item historyLabel="LL.c" index="2">
+<item historyLabel="LL.c" index="1">
 <position info="not_deleted" x="2896" y="0"/>
 </item>
-<item historyLabel="LL.c" index="2">
+<item historyLabel="LL.c" index="1">
 <position info="not_deleted" x="4118" y="0"/>
 </item>
-<item historyLabel="LL.c" index="2">
+<item historyLabel="LL.c" index="1">
 <position info="not_deleted" x="2896" y="0"/>
 </item>
-<item historyLabel="UI.c" index="1">
+<item historyLabel="UI.c" index="0">
 <position info="not_deleted" x="4812" y="0"/>
 </item>
-<item historyLabel="LL.c" index="5">
+<item historyLabel="LL.c" index="4">
 <position info="not_deleted" x="2896" y="0"/>
 </item>
-<item historyLabel="LL.c" index="5">
+<item historyLabel="LL.c" index="4">
 <position info="not_deleted" x="3501" y="6"/>
 </item>
-<item historyLabel="UI.c" index="6">
+<item historyLabel="UI.c" index="5">
 <position info="not_deleted" x="481" y="0"/>
 </item>
-<item historyLabel="LL.c" index="5">
+<item historyLabel="LL.c" index="4">
 <position info="not_deleted" x="3338" y="0"/>
 </item>
-<item historyLabel="UI.c" index="6">
+<item historyLabel="UI.c" index="5">
 <position info="not_deleted" x="3078" y="0"/>
 </item>
-<item historyLabel="LL.c" index="5">
+<item historyLabel="LL.c" index="4">
 <position info="not_deleted" x="1741" y="0"/>
 </item>
-<item historyLabel="UI.c" index="6">
+<item historyLabel="UI.c" index="5">
 <position info="not_deleted" x="3078" y="0"/>
 </item>
-<item historyLabel="UI.h" index="7">
+<item historyLabel="UI.h" index="6">
 <position info="not_deleted" x="640" y="0"/>
 </item>
-<item historyLabel="LL.c" index="5">
+<item historyLabel="LL.c" index="4">
 <position info="not_deleted" x="652" y="0"/>
 </item>
-<item historyLabel="UI.c" index="6">
+<item historyLabel="UI.c" index="5">
 <position info="not_deleted" x="3078" y="0"/>
 </item>
-<item historyLabel="UI.c" index="6">
+<item historyLabel="UI.c" index="5">
 <position info="not_deleted" x="3359" y="0"/>
 </item>
-<item historyLabel="UI.h" index="7">
+<item historyLabel="UI.h" index="6">
 <position info="not_deleted" x="640" y="0"/>
 </item>
-<item historyLabel="LL.c" index="5">
+<item historyLabel="LL.c" index="4">
 <position info="not_deleted" x="652" y="0"/>
 </item>
-<item historyLabel="UI.c" index="8">
+<item historyLabel="UI.c" index="7">
 <position info="not_deleted" x="2713" y="0"/>
 </item>
-<item historyLabel="LL.c" index="5">
+<item historyLabel="LL.c" index="4">
 <position info="not_deleted" x="1922" y="0"/>
 </item>
-<item historyLabel="LL.c" index="5">
+<item historyLabel="LL.c" index="4">
 <position info="not_deleted" x="2113" y="0"/>
 </item>
-<item historyLabel="LL.c" index="5">
+<item historyLabel="LL.c" index="4">
 <position info="not_deleted" x="1946" y="5"/>
 </item>
-<item historyLabel="UI.h" index="9">
+<item historyLabel="UI.h" index="8">
 <position info="not_deleted" x="640" y="0"/>
 </item>
-<item historyLabel="UI.h" index="9">
+<item historyLabel="UI.h" index="8">
 <position info="not_deleted" x="1474" y="7"/>
 </item>
-<item historyLabel="Configuration" index="10"/>
-<item active="true" historyLabel="UI.c" index="11">
+<item historyLabel="Configuration" index="9"/>
+<item historyLabel="UI.c" index="10">
 <position info="not_deleted" x="2713" y="0"/>
+</item>
+<item historyLabel="LL.c" index="11">
+<position info="not_deleted" x="1941" y="0"/>
+</item>
+<item active="true" historyLabel="LL.c" index="11">
+<position info="not_deleted" x="602" y="11"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>

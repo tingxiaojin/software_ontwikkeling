@@ -239,8 +239,8 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x60 ..\obj\syscalls.o
  .debug_ranges  0x00000000       0x50 ..\obj\syscalls.o
- .debug_line    0x00000000      0x221 ..\obj\syscalls.o
- .debug_str     0x00000000      0x397 ..\obj\syscalls.o
+ .debug_line    0x00000000      0x22c ..\obj\syscalls.o
+ .debug_str     0x00000000      0x3ad ..\obj\syscalls.o
  .comment       0x00000000       0x6f ..\obj\syscalls.o
  .debug_frame   0x00000000      0x168 ..\obj\syscalls.o
  .ARM.attributes
@@ -1171,56 +1171,56 @@ OUTPUT(VGA_Core.elf elf32-littlearm)
  .debug_ranges  0x00000818       0x58 ..\..\..\libvga_api.a(uart.o)
  .debug_ranges  0x00000870       0x90 ..\..\..\libvga_api.a(printf.o)
 
-.debug_line     0x00000000     0x44aa
- .debug_line    0x00000000      0x1fe ..\obj\UI.o
- .debug_line    0x000001fe      0x599 ..\obj\stm32f4xx_usart.o
- .debug_line    0x00000797       0xd1 ..\obj\startup_stm32f4xx.o
- .debug_line    0x00000868      0x225 ..\obj\LL.o
- .debug_line    0x00000a8d      0x685 ..\obj\stm32f4xx_rcc.o
- .debug_line    0x00001112      0x440 ..\obj\stm32f4xx_gpio.o
- .debug_line    0x00001552      0x262 ..\obj\system_stm32f4xx.o
- .debug_line    0x000017b4      0x50a ..\obj\stm32f4xx_dma.o
- .debug_line    0x00001cbe      0x472 ..\obj\stm32_ub_vga_screen.o
- .debug_line    0x00002130      0x31e ..\obj\misc.o
- .debug_line    0x0000244e      0xba1 ..\obj\stm32f4xx_tim.o
- .debug_line    0x00002fef      0x49f ..\..\..\libvga_api.a(API_DRAW.o)
- .debug_line    0x0000348e      0x3c8 ..\..\..\libvga_api.a(API_IO.o)
- .debug_line    0x00003856      0x351 ..\..\..\libvga_api.a(delay.o)
- .debug_line    0x00003ba7      0x554 ..\..\..\libvga_api.a(uart.o)
- .debug_line    0x000040fb      0x3af ..\..\..\libvga_api.a(printf.o)
+.debug_line     0x00000000     0x462b
+ .debug_line    0x00000000      0x214 ..\obj\UI.o
+ .debug_line    0x00000214      0x5c5 ..\obj\stm32f4xx_usart.o
+ .debug_line    0x000007d9       0xdc ..\obj\startup_stm32f4xx.o
+ .debug_line    0x000008b5      0x23b ..\obj\LL.o
+ .debug_line    0x00000af0      0x6b1 ..\obj\stm32f4xx_rcc.o
+ .debug_line    0x000011a1      0x46c ..\obj\stm32f4xx_gpio.o
+ .debug_line    0x0000160d      0x278 ..\obj\system_stm32f4xx.o
+ .debug_line    0x00001885      0x536 ..\obj\stm32f4xx_dma.o
+ .debug_line    0x00001dbb      0x49e ..\obj\stm32_ub_vga_screen.o
+ .debug_line    0x00002259      0x34a ..\obj\misc.o
+ .debug_line    0x000025a3      0xbcd ..\obj\stm32f4xx_tim.o
+ .debug_line    0x00003170      0x49f ..\..\..\libvga_api.a(API_DRAW.o)
+ .debug_line    0x0000360f      0x3c8 ..\..\..\libvga_api.a(API_IO.o)
+ .debug_line    0x000039d7      0x351 ..\..\..\libvga_api.a(delay.o)
+ .debug_line    0x00003d28      0x554 ..\..\..\libvga_api.a(uart.o)
+ .debug_line    0x0000427c      0x3af ..\..\..\libvga_api.a(printf.o)
 
-.debug_str      0x00000000     0x3533
- .debug_str     0x00000000      0x237 ..\obj\UI.o
-                                0x270 (size before relaxing)
- .debug_str     0x00000237      0x56f ..\obj\stm32f4xx_usart.o
-                                0x6bf (size before relaxing)
- .debug_str     0x000007a6       0xe0 ..\obj\startup_stm32f4xx.o
-                                0x177 (size before relaxing)
- .debug_str     0x00000886       0xb8 ..\obj\LL.o
-                                0x297 (size before relaxing)
- .debug_str     0x0000093e      0x60d ..\obj\stm32f4xx_rcc.o
-                                0x880 (size before relaxing)
- .debug_str     0x00000f4b      0x358 ..\obj\stm32f4xx_gpio.o
-                                0x4d3 (size before relaxing)
- .debug_str     0x000012a3      0x148 ..\obj\system_stm32f4xx.o
-                                0x3da (size before relaxing)
- .debug_str     0x000013eb      0x3c1 ..\obj\stm32f4xx_dma.o
-                                0x572 (size before relaxing)
- .debug_str     0x000017ac      0x899 ..\obj\stm32_ub_vga_screen.o
-                                0xd0d (size before relaxing)
- .debug_str     0x00002045      0x191 ..\obj\misc.o
-                                0x3fe (size before relaxing)
- .debug_str     0x000021d6      0xa2e ..\obj\stm32f4xx_tim.o
-                                0xe00 (size before relaxing)
- .debug_str     0x00002c04      0x17b ..\..\..\libvga_api.a(API_DRAW.o)
+.debug_str      0x00000000     0x35ac
+ .debug_str     0x00000000      0x242 ..\obj\UI.o
+                                0x27b (size before relaxing)
+ .debug_str     0x00000242      0x57a ..\obj\stm32f4xx_usart.o
+                                0x6ca (size before relaxing)
+ .debug_str     0x000007bc       0xeb ..\obj\startup_stm32f4xx.o
+                                0x182 (size before relaxing)
+ .debug_str     0x000008a7       0xc3 ..\obj\LL.o
+                                0x2a2 (size before relaxing)
+ .debug_str     0x0000096a      0x618 ..\obj\stm32f4xx_rcc.o
+                                0x88b (size before relaxing)
+ .debug_str     0x00000f82      0x363 ..\obj\stm32f4xx_gpio.o
+                                0x4de (size before relaxing)
+ .debug_str     0x000012e5      0x153 ..\obj\system_stm32f4xx.o
+                                0x3e5 (size before relaxing)
+ .debug_str     0x00001438      0x3cc ..\obj\stm32f4xx_dma.o
+                                0x57d (size before relaxing)
+ .debug_str     0x00001804      0x8a4 ..\obj\stm32_ub_vga_screen.o
+                                0xd18 (size before relaxing)
+ .debug_str     0x000020a8      0x19c ..\obj\misc.o
+                                0x409 (size before relaxing)
+ .debug_str     0x00002244      0xa39 ..\obj\stm32f4xx_tim.o
+                                0xe0b (size before relaxing)
+ .debug_str     0x00002c7d      0x17b ..\..\..\libvga_api.a(API_DRAW.o)
                                 0x391 (size before relaxing)
- .debug_str     0x00002d7f      0x125 ..\..\..\libvga_api.a(API_IO.o)
+ .debug_str     0x00002df8      0x125 ..\..\..\libvga_api.a(API_IO.o)
                                 0x39d (size before relaxing)
- .debug_str     0x00002ea4       0xa9 ..\..\..\libvga_api.a(delay.o)
+ .debug_str     0x00002f1d       0xa9 ..\..\..\libvga_api.a(delay.o)
                                 0x325 (size before relaxing)
- .debug_str     0x00002f4d      0x121 ..\..\..\libvga_api.a(uart.o)
+ .debug_str     0x00002fc6      0x121 ..\..\..\libvga_api.a(uart.o)
                                 0xba2 (size before relaxing)
- .debug_str     0x0000306e      0x4c5 ..\..\..\libvga_api.a(printf.o)
+ .debug_str     0x000030e7      0x4c5 ..\..\..\libvga_api.a(printf.o)
                                 0x6e0 (size before relaxing)
 
 .comment        0x00000000       0x6e
