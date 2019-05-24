@@ -33,7 +33,11 @@
 </editorArea>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="UI.c" partName="UI.c" path="C:/Users/tingx/Desktop/School/6D/soft_ont/GitHub/UI.c" title="UI.c" tooltip="C:/Users/tingx/Desktop/School/6D/soft_ont/GitHub/UI.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/VGA_Core/UI.c"/>
+<<<<<<< HEAD
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1457" selectionTopPixel="935"/>
+=======
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1278" selectionTopPixel="878"/>
+>>>>>>> a4f10c3209712a828e4d1d8d8a3db032bb492364
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="UI.h" partName="UI.h" path="C:/Users/tingx/Desktop/School/6D/soft_ont/GitHub/UI.h" title="UI.h" tooltip="C:/Users/tingx/Desktop/School/6D/soft_ont/GitHub/UI.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/VGA_Core/UI.h"/>

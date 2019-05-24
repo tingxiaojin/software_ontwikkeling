@@ -88,7 +88,10 @@
     <File name="cmsis_lib/source/stm32f4xx_rcc.c" path="cmsis_lib/source/stm32f4xx_rcc.c" type="1"/>
     <File name="cmsis/core_cmInstr.h" path="cmsis/core_cmInstr.h" type="1"/>
     <File name="UI.c" path="UI.c" type="1"/>
+<<<<<<< HEAD
     <File name="IO_tekst_bitmap.h" path="IO_tekst_bitmap.h" type="1"/>
+=======
+>>>>>>> a4f10c3209712a828e4d1d8d8a3db032bb492364
     <File name="cmsis_boot" path="" type="2"/>
     <File name="ub_lib" path="" type="2"/>
     <File name="LL.c" path="LL.c" type="1"/>

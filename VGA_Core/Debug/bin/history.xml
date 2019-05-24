@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
+<<<<<<< HEAD
    <processor signature="4.8.3 -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=VGA_Core.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\VGA_Core -TC:\CooCox\CoIDE\configuration\ProgramData\VGA_Core/arm-gcc-link.ld -g -L..\..\.. -lm -L..\..\.. -lvga_api">
       <target file="VGA_Core.elf" lastModified="16ae5e6acd4">
          <source file="..\obj\UI.o" lastModified="16ae5e6a9a9"/>
@@ -15,6 +16,22 @@
          <source file="..\obj\stm32_ub_vga_screen.o" lastModified="16ae51136da"/>
          <source file="..\obj\misc.o" lastModified="16ae511373d"/>
          <source file="..\obj\stm32f4xx_tim.o" lastModified="16ae511380f"/>
+=======
+   <processor signature="arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=VGA_Core.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\VGA_Core -TC:\CooCox\CoIDE\configuration\ProgramData\VGA_Core/arm-gcc-link.ld -g -L..\..\.. -lm -L..\..\.. -lvga_api">
+      <target file="VGA_Core.elf" lastModified="16adf557420">
+         <source file="..\obj\UI.o" lastModified="16adf5569c9"/>
+         <source file="..\obj\stm32f4xx_usart.o" lastModified="16adf556a9f"/>
+         <source file="..\obj\startup_stm32f4xx.o" lastModified="16adf556b1a"/>
+         <source file="..\obj\LL.o" lastModified="16adf556bae"/>
+         <source file="..\obj\stm32f4xx_rcc.o" lastModified="16adf556c7a"/>
+         <source file="..\obj\stm32f4xx_gpio.o" lastModified="16adf556d1d"/>
+         <source file="..\obj\system_stm32f4xx.o" lastModified="16adf556db3"/>
+         <source file="..\obj\syscalls.o" lastModified="16adf556e72"/>
+         <source file="..\obj\stm32f4xx_dma.o" lastModified="16adf556f1d"/>
+         <source file="..\obj\stm32_ub_vga_screen.o" lastModified="16adf556fc5"/>
+         <source file="..\obj\misc.o" lastModified="16adf55705b"/>
+         <source file="..\obj\stm32f4xx_tim.o" lastModified="16adf55716b"/>
+>>>>>>> a4f10c3209712a828e4d1d8d8a3db032bb492364
       </target>
    </processor>
 </history>
