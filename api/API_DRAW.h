@@ -1,21 +1,24 @@
-//#include "stm32f4xx.h"
-//#include "stm32_ub_vga_screen.h"
-//#include <math.h>
-//#include <stdio.h>
-//#include <stdio.h>
-//#include "includes.h"
 
-//#include "pijl_links.h"
-//#include "pijl_rechts.h"
-//#include "pijl_omhoog.h"
-//#include "pijl_omlaag.h"
-//#include "smiley_blij.h"
-//#include "smiley_boos.h"
 
-#define FOUTX 		0x01
-#define FOUTY 		0x02
-#define FOUTOMVANG 	0x04
-#define INPUTERROR  0x08
+
+
+#ifndef API_DRAW_H
+#define API_DRAW_H
+
+enum
+{
+	FOUTX =1,
+	FOUTY,
+	FOUTOMVANG,
+	INPUTERROR,
+	STR_LEEG,
+};
 
 extern int API_DRAW_bitmap	(int nr, int x, int y, int background);
 extern int API_DRAW_line	(int startx, int starty, int eindx, int eindy, char kleur, int dikte);
+extern int API_ERROR_inrange(int startx, int starty, int eindx, int eindy);
+extern int API_DRAW_rechthoek(int startx, int starty, int breedte, int hoogte, int kleur, int gevuld);
+extern int API_DRAW_text(char* zin, int x_lup, int y_lup, int kleur, int achtergrond);
+
+
+#endif
