@@ -86,12 +86,9 @@
     <File name="cmsis_boot/startup/startup_stm32f4xx.c" path="cmsis_boot/startup/startup_stm32f4xx.c" type="1"/>
     <File name="api" path="" type="2"/>
     <File name="cmsis_lib/source/stm32f4xx_rcc.c" path="cmsis_lib/source/stm32f4xx_rcc.c" type="1"/>
-    <File name="cmsis/core_cmInstr.h" path="cmsis/core_cmInstr.h" type="1"/>
     <File name="UI.c" path="UI.c" type="1"/>
-<<<<<<< HEAD
+    <File name="cmsis/core_cmInstr.h" path="cmsis/core_cmInstr.h" type="1"/>
     <File name="IO_tekst_bitmap.h" path="IO_tekst_bitmap.h" type="1"/>
-=======
->>>>>>> a4f10c3209712a828e4d1d8d8a3db032bb492364
     <File name="cmsis_boot" path="" type="2"/>
     <File name="ub_lib" path="" type="2"/>
     <File name="LL.c" path="LL.c" type="1"/>
@@ -106,8 +103,8 @@
     <File name="cmsis" path="" type="2"/>
     <File name="cmsis_lib/source/misc.c" path="cmsis_lib/source/misc.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_tim.h" path="cmsis_lib/include/stm32f4xx_tim.h" type="1"/>
-    <File name="syscalls/syscalls.c" path="syscalls/syscalls.c" type="1"/>
     <File name="cmsis_lib" path="" type="2"/>
+    <File name="syscalls/syscalls.c" path="syscalls/syscalls.c" type="1"/>
     <File name="IO_tekst_bitmap.c" path="IO_tekst_bitmap.c" type="1"/>
     <File name="cmsis_lib/source" path="" type="2"/>
     <File name="LL.h" path="LL.h" type="1"/>
