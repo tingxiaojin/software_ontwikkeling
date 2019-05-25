@@ -90,40 +90,38 @@ void UI_CH_rm(char* buffer, char c)
 int main(void)
 {
 	API_IO_init();
-	API_IO_clearscherm(VGA_COL_RED);
+	API_IO_UART_INT_init();
+	API_IO_clearscherm(VGA_COL_BLACK);
 	FUNCTIE input;
-	char buffer [50];
-	int i;
+	char buffer [100];
+//	int i;
 	int error=-1;
 
 
-//	memset(buffer, 0, sizeof(buffer));
 //	API_IO_UART_puts("WELKOM MIJN CODE :D\n\r");
 //	API_IO_UART_putint(API_DRAW_line(1, 1, 1, 200, 50, 1));
 
 	while(1)
 	{
-		API_IO_UART_gets(buffer); // get user input
-		UI_CH_rm(buffer, ' ');    // remove spaces
-		UI_CH_rm(buffer, 0x08);   // remove backspaces
-		UI_CH_rp(buffer, ',', '\0'); // replace comma with a string terminator
+		API_IO_UART_INT_gets(buffer); // get user input
+//		API_IO_UART_puts(buffer);
+
+		if(strlen(buffer)==0)
+			continue;
 
 		// if input = empty
-		if((strlen(buffer)==STR_EMPTY)||(buffer[0] == '\n'))
+		if(buffer[0] == CR)
 		{
 			error = STR_LEEG;
 			UI_ERR_put(error);
 			continue;
 		}
 
-		// to-upper functienaam
-		for(i=0;*(buffer+i)!='\0'; i++)
-			*(buffer+i) = toupper(*(buffer+i));
+		UI_CH_rm(buffer, ' ');    	 // remove spaces
+		UI_CH_rp(buffer, ',', '\0'); // replace comma with a string terminator
 
 
-
-
-		if (LL_STRING_check(buffer,"LIJN"))//!(strncmp(buffer,"LIJN",strlen("LIJN")))==TRUE)
+		if (LL_STRING_check(buffer,"LIJN"))
 		{
 			LL_FIG_init(buffer, &input, LIJN);
 			error = LL_exe(&input);
@@ -143,11 +141,21 @@ int main(void)
 			LL_FIG_init(buffer, &input, CLEARSCHERM);
 			error = LL_exe(&input);
 		}
+		else if (LL_STRING_check(buffer,"WACHT"))
+		{
+			LL_FIG_init(buffer, &input, WACHT);
+			error = LL_exe(&input);
+		}
+		else if (LL_STRING_check(buffer,"FIGUUR"))
+		{
+			LL_FIG_init(buffer, &input, FIGUUR);
+			error = LL_exe(&input);
+		}
 		else
 			error = INPUTERROR;
 
 		UI_ERR_put(error);
-		memset(buffer, 0, sizeof(buffer));
+//		memset(buffer, 0, sizeof(buffer));
 
 	}
 }
