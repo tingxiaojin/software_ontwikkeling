@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
    <processor signature="arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=VGA_Core.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\VGA_Core -TC:\CooCox\CoIDE\configuration\ProgramData\VGA_Core/arm-gcc-link.ld -g -L..\..\.. -lm -L..\..\.. -lvga_api">
-      <target file="VGA_Core.elf" lastModified="16aed3002ea">
+      <target file="VGA_Core.elf" lastModified="16aef054013">
          <source file="..\obj\UI.o" lastModified="16aed2ff724"/>
          <source file="..\obj\stm32f4xx_usart.o" lastModified="16aed2ff856"/>
          <source file="..\obj\startup_stm32f4xx.o" lastModified="16aed2ff8d9"/>
-         <source file="..\obj\LL.o" lastModified="16aed2ff992"/>
+         <source file="..\obj\LL.o" lastModified="16aef053b3b"/>
          <source file="..\obj\stm32f4xx_rcc.o" lastModified="16aed2ffa8d"/>
          <source file="..\obj\stm32f4xx_gpio.o" lastModified="16aed2ffb53"/>
          <source file="..\obj\system_stm32f4xx.o" lastModified="16aed2ffc17"/>

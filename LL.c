@@ -126,7 +126,7 @@ void LL_FIG_init(char* buffer, FUNCTIE* input, int vorm)
 	case FIGUUR:
 //		int *ploader = &input->startx;
 //		int i;
-		input->functie=LIJN;
+		input->functie=FIGUUR;
 		input->kleur  =LL_STRING_param(&buffer[0], 11);
 		input->dikte  =1;
 //		for(i=1; i<10; i++, ploader++)
