@@ -27,45 +27,36 @@ int LL_STRING_check(char* input, char* figuur)
  */
 int LL_kstoki(char* skleur)
 {
+	int i;
 	int ikleur;
-	if(LL_STRING_check(skleur,"GROEN"))
-		ikleur = VGA_COL_GREEN;
-	else if(LL_STRING_check(skleur,"LICHTGROEN"))
-		ikleur = VGA_COL_LIGHTGREEN;
-	else if(LL_STRING_check(skleur,"ROOD"))
-		ikleur = VGA_COL_RED;
-	else if(LL_STRING_check(skleur,"LICHTROOD"))
-		ikleur = VGA_COL_LIGHTRED;
-	else if(LL_STRING_check(skleur,"BLAUW"))
-		ikleur = VGA_COL_BLUE;
-	else if(LL_STRING_check(skleur,"LICHTBLAUW"))
-		ikleur = VGA_COL_LIGHTBLUE;
-	else if(LL_STRING_check(skleur,"CYAN"))
-		ikleur = VGA_COL_CYAN;
-	else if(LL_STRING_check(skleur,"LICHTCYAN"))
-		ikleur = VGA_COL_LIGHTCYAN;
-	else if(LL_STRING_check(skleur,"LICHTMAGENTA"))
-		ikleur = VGA_COL_LIGHTMAGENTA;
-	else if(LL_STRING_check(skleur,"GEEL"))
-		ikleur = VGA_COL_YELLOW;
-	else if(LL_STRING_check(skleur,"BRUIN"))
-		ikleur = VGA_COL_BROWN;
-	else if(LL_STRING_check(skleur,"GRIJS"))
-		ikleur = VGA_COL_GREY;
-	else if(LL_STRING_check(skleur,"ZWART"))
-		ikleur = VGA_COL_BLACK;
-	else if(LL_STRING_check(skleur,"WIT"))
-		ikleur = VGA_COL_WHITE;
+	char scol [][15] = {"GROEN","LICHTGROEN","ROOD","LICHTROOD","BLAUW","LICHTBLAUW","DEEPSKYBLUE","CYAAN","LICHTCYAAN",
+			"MAGENTA","LICHTMAGENTA","GEEL","BRUIN","GRIJS","ZWART","WIT","ROZE","PAARS"};
+	int icol [] = {VGA_COL_GREEN, VGA_COL_LIGHTGREEN, VGA_COL_RED, VGA_COL_LIGHTRED, VGA_COL_BLUE, VGA_COL_LIGHTBLUE,
+			VGA_COL_DEEPSKYBLUE, VGA_COL_CYAN, VGA_COL_LIGHTCYAN, VGA_COL_MAGENTA, VGA_COL_LIGHTMAGENTA,VGA_COL_YELLOW,
+			VGA_COL_BROWN,VGA_COL_GREY,VGA_COL_BLACK,VGA_COL_WHITE, VGA_COL_PINK, VGA_COL_PURPLE};
+
+	for (i=0; i<sizeof(scol); i++)
+		if(LL_STRING_check(skleur,(void*)scol[i]))
+		{
+			ikleur = icol[i];
+			break;
+		}
+		else
+			ikleur = 0;
 	return ikleur;
 }
 
-
+/*
+ * return: on error NULL
+ */
 char* LL_STRING_param(char* buffer, int paramnum)
 {
+	int i;
 	for(;paramnum>0; paramnum--)
 	{
-		for (; *buffer!='\0'; buffer++);
+		for (i=0; *buffer!='\0'; i++, buffer++);
 		buffer++;
+		if(i>200) return (void*)0;
 	}
 	return buffer;
 }
@@ -91,7 +82,7 @@ void LL_FIG_init(char* buffer, FUNCTIE* input, int vorm)
 		input->starty  = atoi(LL_STRING_param(&buffer[0], 2));
 		input->eindx   = atoi(LL_STRING_param(&buffer[0], 3));
 		input->eindy   = atoi(LL_STRING_param(&buffer[0], 4));
-		input->kleur   = LL_STRING_param(&buffer[0], 5);
+		input->kleur   = 	  LL_STRING_param(&buffer[0], 5) ;
 		input->dikte   = atoi(LL_STRING_param(&buffer[0], 6));
 		break;
 
@@ -101,8 +92,19 @@ void LL_FIG_init(char* buffer, FUNCTIE* input, int vorm)
 		input->starty  = atoi(LL_STRING_param(&buffer[0], 2));
 		input->breedte = atoi(LL_STRING_param(&buffer[0], 3));
 		input->hoogte  = atoi(LL_STRING_param(&buffer[0], 4));
-		input->kleur   = LL_STRING_param(&buffer[0], 5);
+		input->kleur   = 	  LL_STRING_param(&buffer[0], 5);
 		input->gevuld  = atoi(LL_STRING_param(&buffer[0], 6));
+		break;
+
+	case TEKST:
+		input->functie 		= TEKST;
+		input->startx  		= atoi(LL_STRING_param(&buffer[0], 1));
+		input->starty  		= atoi(LL_STRING_param(&buffer[0], 2));
+		input->kleur   		= 		LL_STRING_param(&buffer[0], 3);
+		input->tekst   		= 		LL_STRING_param(&buffer[0], 4);
+		input->font	   		= 		LL_STRING_param(&buffer[0], 5);
+		input->fontgrootte	= atoi(LL_STRING_param(&buffer[0], 6));
+		input->fontstijl	= atoi(LL_STRING_param(&buffer[0], 7));
 		break;
 
 	case BITMAP:
@@ -110,7 +112,7 @@ void LL_FIG_init(char* buffer, FUNCTIE* input, int vorm)
 		input->nr 	  = atoi(LL_STRING_param(&buffer[0], 1));
 		input->startx = atoi(LL_STRING_param(&buffer[0], 2));
 		input->starty = atoi(LL_STRING_param(&buffer[0], 3));
-		input->achtergrond = (strlen(buffer)>=5)? atoi(LL_STRING_param(&buffer[0], 4)): 1;
+		input->achtergrond = (atoi(LL_STRING_param(&buffer[0], 4))==TRUE)? 0:1;
 		break;
 
 	case CLEARSCHERM:
@@ -127,7 +129,6 @@ void LL_FIG_init(char* buffer, FUNCTIE* input, int vorm)
 //		int *ploader = &input->startx;
 //		int i;
 		input->functie=FIGUUR;
-		input->kleur  =LL_STRING_param(&buffer[0], 11);
 		input->dikte  =1;
 //		for(i=1; i<10; i++, ploader++)
 //			*ploader = atoi(LL_STRING_param(&buffer[0], i));
@@ -141,6 +142,24 @@ void LL_FIG_init(char* buffer, FUNCTIE* input, int vorm)
 		input->starty4= atoi(LL_STRING_param(&buffer[0], 8));
 		input->startx5= atoi(LL_STRING_param(&buffer[0], 9));
 		input->starty5= atoi(LL_STRING_param(&buffer[0], 10));
+		input->startx6= input->startx;
+		input->starty6= input->starty;
+		input->kleur  =LL_STRING_param(&buffer[0], 11);
+		break;
+
+	case NLFLAG:
+		input->functie=NLFLAG;
+		break;
+
+	case ITFLAG:
+		input->functie=ITFLAG;
+		break;
+
+	case TOREN:
+		input->functie=TOREN;
+		input->startx= atoi(LL_STRING_param(&buffer[0], 1));
+		input->starty= atoi(LL_STRING_param(&buffer[0], 2));
+		input->kleur = 		LL_STRING_param(&buffer[0], 3) ;
 		break;
 	}
 }
@@ -148,7 +167,7 @@ void LL_FIG_init(char* buffer, FUNCTIE* input, int vorm)
 int LL_exe(FUNCTIE* input)
 {
 	int error=0;
-	int i;
+	int i,j,k;
 	int*pstartx= &input->startx;
 	int*pstarty= &input->starty;
 
@@ -157,91 +176,194 @@ int LL_exe(FUNCTIE* input)
 	case LIJN:
 
 #ifdef DEBUG
-		API_IO_UART_puts("\n\rReceived data from user LL:\n\r");
-		API_IO_UART_putint(input->functie);
-		API_IO_UART_puts(" ");
-		API_IO_UART_putint(input->startx);
-		API_IO_UART_puts(" ");
-		API_IO_UART_putint(input->starty);
-		API_IO_UART_puts(" ");
-		API_IO_UART_putint(input->eindx);
-		API_IO_UART_puts(" ");
-		API_IO_UART_putint(input->eindy);
-		API_IO_UART_puts(" ");
-		API_IO_UART_puts(input->kleur);
-		API_IO_UART_puts(" ");
-		API_IO_UART_putint(input->dikte);
-		API_IO_UART_puts(" \n\r");
+		API_io_UART_puts("\n\rReceived data from user LL:\n\r");
+		API_io_UART_putint(input->functie);
+		API_io_UART_puts(" ");
+		API_io_UART_putint(input->startx);
+		API_io_UART_puts(" ");
+		API_io_UART_putint(input->starty);
+		API_io_UART_puts(" ");
+		API_io_UART_putint(input->eindx);
+		API_io_UART_puts(" ");
+		API_io_UART_putint(input->eindy);
+		API_io_UART_puts(" ");
+		API_io_UART_puts(input->kleur);
+		API_io_UART_puts(" ");
+		API_io_UART_putint(input->dikte);
+		API_io_UART_puts(" \n\r");
 #endif
 
-		error = API_DRAW_line(input->startx, input->starty, input->eindx, input->eindy, LL_kstoki(input->kleur), input->dikte);
+		error = API_draw_line(input->startx, input->starty, input->eindx, input->eindy, LL_kstoki(input->kleur), input->dikte, 0);
 
 #ifdef DEBUG_ERROR
-		API_IO_UART_puts(" \n\r");
-		API_IO_UART_putint(error);
-		API_IO_UART_puts(" \n\r");
+		API_io_UART_puts(" \n\r");
+		API_io_UART_putint(error);
+		API_io_UART_puts(" \n\r");
 #endif
 		break;
 
 	case RECHTHOEK:
 #ifdef DEBUG
-		API_IO_UART_puts("\n\rReceived data from user LL:\n\r");
-		API_IO_UART_putint(input->functie);
-		API_IO_UART_puts(" ");
-		API_IO_UART_putint(input->startx);
-		API_IO_UART_puts(" ");
-		API_IO_UART_putint(input->starty);
-		API_IO_UART_puts(" ");
-		API_IO_UART_putint(input->breedte);
-		API_IO_UART_puts(" ");
-		API_IO_UART_putint(input->hoogte);
-		API_IO_UART_puts(" ");
-		API_IO_UART_puts(input->kleur);
-		API_IO_UART_puts(" ");
-		API_IO_UART_putint(input->gevuld);
-		API_IO_UART_puts(" \n\r");
+		API_io_UART_puts("\n\rReceived data from user LL:\n\r");
+		API_io_UART_putint(input->functie);
+		API_io_UART_puts(" ");
+		API_io_UART_putint(input->startx);
+		API_io_UART_puts(" ");
+		API_io_UART_putint(input->starty);
+		API_io_UART_puts(" ");
+		API_io_UART_putint(input->breedte);
+		API_io_UART_puts(" ");
+		API_io_UART_putint(input->hoogte);
+		API_io_UART_puts(" ");
+		API_io_UART_puts(input->kleur);
+		API_io_UART_puts(" ");
+		API_io_UART_putint(input->gevuld);
+		API_io_UART_puts(" \n\r");
 #endif
-		error = API_DRAW_rechthoek(input->startx, input->starty, input->breedte, input->hoogte, LL_kstoki(input->kleur), input->gevuld);
-//		API_IO_UART_puts("\n\rError: \n\r");
-//		API_IO_UART_putint(error);
+		error = API_draw_rectangle(input->startx, input->starty, input->breedte, input->hoogte, LL_kstoki(input->kleur), input->gevuld, 0, 0);
+//		API_io_UART_puts("\n\rError: \n\r");
+//		API_io_UART_putint(error);
 		break;
+
+	case TEKST:
+#ifdef DEBUG
+		API_io_UART_puts("\n\rReceived data from user LL:\n\r");
+		API_io_UART_putint(input->functie);
+		API_io_UART_puts(" ");
+		API_io_UART_putint(input->startx);
+		API_io_UART_puts(" ");
+		API_io_UART_putint(input->starty);
+		API_io_UART_puts(" ");
+		API_io_UART_puts(input->kleur);
+		API_io_UART_puts(" ");
+		API_io_UART_puts(input->tekst);
+		API_io_UART_puts(" ");
+//		API_io_UART_puts(input->font);
+		API_io_UART_puts(" \n\r");
+		API_io_UART_putint(input->fontgrootte);
+		API_io_UART_puts(" \n\r");
+		API_io_UART_putint(input->fontstijl);
+		API_io_UART_puts(" \n\r");
+#endif
+		error = API_draw_text(input->startx, input->starty, LL_kstoki(input->kleur), input->tekst, (void*)0, 1, 1, -1);
+		break;
+
 	case BITMAP:
 #ifdef DEBUG
-		API_IO_UART_puts("\n\rReceived data from user:\n\r");
-		API_IO_UART_putint(input->functie);
-		API_IO_UART_puts(" ");
-		API_IO_UART_putint(input->nr);
-		API_IO_UART_puts(" ");
-		API_IO_UART_putint(input->startx);
-		API_IO_UART_puts(" ");
-		API_IO_UART_putint(input->starty);
-		API_IO_UART_puts(" \n\r");
+		API_io_UART_puts("\n\rReceived data from user:\n\r");
+		API_io_UART_putint(input->functie);
+		API_io_UART_puts(" ");
+		API_io_UART_putint(input->nr);
+		API_io_UART_puts(" ");
+		API_io_UART_putint(input->startx);
+		API_io_UART_puts(" ");
+		API_io_UART_putint(input->starty);
+		API_io_UART_puts(" ");
+		API_io_UART_putint(input->achtergrond);
+		API_io_UART_puts(" \n\r");
 #endif
-		error = API_DRAW_bitmap(input->nr, input->startx, input->starty, input->achtergrond);
-//		API_IO_UART_puts("\n\rError: \n\r");
-//		API_IO_UART_putint(error);
+		error = API_draw_bitmap(input->startx, input->starty, input->nr, input->achtergrond);
+//		API_io_UART_puts("\n\rError: \n\r");
+//		API_io_UART_putint(error);
 		break;
 
 	case CLEARSCHERM:
 #ifdef DEBUG
-		API_IO_UART_puts("\n\rReceived data from user:\n\r");
-		API_IO_UART_putint(input->functie);
-		API_IO_UART_puts(" ");
-		API_IO_UART_puts(input->kleur);
-		API_IO_UART_puts(" \n\r");
+		API_io_UART_puts("\n\rReceived data from user:\n\r");
+		API_io_UART_putint(input->functie);
+		API_io_UART_puts(" ");
+		API_io_UART_puts(input->kleur);
+		API_io_UART_puts(" \n\r");
 #endif
-		API_IO_clearscherm(LL_kstoki(input->kleur));
+		API_io_clearscherm(LL_kstoki(input->kleur));
 		break;
 
 	case WACHT:
-		API_IO_DELAY_ms(input->ms);
+		API_io_DELAY_ms(input->ms);
 		break;
 
 	case FIGUUR:
 
-		for(i=0; i<4; i++)
-			error += API_DRAW_line(*(pstartx+i), *(pstarty+i), *(pstartx+i+1), *(pstarty+i+1), LL_kstoki(input->kleur), input->dikte);
+		API_io_UART_putint(input->functie);
+//		API_io_UART_puts(" ");
+//		API_io_UART_putint(input->startx);
+//		API_io_UART_puts(" ");
+//		API_io_UART_putint(input->starty);
+//		API_io_UART_puts(" ");
+//		API_io_UART_putint(input->startx2);
+//		API_io_UART_puts(" ");
+//		API_io_UART_putint(input->starty2);
+//		API_io_UART_puts(" ");
+//		API_io_UART_putint(input->startx3);
+//		API_io_UART_puts(" ");
+//		API_io_UART_putint(input->starty3);
+//		API_io_UART_puts(" ");
+//		API_io_UART_putint(input->startx4);
+//		API_io_UART_puts(" ");
+//		API_io_UART_putint(input->starty4);
+//		API_io_UART_puts(" ");
+//		API_io_UART_putint(input->startx5);
+//		API_io_UART_puts(" ");
+//		API_io_UART_putint(input->starty5);
+//		API_io_UART_puts(" ");
+//		API_io_UART_puts(input->kleur);
+//		API_io_UART_puts("\n\r");
+
+		for(i=0; i<5; i++)
+		{
+			API_io_UART_puts(" ");
+			API_io_UART_putint(*(pstartx+i));
+			API_io_UART_puts(" ");
+			API_io_UART_putint(*(pstarty+i));
+			error += API_draw_line(*(pstartx+i), *(pstarty+i), *(pstartx+i+1), *(pstarty+i+1), LL_kstoki(input->kleur), input->dikte, 0);
+		}
+		API_io_UART_puts(" ");
+		API_io_UART_puts(input->kleur);
+		API_io_UART_puts("\n\r");
 		break;
+
+	case NLFLAG:
+		API_draw_rectangle(0,  0, 320, 80, VGA_COL_RED  , 0, 0, 0);
+		API_draw_rectangle(0, 80, 320, 80, VGA_COL_WHITE, 0, 0, 0);
+		API_draw_rectangle(0,160, 320, 80, VGA_COL_BLUE , 0, 0, 0);
+		break;
+
+	case ITFLAG:
+		API_draw_clearscreen(VGA_COL_RED);
+		API_draw_rectangle(0  , 0, 106, 240, VGA_COL_GREEN, 0, 0, 0);
+		API_draw_rectangle(106, 0, 106, 240, VGA_COL_WHITE, 0, 0, 0);
+//		API_draw_rectangle(212, 0, 106, 240, VGA_COL_RED  , 0, 0, 0);
+		break;
+
+	case TOREN:
+		// Bloks
+		API_draw_rectangle(input->startx   , input->starty		, 10, 20, LL_kstoki(input->kleur), 0, 0, 0);
+		API_draw_rectangle(input->startx+25, input->starty		, 10, 20, LL_kstoki(input->kleur), 0, 0, 0);
+		API_draw_rectangle(input->startx+50, input->starty		, 10, 20, LL_kstoki(input->kleur), 0, 0, 0);
+
+		// Base structure
+		API_draw_rectangle(input->startx	,input->starty+20	, 60, 20, LL_kstoki(input->kleur), 0, 0, 0);
+		API_draw_rectangle(input->startx+15	,input->starty+40	, 30, 60, LL_kstoki(input->kleur), 0, 0, 0);
+		API_draw_rectangle(input->startx	,input->starty+100	, 60, 40, LL_kstoki(input->kleur), 0, 0, 0);
+
+
+		// Cosmetica
+		for(j=0; j<40; j+=10)
+			for(i=0; i<60; i+=10)
+				API_draw_rectangle(input->startx+i, input->starty+100+j, 10, 10, VGA_COL_BLACK, 1, 0, 0); // bakstenen
+
+		for(j=0; j<60; j+=10)
+			for(i=0; i<30; i+=10)
+				API_draw_rectangle(input->startx+15+i, input->starty+40+j, 10, 10, VGA_COL_BLACK, 1, 0, 0); // bakstenen
+
+		for(j=0; j<20; j+=10)
+			for(i=0; i<60; i+=10)
+				API_draw_rectangle(input->startx+i, input->starty+20+j, 10, 10, VGA_COL_BLACK, 1, 0, 0); // bakstenen
+
+		API_draw_line(input->startx   ,input->starty+100, input->startx+60, input->starty+100, VGA_COL_WHITE, 3 , 0);
+		API_draw_line(input->startx+15, input->starty+40, input->startx+45, input->starty+40 , VGA_COL_WHITE, 3 , 0);
+		break;
+
 	}
 
 	return error;
