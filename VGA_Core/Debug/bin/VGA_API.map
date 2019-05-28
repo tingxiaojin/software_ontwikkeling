@@ -1057,7 +1057,7 @@ LOAD c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm
 END GROUP
 OUTPUT(VGA_API.elf elf32-littlearm)
 
-.debug_info     0x00000000     0x7056
+.debug_info     0x00000000     0x7058
  .debug_info    0x00000000      0x489 ..\obj\API_DRAW.o
  .debug_info    0x00000489      0x2a6 ..\obj\delay.o
  .debug_info    0x0000072f      0x9ca ..\obj\stm32f4xx_usart.o
@@ -1068,12 +1068,12 @@ OUTPUT(VGA_API.elf elf32-littlearm)
  .debug_info    0x000028cc      0x61a ..\obj\stm32f4xx_gpio.o
  .debug_info    0x00002ee6      0x5c5 ..\obj\system_stm32f4xx.o
  .debug_info    0x000034ab      0x741 ..\obj\stm32f4xx_dma.o
- .debug_info    0x00003bec      0x7d2 ..\obj\API_IO.o
- .debug_info    0x000043be      0xad9 ..\obj\stm32_ub_vga_screen.o
- .debug_info    0x00004e97      0x556 ..\obj\misc.o
- .debug_info    0x000053ed     0x1c69 ..\obj\stm32f4xx_tim.o
+ .debug_info    0x00003bec      0x7d4 ..\obj\API_IO.o
+ .debug_info    0x000043c0      0xad9 ..\obj\stm32_ub_vga_screen.o
+ .debug_info    0x00004e99      0x556 ..\obj\misc.o
+ .debug_info    0x000053ef     0x1c69 ..\obj\stm32f4xx_tim.o
 
-.debug_abbrev   0x00000000     0x1330
+.debug_abbrev   0x00000000     0x134a
  .debug_abbrev  0x00000000      0x112 ..\obj\API_DRAW.o
  .debug_abbrev  0x00000112      0x100 ..\obj\delay.o
  .debug_abbrev  0x00000212      0x157 ..\obj\stm32f4xx_usart.o
@@ -1084,10 +1084,10 @@ OUTPUT(VGA_API.elf elf32-littlearm)
  .debug_abbrev  0x00000828      0x1a7 ..\obj\stm32f4xx_gpio.o
  .debug_abbrev  0x000009cf      0x138 ..\obj\system_stm32f4xx.o
  .debug_abbrev  0x00000b07      0x157 ..\obj\stm32f4xx_dma.o
- .debug_abbrev  0x00000c5e      0x232 ..\obj\API_IO.o
- .debug_abbrev  0x00000e90      0x1d0 ..\obj\stm32_ub_vga_screen.o
- .debug_abbrev  0x00001060      0x147 ..\obj\misc.o
- .debug_abbrev  0x000011a7      0x189 ..\obj\stm32f4xx_tim.o
+ .debug_abbrev  0x00000c5e      0x24c ..\obj\API_IO.o
+ .debug_abbrev  0x00000eaa      0x1d0 ..\obj\stm32_ub_vga_screen.o
+ .debug_abbrev  0x0000107a      0x147 ..\obj\misc.o
+ .debug_abbrev  0x000011c1      0x189 ..\obj\stm32f4xx_tim.o
 
 .debug_aranges  0x00000000      0x960
  .debug_aranges

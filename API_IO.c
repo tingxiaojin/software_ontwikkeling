@@ -219,19 +219,7 @@ int API_io_puts(char* zin, int x_lup, int y_lup, int kleur, char* font, int font
 	int i, error=0;
 	int x = x_lup;
 	int y = y_lup;
-	int fontnaam;
-	char **pgvar;
 
-	if (==TRUE)fontnaam = CONSOLAS;
-	else if (==TRUE)
-	{
-		fontnaam = ARIAL;
-		pgvar = arial_16ptDescriptors;
-	}
-
-	switch(fontnaam)
-	{
-	case Arial:
 	error = API_io_putc(*(zin), x, y, kleur, reserved);
 	for(i=1; i<strlen(zin); i++)
 	{
@@ -242,8 +230,6 @@ int API_io_puts(char* zin, int x_lup, int y_lup, int kleur, char* font, int font
 		error +=API_io_putc(*(zin+i), x+=(8*arial_16ptDescriptors[zin[i-1]-' '][0]), y, kleur, reserved);
 	}
 	return error;
-
-	case CONSOLAS:
 }
 
 
