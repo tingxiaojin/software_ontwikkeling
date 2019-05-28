@@ -167,7 +167,7 @@ void LL_FIG_init(char* buffer, FUNCTIE* input, int vorm)
 int LL_exe(FUNCTIE* input)
 {
 	int error=0;
-	int i,j,k;
+	int i,j;
 	int*pstartx= &input->startx;
 	int*pstarty= &input->starty;
 
