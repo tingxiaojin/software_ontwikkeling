@@ -24,6 +24,7 @@
         <Option name="Library" value="Not use C Library"/>
         <LinkedLibraries>
           <Libset dir="" libs="m"/>
+          <Libset dir="" libs="vga_api"/>
         </LinkedLibraries>
         <MemoryAreas debugInFlashNotRAM="1">
           <Memory name="IROM1" type="ReadOnly" size="0x00100000" startValue="0x08000000"/>
@@ -36,7 +37,7 @@
       <Output>
         <Option name="OutputFileType" value="0"/>
         <Option name="Path" value="./"/>
-        <Option name="Name" value="VGA_API"/>
+        <Option name="Name" value="VGA_Core"/>
         <Option name="HEX" value="1"/>
         <Option name="BIN" value="1"/>
       </Output>
@@ -68,76 +69,51 @@
   </Target>
   <Components path="./">
     <Component id="30" name="C Library" path="" type="2"/>
-    <Component id="31" name="Retarget printf" path="" type="2"/>
     <Component id="54" name="M4 CMSIS Core" path="" type="2"/>
     <Component id="500" name="CMSIS BOOT" path="" type="2"/>
     <Component id="501" name="RCC" path="" type="2"/>
     <Component id="504" name="GPIO" path="" type="2"/>
-    <Component id="505" name="EXTI" path="" type="2"/>
     <Component id="511" name="DMA" path="" type="2"/>
     <Component id="513" name="TIM" path="" type="2"/>
     <Component id="517" name="USART" path="" type="2"/>
     <Component id="524" name="MISC" path="" type="2"/>
-    <Component id="526" name="SYSCFG" path="" type="2"/>
   </Components>
   <Files>
     <File name="cmsis_lib/source/stm32f4xx_gpio.c" path="cmsis_lib/source/stm32f4xx_gpio.c" type="1"/>
-    <File name="ub_lib/stm32_ub_vga_screen.c" path="ub_lib/stm32_ub_vga_screen.c" type="1"/>
+    <File name="api" path="" type="2"/>
+    <File name="cmsis_boot/startup/startup_stm32f4xx.c" path="cmsis_boot/startup/startup_stm32f4xx.c" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_dma.c" path="cmsis_lib/source/stm32f4xx_dma.c" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_usart.c" path="cmsis_lib/source/stm32f4xx_usart.c" type="1"/>
-    <File name="ports/uart.h" path="ports/uart.h" type="1"/>
-    <File name="ports/delay.c" path="ports/delay.c" type="1"/>
-    <File name="bitmaps/smiley_boos.h" path="bitmaps/smiley_boos.h" type="1"/>
-    <File name="Arial.h" path="bitmaps/Arial.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_rcc.c" path="cmsis_lib/source/stm32f4xx_rcc.c" type="1"/>
+    <File name="cmsis/core_cmInstr.h" path="cmsis/core_cmInstr.h" type="1"/>
+    <File name="UI.c" path="UI.c" type="1"/>
     <File name="cmsis_boot" path="" type="2"/>
-    <File name="cmsis_lib/include/stm32f4xx_syscfg.h" path="cmsis_lib/include/stm32f4xx_syscfg.h" type="1"/>
+    <File name="LL.c" path="LL.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_usart.h" path="cmsis_lib/include/stm32f4xx_usart.h" type="1"/>
-    <File name="bitmaps" path="" type="2"/>
-    <File name="cmsis_boot/stm32f4xx.h" path="cmsis_boot/stm32f4xx.h" type="1"/>
     <File name="cmsis_boot/startup" path="" type="2"/>
     <File name="cmsis/core_cm4_simd.h" path="cmsis/core_cm4_simd.h" type="1"/>
+    <File name="cmsis_boot/stm32f4xx.h" path="cmsis_boot/stm32f4xx.h" type="1"/>
     <File name="api/API_IO.h" path="api/API_IO.h" type="1"/>
     <File name="cmsis/core_cmFunc.h" path="cmsis/core_cmFunc.h" type="1"/>
     <File name="cmsis/core_cm4.h" path="cmsis/core_cm4.h" type="1"/>
-    <File name="API_IO.c" path="API_IO.c" type="1"/>
-    <File name="cmsis_lib/source/misc.c" path="cmsis_lib/source/misc.c" type="1"/>
-    <File name="cmsis_lib/include/stm32f4xx_tim.h" path="cmsis_lib/include/stm32f4xx_tim.h" type="1"/>
-    <File name="syscalls/syscalls.c" path="syscalls/syscalls.c" type="1"/>
-    <File name="bitmaps/smiley_blij.h" path="bitmaps/smiley_blij.h" type="1"/>
-    <File name="cmsis_lib/source" path="" type="2"/>
-    <File name="bitmaps/pijl_omlaag.h" path="bitmaps/pijl_omlaag.h" type="1"/>
-    <File name="API_DRAW.c" path="API_DRAW.c" type="1"/>
-    <File name="bitmaps/pijl_rechts.h" path="bitmaps/pijl_rechts.h" type="1"/>
-    <File name="cmsis_boot/stm32f4xx_conf.h" path="cmsis_boot/stm32f4xx_conf.h" type="1"/>
-    <File name="cmsis_boot/system_stm32f4xx.h" path="cmsis_boot/system_stm32f4xx.h" type="1"/>
-    <File name="stdio/printf.c" path="stdio/printf.c" type="1"/>
-    <File name="cmsis_lib/include/stm32f4xx_rcc.h" path="cmsis_lib/include/stm32f4xx_rcc.h" type="1"/>
-    <File name="cmsis_lib/source/stm32f4xx_syscfg.c" path="cmsis_lib/source/stm32f4xx_syscfg.c" type="1"/>
-    <File name="api/API_DRAW.h" path="api/API_DRAW.h" type="1"/>
-    <File name="cmsis_boot/startup/startup_stm32f4xx.c" path="cmsis_boot/startup/startup_stm32f4xx.c" type="1"/>
-    <File name="api" path="" type="2"/>
-    <File name="stdio" path="" type="2"/>
-    <File name="cmsis_lib/source/stm32f4xx_rcc.c" path="cmsis_lib/source/stm32f4xx_rcc.c" type="1"/>
-    <File name="cmsis/core_cmInstr.h" path="cmsis/core_cmInstr.h" type="1"/>
-    <File name="bitmaps/pijl_links.h" path="bitmaps/pijl_links.h" type="1"/>
-    <File name="ub_lib" path="" type="2"/>
-    <File name="cmsis_lib/include/stm32f4xx_exti.h" path="cmsis_lib/include/stm32f4xx_exti.h" type="1"/>
-    <File name="cmsis_lib/source/stm32f4xx_exti.c" path="cmsis_lib/source/stm32f4xx_exti.c" type="1"/>
     <File name="cmsis_boot/system_stm32f4xx.c" path="cmsis_boot/system_stm32f4xx.c" type="1"/>
-    <File name="ports" path="" type="2"/>
+    <File name="cmsis_lib/source/misc.c" path="cmsis_lib/source/misc.c" type="1"/>
     <File name="cmsis" path="" type="2"/>
+    <File name="cmsis_lib/include/stm32f4xx_tim.h" path="cmsis_lib/include/stm32f4xx_tim.h" type="1"/>
     <File name="cmsis_lib" path="" type="2"/>
-    <File name="bitmaps/pijl_omhoog.h" path="bitmaps/pijl_omhoog.h" type="1"/>
-    <File name="ports/delay.h" path="ports/delay.h" type="1"/>
+    <File name="syscalls/syscalls.c" path="syscalls/syscalls.c" type="1"/>
+    <File name="cmsis_lib/source" path="" type="2"/>
+    <File name="LL.h" path="LL.h" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_dma.h" path="cmsis_lib/include/stm32f4xx_dma.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_tim.c" path="cmsis_lib/source/stm32f4xx_tim.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_gpio.h" path="cmsis_lib/include/stm32f4xx_gpio.h" type="1"/>
-    <File name="ports/uart.c" path="ports/uart.c" type="1"/>
-    <File name="ub_lib/stm32_ub_vga_screen.h" path="ub_lib/stm32_ub_vga_screen.h" type="1"/>
     <File name="syscalls" path="" type="2"/>
-    <File name="ports/includes.h" path="includes.h" type="1"/>
+    <File name="UI.h" path="UI.h" type="1"/>
     <File name="cmsis_lib/include/misc.h" path="cmsis_lib/include/misc.h" type="1"/>
+    <File name="cmsis_boot/stm32f4xx_conf.h" path="cmsis_boot/stm32f4xx_conf.h" type="1"/>
+    <File name="cmsis_boot/system_stm32f4xx.h" path="cmsis_boot/system_stm32f4xx.h" type="1"/>
     <File name="cmsis_lib/include" path="" type="2"/>
-    <File name="main.c" path="main.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_rcc.h" path="cmsis_lib/include/stm32f4xx_rcc.h" type="1"/>
+    <File name="api/API_DRAW.h" path="api/API_DRAW.h" type="1"/>
   </Files>
 </Project>
