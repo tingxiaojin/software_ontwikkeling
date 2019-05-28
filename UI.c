@@ -64,8 +64,8 @@ int main(void)
 	API_DRAW_line(1, 1, 1, 200, 50, 1);
 ///////////////////////////////////////////////////////////
 	//UB_VGA_SetPixel(50,50, VGA_COL_BLACK);
-
-	API_DRAW_text(0, 100, VGA_COL_BLUE);
+	char tekst[] = "the quick brown fox jumps over the lazy dog!";
+	API_DRAW_text(tekst, 10,10,100);
 
 
 
