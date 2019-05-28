@@ -1125,41 +1125,41 @@ LOAD c:/program files (x86)/gnu tools arm embedded/5.4 2016q2/bin/../lib/gcc/arm
 END GROUP
 OUTPUT(VGA_Core.elf elf32-littlearm)
 
-.debug_info     0x00000000     0x85dd
+.debug_info     0x00000000     0x85d4
  .debug_info    0x00000000      0x365 ..\obj\UI.o
  .debug_info    0x00000365      0x9ca ..\obj\stm32f4xx_usart.o
  .debug_info    0x00000d2f       0xf2 ..\obj\startup_stm32f4xx.o
- .debug_info    0x00000e21      0x47b ..\obj\LL.o
- .debug_info    0x0000129c      0xc63 ..\obj\stm32f4xx_rcc.o
- .debug_info    0x00001eff      0x61a ..\obj\stm32f4xx_gpio.o
- .debug_info    0x00002519      0x5c5 ..\obj\system_stm32f4xx.o
- .debug_info    0x00002ade      0x741 ..\obj\stm32f4xx_dma.o
- .debug_info    0x0000321f      0xad9 ..\obj\stm32_ub_vga_screen.o
- .debug_info    0x00003cf8      0x556 ..\obj\misc.o
- .debug_info    0x0000424e     0x1c69 ..\obj\stm32f4xx_tim.o
- .debug_info    0x00005eb7      0x489 ..\..\..\libvga_api.a(API_DRAW.o)
- .debug_info    0x00006340      0x7d2 ..\..\..\libvga_api.a(API_IO.o)
- .debug_info    0x00006b12      0x2a6 ..\..\..\libvga_api.a(delay.o)
- .debug_info    0x00006db8      0x9e8 ..\..\..\libvga_api.a(uart.o)
- .debug_info    0x000077a0      0xe3d ..\..\..\libvga_api.a(printf.o)
+ .debug_info    0x00000e21      0x472 ..\obj\LL.o
+ .debug_info    0x00001293      0xc63 ..\obj\stm32f4xx_rcc.o
+ .debug_info    0x00001ef6      0x61a ..\obj\stm32f4xx_gpio.o
+ .debug_info    0x00002510      0x5c5 ..\obj\system_stm32f4xx.o
+ .debug_info    0x00002ad5      0x741 ..\obj\stm32f4xx_dma.o
+ .debug_info    0x00003216      0xad9 ..\obj\stm32_ub_vga_screen.o
+ .debug_info    0x00003cef      0x556 ..\obj\misc.o
+ .debug_info    0x00004245     0x1c69 ..\obj\stm32f4xx_tim.o
+ .debug_info    0x00005eae      0x489 ..\..\..\libvga_api.a(API_DRAW.o)
+ .debug_info    0x00006337      0x7d2 ..\..\..\libvga_api.a(API_IO.o)
+ .debug_info    0x00006b09      0x2a6 ..\..\..\libvga_api.a(delay.o)
+ .debug_info    0x00006daf      0x9e8 ..\..\..\libvga_api.a(uart.o)
+ .debug_info    0x00007797      0xe3d ..\..\..\libvga_api.a(printf.o)
 
-.debug_abbrev   0x00000000     0x17ba
+.debug_abbrev   0x00000000     0x17ad
  .debug_abbrev  0x00000000      0x11d ..\obj\UI.o
  .debug_abbrev  0x0000011d      0x157 ..\obj\stm32f4xx_usart.o
  .debug_abbrev  0x00000274       0xb0 ..\obj\startup_stm32f4xx.o
- .debug_abbrev  0x00000324      0x14f ..\obj\LL.o
- .debug_abbrev  0x00000473      0x1e5 ..\obj\stm32f4xx_rcc.o
- .debug_abbrev  0x00000658      0x1a7 ..\obj\stm32f4xx_gpio.o
- .debug_abbrev  0x000007ff      0x138 ..\obj\system_stm32f4xx.o
- .debug_abbrev  0x00000937      0x157 ..\obj\stm32f4xx_dma.o
- .debug_abbrev  0x00000a8e      0x1d0 ..\obj\stm32_ub_vga_screen.o
- .debug_abbrev  0x00000c5e      0x147 ..\obj\misc.o
- .debug_abbrev  0x00000da5      0x189 ..\obj\stm32f4xx_tim.o
- .debug_abbrev  0x00000f2e      0x112 ..\..\..\libvga_api.a(API_DRAW.o)
- .debug_abbrev  0x00001040      0x232 ..\..\..\libvga_api.a(API_IO.o)
- .debug_abbrev  0x00001272      0x100 ..\..\..\libvga_api.a(delay.o)
- .debug_abbrev  0x00001372      0x1e6 ..\..\..\libvga_api.a(uart.o)
- .debug_abbrev  0x00001558      0x262 ..\..\..\libvga_api.a(printf.o)
+ .debug_abbrev  0x00000324      0x142 ..\obj\LL.o
+ .debug_abbrev  0x00000466      0x1e5 ..\obj\stm32f4xx_rcc.o
+ .debug_abbrev  0x0000064b      0x1a7 ..\obj\stm32f4xx_gpio.o
+ .debug_abbrev  0x000007f2      0x138 ..\obj\system_stm32f4xx.o
+ .debug_abbrev  0x0000092a      0x157 ..\obj\stm32f4xx_dma.o
+ .debug_abbrev  0x00000a81      0x1d0 ..\obj\stm32_ub_vga_screen.o
+ .debug_abbrev  0x00000c51      0x147 ..\obj\misc.o
+ .debug_abbrev  0x00000d98      0x189 ..\obj\stm32f4xx_tim.o
+ .debug_abbrev  0x00000f21      0x112 ..\..\..\libvga_api.a(API_DRAW.o)
+ .debug_abbrev  0x00001033      0x232 ..\..\..\libvga_api.a(API_IO.o)
+ .debug_abbrev  0x00001265      0x100 ..\..\..\libvga_api.a(delay.o)
+ .debug_abbrev  0x00001365      0x1e6 ..\..\..\libvga_api.a(uart.o)
+ .debug_abbrev  0x0000154b      0x262 ..\..\..\libvga_api.a(printf.o)
 
 .debug_aranges  0x00000000      0xa60
  .debug_aranges
