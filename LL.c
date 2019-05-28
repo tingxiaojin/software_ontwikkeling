@@ -4,7 +4,7 @@
 #include "API_IO.h"
 
 
-#define DEBUG
+//#define DEBUG
 //#define DEBUG_ERROR
 
 
@@ -78,51 +78,51 @@ void LL_FIG_init(char* buffer, FUNCTIE* input, int vorm)
 	{
 	case LIJN:
 		input->functie = LIJN;
-		input->startx  = atoi(LL_STRING_param(&buffer[0], 1));
-		input->starty  = atoi(LL_STRING_param(&buffer[0], 2));
-		input->eindx   = atoi(LL_STRING_param(&buffer[0], 3));
-		input->eindy   = atoi(LL_STRING_param(&buffer[0], 4));
-		input->kleur   = 	  LL_STRING_param(&buffer[0], 5) ;
-		input->dikte   = atoi(LL_STRING_param(&buffer[0], 6));
+		input->startx  = atoi(LL_STRING_param(&buffer[0], PARAM1));
+		input->starty  = atoi(LL_STRING_param(&buffer[0], PARAM2));
+		input->eindx   = atoi(LL_STRING_param(&buffer[0], PARAM3));
+		input->eindy   = atoi(LL_STRING_param(&buffer[0], PARAM4));
+		input->kleur   = 	  LL_STRING_param(&buffer[0], PARAM5) ;
+		input->dikte   = atoi(LL_STRING_param(&buffer[0], PARAM6));
 		break;
 
 	case RECHTHOEK:
 		input->functie = RECHTHOEK;
-		input->startx  = atoi(LL_STRING_param(&buffer[0], 1));
-		input->starty  = atoi(LL_STRING_param(&buffer[0], 2));
-		input->breedte = atoi(LL_STRING_param(&buffer[0], 3));
-		input->hoogte  = atoi(LL_STRING_param(&buffer[0], 4));
-		input->kleur   = 	  LL_STRING_param(&buffer[0], 5);
-		input->gevuld  = atoi(LL_STRING_param(&buffer[0], 6));
+		input->startx  = atoi(LL_STRING_param(&buffer[0], PARAM1));
+		input->starty  = atoi(LL_STRING_param(&buffer[0], PARAM2));
+		input->breedte = atoi(LL_STRING_param(&buffer[0], PARAM3));
+		input->hoogte  = atoi(LL_STRING_param(&buffer[0], PARAM4));
+		input->kleur   = 	  LL_STRING_param(&buffer[0], PARAM5) ;
+		input->gevuld  = atoi(LL_STRING_param(&buffer[0], PARAM6));
 		break;
 
 	case TEKST:
 		input->functie 		= TEKST;
-		input->startx  		= atoi(LL_STRING_param(&buffer[0], 1));
-		input->starty  		= atoi(LL_STRING_param(&buffer[0], 2));
-		input->kleur   		= 		LL_STRING_param(&buffer[0], 3);
-		input->tekst   		= 		LL_STRING_param(&buffer[0], 4);
-		input->font	   		= 		LL_STRING_param(&buffer[0], 5);
-		input->fontgrootte	= atoi(LL_STRING_param(&buffer[0], 6));
-		input->fontstijl	= atoi(LL_STRING_param(&buffer[0], 7));
+		input->startx  		= atoi(LL_STRING_param(&buffer[0], PARAM1));
+		input->starty  		= atoi(LL_STRING_param(&buffer[0], PARAM2));
+		input->kleur   		= 	   LL_STRING_param(&buffer[0], PARAM3) ;
+		input->tekst   		= 	   LL_STRING_param(&buffer[0], PARAM4) ;
+		input->font	   		= 	   LL_STRING_param(&buffer[0], PARAM5) ;
+		input->fontgrootte	= atoi(LL_STRING_param(&buffer[0], PARAM6));
+		input->fontstijl	= atoi(LL_STRING_param(&buffer[0], PARAM7));
 		break;
 
 	case BITMAP:
 		input->functie= BITMAP;
-		input->nr 	  = atoi(LL_STRING_param(&buffer[0], 1));
-		input->startx = atoi(LL_STRING_param(&buffer[0], 2));
-		input->starty = atoi(LL_STRING_param(&buffer[0], 3));
-		input->achtergrond = (atoi(LL_STRING_param(&buffer[0], 4))==TRUE)? 0:1;
+		input->nr 	  = 	  atoi(LL_STRING_param(&buffer[0], PARAM1));
+		input->startx = 	  atoi(LL_STRING_param(&buffer[0], PARAM2));
+		input->starty = 	  atoi(LL_STRING_param(&buffer[0], PARAM3));
+		input->achtergrond = (atoi(LL_STRING_param(&buffer[0], PARAM4))==TRUE)? 0:1;
 		break;
 
 	case CLEARSCHERM:
 		input->functie   = CLEARSCHERM;
-		input->kleur	 = LL_STRING_param(&buffer[0], 1);
+		input->kleur	 = LL_STRING_param(&buffer[0], PARAM1);
 		break;
 
 	case WACHT:
 		input->functie= WACHT;
-		input->ms = atoi(LL_STRING_param(&buffer[0], 1));
+		input->ms =  atoi(LL_STRING_param(&buffer[0], PARAM1));
 		break;
 
 	case FIGUUR:
@@ -132,19 +132,19 @@ void LL_FIG_init(char* buffer, FUNCTIE* input, int vorm)
 		input->dikte  =1;
 //		for(i=1; i<10; i++, ploader++)
 //			*ploader = atoi(LL_STRING_param(&buffer[0], i));
-		input->startx=  atoi(LL_STRING_param(&buffer[0], 1));
-		input->starty=  atoi(LL_STRING_param(&buffer[0], 2));
-		input->startx2= atoi(LL_STRING_param(&buffer[0], 3));
-		input->starty2= atoi(LL_STRING_param(&buffer[0], 4));
-		input->startx3= atoi(LL_STRING_param(&buffer[0], 5));
-		input->starty3= atoi(LL_STRING_param(&buffer[0], 6));
-		input->startx4= atoi(LL_STRING_param(&buffer[0], 7));
-		input->starty4= atoi(LL_STRING_param(&buffer[0], 8));
-		input->startx5= atoi(LL_STRING_param(&buffer[0], 9));
-		input->starty5= atoi(LL_STRING_param(&buffer[0], 10));
+		input->kleur  = 	 LL_STRING_param(&buffer[0], PARAM11);
+		input->startx = atoi(LL_STRING_param(&buffer[0], PARAM1));
+		input->starty = atoi(LL_STRING_param(&buffer[0], PARAM2));
+		input->startx2= atoi(LL_STRING_param(&buffer[0], PARAM3));
+		input->starty2= atoi(LL_STRING_param(&buffer[0], PARAM4));
+		input->startx3= atoi(LL_STRING_param(&buffer[0], PARAM5));
+		input->starty3= atoi(LL_STRING_param(&buffer[0], PARAM6));
+		input->startx4= atoi(LL_STRING_param(&buffer[0], PARAM7));
+		input->starty4= atoi(LL_STRING_param(&buffer[0], PARAM8));
+		input->startx5= atoi(LL_STRING_param(&buffer[0], PARAM9));
+		input->starty5= atoi(LL_STRING_param(&buffer[0], PARAM10));
 		input->startx6= input->startx;
 		input->starty6= input->starty;
-		input->kleur  =LL_STRING_param(&buffer[0], 11);
 		break;
 
 	case NLFLAG:
@@ -157,17 +157,18 @@ void LL_FIG_init(char* buffer, FUNCTIE* input, int vorm)
 
 	case TOREN:
 		input->functie=TOREN;
-		input->startx= atoi(LL_STRING_param(&buffer[0], 1));
-		input->starty= atoi(LL_STRING_param(&buffer[0], 2));
-		input->kleur = 		LL_STRING_param(&buffer[0], 3) ;
+		input->startx= atoi(LL_STRING_param(&buffer[0], PARAM1));
+		input->starty= atoi(LL_STRING_param(&buffer[0], PARAM2));
+		input->kleur = 		LL_STRING_param(&buffer[0], PARAM3) ;
 		break;
 	}
+
 }
 
 int LL_exe(FUNCTIE* input)
 {
 	int error=0;
-	int i,j,k;
+	int i,j;
 	int*pstartx= &input->startx;
 	int*pstarty= &input->starty;
 
@@ -192,7 +193,7 @@ int LL_exe(FUNCTIE* input)
 		API_io_UART_putint(input->dikte);
 		API_io_UART_puts(" \n\r");
 #endif
-
+		if(input->parameters < PARAM6) return TOOLITTLEPARAM;
 		error = API_draw_line(input->startx, input->starty, input->eindx, input->eindy, LL_kstoki(input->kleur), input->dikte, 0);
 
 #ifdef DEBUG_ERROR
@@ -220,6 +221,7 @@ int LL_exe(FUNCTIE* input)
 		API_io_UART_putint(input->gevuld);
 		API_io_UART_puts(" \n\r");
 #endif
+		if(input->parameters < PARAM6) return TOOLITTLEPARAM;
 		error = API_draw_rectangle(input->startx, input->starty, input->breedte, input->hoogte, LL_kstoki(input->kleur), input->gevuld, 0, 0);
 //		API_io_UART_puts("\n\rError: \n\r");
 //		API_io_UART_putint(error);
@@ -245,6 +247,7 @@ int LL_exe(FUNCTIE* input)
 		API_io_UART_putint(input->fontstijl);
 		API_io_UART_puts(" \n\r");
 #endif
+		if(input->parameters < PARAM4) return TOOLITTLEPARAM;
 		error = API_draw_text(input->startx, input->starty, LL_kstoki(input->kleur), input->tekst, (void*)0, 1, 1, -1);
 		break;
 
@@ -262,6 +265,7 @@ int LL_exe(FUNCTIE* input)
 		API_io_UART_putint(input->achtergrond);
 		API_io_UART_puts(" \n\r");
 #endif
+		if(input->parameters < PARAM4) return TOOLITTLEPARAM;
 		error = API_draw_bitmap(input->startx, input->starty, input->nr, input->achtergrond);
 //		API_io_UART_puts("\n\rError: \n\r");
 //		API_io_UART_putint(error);
@@ -275,40 +279,18 @@ int LL_exe(FUNCTIE* input)
 		API_io_UART_puts(input->kleur);
 		API_io_UART_puts(" \n\r");
 #endif
+		if(input->parameters < PARAM1) return TOOLITTLEPARAM;
 		API_io_clearscherm(LL_kstoki(input->kleur));
 		break;
 
 	case WACHT:
+		if(input->parameters < PARAM1) return TOOLITTLEPARAM;
 		API_io_DELAY_ms(input->ms);
 		break;
 
 	case FIGUUR:
 
 		API_io_UART_putint(input->functie);
-//		API_io_UART_puts(" ");
-//		API_io_UART_putint(input->startx);
-//		API_io_UART_puts(" ");
-//		API_io_UART_putint(input->starty);
-//		API_io_UART_puts(" ");
-//		API_io_UART_putint(input->startx2);
-//		API_io_UART_puts(" ");
-//		API_io_UART_putint(input->starty2);
-//		API_io_UART_puts(" ");
-//		API_io_UART_putint(input->startx3);
-//		API_io_UART_puts(" ");
-//		API_io_UART_putint(input->starty3);
-//		API_io_UART_puts(" ");
-//		API_io_UART_putint(input->startx4);
-//		API_io_UART_puts(" ");
-//		API_io_UART_putint(input->starty4);
-//		API_io_UART_puts(" ");
-//		API_io_UART_putint(input->startx5);
-//		API_io_UART_puts(" ");
-//		API_io_UART_putint(input->starty5);
-//		API_io_UART_puts(" ");
-//		API_io_UART_puts(input->kleur);
-//		API_io_UART_puts("\n\r");
-
 		for(i=0; i<5; i++)
 		{
 			API_io_UART_puts(" ");

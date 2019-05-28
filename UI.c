@@ -1,19 +1,10 @@
-//--------------------------------------------------------------
-// File     : main.c
-// Datum    : 30.03.2016
-// Version  : 1.0
-// Autor    : UB
-// mods by	: J.F. van der Bent
-// CPU      : STM32F4
-// IDE      : CooCox CoIDE 1.7.x
-// Module   : CMSIS_BOOT, M4_CMSIS_CORE
-// Function : VGA_core DMA LIB 320x240, 8bit color
-//--------------------------------------------------------------
+
 
 #include "UI.h"
 #include "LL.h"
 #include "API_IO.h"
 #include "API_DRAW.h"
+
 
 
 void UI_ERR_put(int error)
@@ -43,6 +34,14 @@ void UI_ERR_put(int error)
 		API_io_UART_puts("\tINPUT EMPTY!\n\rErrorcode: ");
 		API_io_UART_putint(error);
 		break;
+	case TOOMUCHPARAM:
+		API_io_UART_puts("\tTO MUCH PARAMETERS! GIVE ME LESS\n\rErrorcode: ");
+		API_io_UART_putint(error);
+		break;
+	case TOOLITTLEPARAM:
+		API_io_UART_puts("\tTO LITTLE PARAMETERS! GIVE ME MORE\n\rErrorcode: ");
+		API_io_UART_putint(error);
+		break;
 	default:
 		API_io_UART_puts("\tUNKOWN ERRORCODE!\n\rErrorcode: 0x");
 		API_io_UART_putnum(16, error);
@@ -50,6 +49,24 @@ void UI_ERR_put(int error)
 	API_io_UART_puts("\n\r");
 }
 
+
+/*
+ * @Note: counts the num of param, seperated by the sep character
+ * @Return: num of parameters in function
+ */
+int UI_PARAMCNT(char* buffer, char sep)
+{
+	int paramcnt, i;
+	for(paramcnt=PARAM1; *buffer!='\0';buffer++)
+	{
+		if(*buffer=='\'')
+			for(i=0; i<200; i++)				// for loops are safer then while loops
+				if(*(buffer++) == '\'')break;
+
+		paramcnt+= (*buffer == sep)? 1 : 0 ;
+	}
+	return paramcnt;
+}
 
 // replaces a character in a buffer with another character
 void UI_CH_rp(char* buffer, char old_char, char new_char)
@@ -95,11 +112,10 @@ int main(void)
 	API_draw_clearscreen(VGA_COL_BLACK);
 	FUNCTIE input;
 	char buffer [100];
-//	int i;
 	int error=-1;
 
 
-//	API_io_UART_puts("WELKOM MIJN CODE :D\n\r");
+	API_io_UART_puts("WELKOM MIJN CODE :D\n\r");
 //	API_io_UART_putint(API_draw_line(1, 1, 1, 200, 50, 1));
 
 	while(1)
@@ -107,7 +123,7 @@ int main(void)
 		API_io_UART_INT_gets(buffer); // get user input
 //		API_io_UART_puts(buffer);
 
-		if(strlen(buffer)==0)
+		if(strlen(buffer)==EMPTY)
 			continue;
 
 		// if input = empty
@@ -120,9 +136,10 @@ int main(void)
 
 //		API_io_rm_c_ut	(buffer, ' ', ST);	// remove spaces until first ST found
 //		API_io_rp_c		(buffer, ',', ST);	// replace comma's (',') with a ST ('\0')
-		UI_CH_rm(buffer, ' ', ST);	// remove spaces until first ST found
-		UI_CH_rp(buffer, ',', ST); 	// replace comma's (',') with a ST ('\0')
 
+		UI_CH_rm		  (buffer, ' ', ST);			// remove spaces until first ST found
+		input.parameters = UI_PARAMCNT	(buffer, ',');	// count the parameters
+		UI_CH_rp		  (buffer, ',', ST); 			// replace comma's (',') with a ST ('\0')
 
 		if (LL_STRING_check(buffer,"LIJN"))
 		{

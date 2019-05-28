@@ -16,6 +16,8 @@
 #define TRUE  1
 #define FALSE 0
 
+#define EMPTY 0
+
 #define CR	0x0D
 #define ST 	'\0'
 
@@ -33,16 +35,24 @@ enum
 	TOREN
 };
 
-enum
+enum PARAM
 {
-	PARAM1 = 0,
+	PARAM0 = 0,
+	PARAM1,
 	PARAM2,
 	PARAM3,
 	PARAM4,
 	PARAM5,
 	PARAM6,
-	PARAM7
+	PARAM7,
+	PARAM8,
+	PARAM9,
+	PARAM10,
+	PARAM11,
+	PARAM12,
+	PARAM13
 };
+
 //#define PARAM1		0
 //#define PARAM2		1
 //#define PARAM3		2
@@ -87,6 +97,7 @@ typedef struct
 	char* tekst;
 	char* font;
 	int   ms;
+	int   parameters;
 }FUNCTIE;
 
 
@@ -95,6 +106,7 @@ extern int  LL_exe		(FUNCTIE* input);
 extern void UI_ERR_put	(int error);
 extern void UI_CH_rm	(char* buffer, char c, char rm);
 extern void UI_CH_rp	(char* buffer, char old_char, char new_char);
+extern int  UI_PARAMCNT (char* buffer, char sep);
 
 
 //--------------------------------------------------------------
