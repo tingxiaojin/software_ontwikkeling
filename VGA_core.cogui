@@ -18,7 +18,9 @@
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="4"/>
 <part id="0"/>
+<<<<<<< HEAD
 <part id="2"/>
 <part id="5"/>
 <part id="3"/>
@@ -26,10 +28,18 @@
 <part id="6"/>
 <part id="1"/>
 <part id="7"/>
+=======
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="5"/>
+<part id="6"/>
+>>>>>>> 9ae6e993bd5e9bdc24d95542520f61ca8aeb76e2
 </presentation>
 </folder>
 </info>
 </editorArea>
+<<<<<<< HEAD
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/Werkmap/Library/API/main.c" title="main.c" tooltip="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/Werkmap/Library/API/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/VGA_Core/main.c"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="442" selectionTopPixel="74"/>
@@ -62,6 +72,35 @@
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="includes.h" partName="includes.h" path="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/Werkmap/Library/API/includes.h" title="includes.h" tooltip="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/Werkmap/Library/API/includes.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/VGA_Core/ports/includes.h"/>
 <editorState selectionHorizontalPixel="0" selectionLength="18" selectionOffset="3171" selectionTopPixel="1346"/>
+=======
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="UI.h" partName="UI.h" path="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/REPOSITORY/UI.h" title="UI.h" tooltip="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/REPOSITORY/UI.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/VGA_Core/UI.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1320" selectionTopPixel="898"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="LL.c" partName="LL.c" path="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/REPOSITORY/LL.c" title="LL.c" tooltip="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/REPOSITORY/LL.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/VGA_Core/LL.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="8868" selectionTopPixel="5098"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="LL.h" partName="LL.h" path="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/REPOSITORY/LL.h" title="LL.h" tooltip="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/REPOSITORY/LL.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/VGA_Core/LL.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="66" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="API_DRAW.h" partName="API_DRAW.h" path="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/REPOSITORY/api/API_DRAW.h" title="API_DRAW.h" tooltip="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/REPOSITORY/api/API_DRAW.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/VGA_Core/api/API_DRAW.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="147" selectionTopPixel="24"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="UI.c" partName="UI.c" path="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/REPOSITORY/UI.c" title="UI.c" tooltip="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/REPOSITORY/UI.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/VGA_Core/UI.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2966" selectionTopPixel="1818"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="API_IO.h" partName="API_IO.h" path="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/REPOSITORY/api/API_IO.h" title="API_IO.h" tooltip="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/REPOSITORY/api/API_IO.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/VGA_Core/api/API_IO.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="671" selectionTopPixel="0"/>
+</editor>
+<editor id="org.coocox.builder.ui.editors.ConfigEditor" name="" partName="Configuration" title="Configuration" tooltip="" workbook="DefaultEditorWorkbook">
+<input factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory">&#x0A;<org.coocox.builder.ui.editors.ConfigEditor horizontalPosition="0" subTagIndex="0" verticalPosition="0"/>
+</input>
+>>>>>>> 9ae6e993bd5e9bdc24d95542520f61ca8aeb76e2
 </editor>
 </editors>
 <views>
@@ -69,10 +108,17 @@
 <viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="0">
 <expanded>
 <element path="/VGA_Core"/>
+<<<<<<< HEAD
 <element path="/VGA_Core/bitmaps"/>
 </expanded>
 <selection>
 <element path="/VGA_Core/Arial.h"/>
+=======
+<element path="/VGA_Core/api"/>
+</expanded>
+<selection>
+<element path="/VGA_Core/UI.c"/>
+>>>>>>> 9ae6e993bd5e9bdc24d95542520f61ca8aeb76e2
 </selection>
 </viewState>
 </view>
@@ -154,7 +200,11 @@
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 </folder>
 </info>
+<<<<<<< HEAD
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@1d9354c" ratio="0.67571884" ratioLeft="423" ratioRight="203" relationship="4" relative="org.eclipse.ui.internal.ViewStack@1d99ec7">
+=======
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1d9354c" ratio="0.79552716" ratioLeft="498" ratioRight="128" relationship="4" relative="org.eclipse.ui.internal.ViewStack@1d99ec7">
+>>>>>>> 9ae6e993bd5e9bdc24d95542520f61ca8aeb76e2
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -187,7 +237,6 @@
 </perspective>
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.coocox.codebugger.configuration.ui.Perspective" id="org.coocox.codebugger.configuration.perspective" label="CoDebugger"/>
-<alwaysOnActionSet id="org.coocox.builder.ui.actionSet"/>
 <alwaysOnActionSet id="org.coocox.component.ui.actionSet"/>
 <alwaysOnActionSet id="org.coocox.welcome.ui.actionSet"/>
 <alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
@@ -210,8 +259,8 @@
 <hide_menu_item_id id="org.coocox.builder.rcp.flashMenu"/>
 <hide_menu_item_id id="org.coocox.builder.ui.debug"/>
 <hide_menu_item_id id="org.coocox.builder.ui.showHelpViewAction"/>
-<hide_menu_item_id id="org.coocox.builder.ui.newFile"/>
 <hide_menu_item_id id="org.coocox.builder.ui.showHelpViewAction1"/>
+<hide_menu_item_id id="org.coocox.builder.ui.newFile"/>
 <hide_menu_item_id id="org.coocox.builder.ui.actions.ConfigurationAction"/>
 <hide_menu_item_id id="org.coocox.builder.ui.builderDefaultLayout"/>
 <hide_menu_item_id id="org.eclipse.jdt.ui.source.menu"/>
@@ -232,8 +281,8 @@
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <hide_toolbar_item_id id="org.coocox.builder.ui.build"/>
 <hide_toolbar_item_id id="org.coocox.welcome.ui.action.welcome"/>
-<hide_toolbar_item_id id="org.coocox.component.ui.ShowRepositoryAction"/>
 <hide_toolbar_item_id id="org.coocox.codebugger.configuration.coideProgramDownloadAction"/>
+<hide_toolbar_item_id id="org.coocox.component.ui.ShowRepositoryAction"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.eclipse.debug.ui.DebugView"/>
 <view id="org.coocox.codebugger.trace.ui.traceview"/>
@@ -283,6 +332,7 @@
 <workingSets/>
 <navigationHistory>
 <editors>
+<<<<<<< HEAD
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/VGA_Core/API_IO.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/VGA_Core/main.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/VGA_Core/API_DRAW.c"/>
@@ -440,6 +490,167 @@
 </item>
 <item active="true" historyLabel="API_DRAW.c" index="2">
 <position info="not_deleted" x="1880" y="0"/>
+=======
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/VGA_Core/UI.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/VGA_Core/UI.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/VGA_Core/LL.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/VGA_Core/api/API_DRAW.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/VGA_Core/api/API_IO.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/VGA_Core/LL.h"/>
+<editor factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="C:\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D\Software ontwikkeling\REPOSITORY\UI.h" project="VGA_Core"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/VGA_Core/UI.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/VGA_Core/LL.c"/>
+</editors>
+<item historyLabel="API_IO.h" index="4">
+<position info="not_deleted" x="671" y="0"/>
+</item>
+<item historyLabel="API_DRAW.h" index="3">
+<position info="not_deleted" x="123" y="0"/>
+</item>
+<item historyLabel="LL.h" index="5">
+<position info="not_deleted" x="66" y="0"/>
+</item>
+<item historyLabel="UI.h" index="1">
+<position/>
+</item>
+<item historyLabel="UI.c" index="0">
+<position/>
+</item>
+<item historyLabel="LL.c" index="2">
+<position info="not_deleted" x="8117" y="0"/>
+</item>
+<item historyLabel="UI.c" index="0">
+<position/>
+</item>
+<item historyLabel="API_DRAW.h" index="3">
+<position info="not_deleted" x="345" y="0"/>
+</item>
+<item historyLabel="LL.c" index="2">
+<position info="not_deleted" x="11202" y="0"/>
+</item>
+<item historyLabel="LL.c" index="2">
+<position info="not_deleted" x="9523" y="0"/>
+</item>
+<item historyLabel="LL.c" index="2">
+<position info="not_deleted" x="9506" y="0"/>
+</item>
+<item historyLabel="UI.c" index="0">
+<position/>
+</item>
+<item historyLabel="UI.h" index="1">
+<position/>
+</item>
+<item historyLabel="UI.c" index="0">
+<position info="not_deleted" x="4207" y="0"/>
+</item>
+<item historyLabel="LL.c" index="2">
+<position info="not_deleted" x="1581" y="11"/>
+</item>
+<item historyLabel="LL.c" index="2">
+<position info="not_deleted" x="10531" y="0"/>
+</item>
+<item historyLabel="LL.c" index="2">
+<position info="not_deleted" x="10998" y="0"/>
+</item>
+<item historyLabel="LL.c" index="2">
+<position info="not_deleted" x="10694" y="110"/>
+</item>
+<item historyLabel="LL.c" index="2">
+<position info="not_deleted" x="11166" y="0"/>
+</item>
+<item historyLabel="LL.c" index="2">
+<position info="not_deleted" x="4383" y="0"/>
+</item>
+<item historyLabel="LL.h" index="5">
+<position info="not_deleted" x="66" y="0"/>
+</item>
+<item historyLabel="API_DRAW.h" index="3">
+<position info="not_deleted" x="345" y="0"/>
+</item>
+<item historyLabel="API_IO.h" index="4">
+<position info="not_deleted" x="671" y="0"/>
+</item>
+<item historyLabel="LL.c" index="2">
+<position info="not_deleted" x="4383" y="0"/>
+</item>
+<item historyLabel="UI.h" index="1">
+<position/>
+</item>
+<item historyLabel="LL.c" index="2">
+<position info="not_deleted" x="9787" y="0"/>
+</item>
+<item historyLabel="UI.c" index="0">
+<position info="not_deleted" x="4175" y="0"/>
+</item>
+<item historyLabel="UI.h" index="1">
+<position/>
+</item>
+<item historyLabel="LL.c" index="2">
+<position info="not_deleted" x="8315" y="0"/>
+</item>
+<item historyLabel="LL.h" index="5">
+<position info="not_deleted" x="66" y="0"/>
+</item>
+<item historyLabel="UI.h" index="1">
+<position/>
+</item>
+<item historyLabel="LL.c" index="2">
+<position info="not_deleted" x="8960" y="0"/>
+</item>
+<item historyLabel="UI.c" index="0">
+<position info="not_deleted" x="2966" y="0"/>
+</item>
+<item historyLabel="LL.c" index="2">
+<position/>
+</item>
+<item historyLabel="UI.h" index="1">
+<position/>
+</item>
+<item historyLabel="LL.h" index="5">
+<position info="not_deleted" x="66" y="0"/>
+</item>
+<item historyLabel="LL.c" index="2">
+<position info="not_deleted" x="4114" y="0"/>
+</item>
+<item historyLabel="UI.h" index="6">
+<position info="not_deleted" x="1136" y="7"/>
+</item>
+<item historyLabel="UI.h" index="1">
+<position info="not_deleted" x="1172" y="0"/>
+</item>
+<item historyLabel="UI.h" index="1">
+<position info="not_deleted" x="1297" y="7"/>
+</item>
+<item historyLabel="UI.h" index="1">
+<position info="not_deleted" x="1197" y="6"/>
+</item>
+<item historyLabel="UI.h" index="1">
+<position info="not_deleted" x="1226" y="7"/>
+</item>
+<item historyLabel="UI.h" index="1">
+<position info="not_deleted" x="1211" y="7"/>
+</item>
+<item historyLabel="UI.h" index="1">
+<position info="not_deleted" x="1487" y="0"/>
+</item>
+<item historyLabel="UI.h" index="6">
+<position info="not_deleted" x="1301" y="0"/>
+</item>
+<item historyLabel="UI.h" index="1">
+<position info="not_deleted" x="1320" y="0"/>
+</item>
+<item historyLabel="LL.c" index="2">
+<position info="not_deleted" x="9114" y="0"/>
+</item>
+<item historyLabel="API_DRAW.h" index="3">
+<position info="not_deleted" x="136" y="13"/>
+</item>
+<item historyLabel="UI.c" index="7">
+<position info="not_deleted" x="2966" y="0"/>
+</item>
+<item active="true" historyLabel="LL.c" index="8">
+<position info="not_deleted" x="9114" y="0"/>
+>>>>>>> 9ae6e993bd5e9bdc24d95542520f61ca8aeb76e2
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -448,6 +659,7 @@
 <actionBarAdvisor/>
 </window>
 <mruList>
+<<<<<<< HEAD
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="includes.h" tooltip="VGA_Core/ports/includes.h">
 <persistable path="/VGA_Core/ports/includes.h"/>
 </file>
@@ -456,20 +668,42 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Arial.h" tooltip="VGA_Core/Arial.h">
 <persistable path="/VGA_Core/Arial.h"/>
+=======
+<file factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="UI.h" tooltip="C:\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D\Software ontwikkeling\REPOSITORY\UI.h">
+<persistable path="C:\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D\Software ontwikkeling\REPOSITORY\UI.h" project="VGA_Core"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="API_IO.h" tooltip="VGA_Core/api/API_IO.h">
-<persistable path="/VGA_Core/api/API_IO.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32_ub_vga_screen.h" tooltip="VGA_Core/ub_lib/stm32_ub_vga_screen.h">
+<persistable path="/VGA_Core/ub_lib/stm32_ub_vga_screen.h"/>
 </file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="delay.c" tooltip="VGA_Core/ports/delay.c">
+<persistable path="/VGA_Core/ports/delay.c"/>
+>>>>>>> 9ae6e993bd5e9bdc24d95542520f61ca8aeb76e2
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="delay.h" tooltip="VGA_Core/ports/delay.h">
+<persistable path="/VGA_Core/ports/delay.h"/>
+</file>
+<<<<<<< HEAD
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="API_DRAW.h" tooltip="VGA_Core/api/API_DRAW.h">
 <persistable path="/VGA_Core/api/API_DRAW.h"/>
 </file>
 <file factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory" id="org.coocox.builder.ui.editors.repository.RepositoryBrowser" name="Repository" tooltip="Repository">
 <persistable>&#x0A;<subPage/>
 </persistable>
+=======
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="includes.h" tooltip="VGA_Core/ports/includes.h">
+<persistable path="/VGA_Core/ports/includes.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="lcd.c" tooltip="VGA_Core/ports/lcd.c">
-<persistable path="/VGA_Core/ports/lcd.c"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="uart.c" tooltip="VGA_Core/ports/uart.c">
+<persistable path="/VGA_Core/ports/uart.c"/>
 </file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="misc.h" tooltip="VGA_Core/cmsis_lib/include/misc.h">
+<persistable path="/VGA_Core/cmsis_lib/include/misc.h"/>
+>>>>>>> 9ae6e993bd5e9bdc24d95542520f61ca8aeb76e2
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Arial.h" tooltip="VGA_Core/Arial.h">
+<persistable path="/VGA_Core/Arial.h"/>
+</file>
+<<<<<<< HEAD
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_gpio.h" tooltip="VGA_Core/cmsis_lib/include/stm32f4xx_gpio.h">
 <persistable path="/VGA_Core/cmsis_lib/include/stm32f4xx_gpio.h"/>
 </file>
@@ -493,6 +727,29 @@
 </file>
 <file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stdlib.h" tooltip="c:\program files (x86)\gnu tools arm embedded\5.4 2016q2\arm-none-eabi\include\stdlib.h">
 <persistable uri="file:/c:/program%20files%20(x86)/gnu%20tools%20arm%20embedded/5.4%202016q2/arm-none-eabi/include/stdlib.h"/>
+=======
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="API_IO.h" tooltip="VGA_Core/api/API_IO.h">
+<persistable path="/VGA_Core/api/API_IO.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="API_DRAW.h" tooltip="VGA_Core/api/API_DRAW.h">
+<persistable path="/VGA_Core/api/API_DRAW.h"/>
+</file>
+<file factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory" id="org.coocox.builder.ui.editors.repository.RepositoryBrowser" name="Repository" tooltip="Repository">
+<persistable>&#x0A;<subPage/>
+</persistable>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="lcd.c" tooltip="VGA_Core/ports/lcd.c">
+<persistable path="/VGA_Core/ports/lcd.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_gpio.h" tooltip="VGA_Core/cmsis_lib/include/stm32f4xx_gpio.h">
+<persistable path="/VGA_Core/cmsis_lib/include/stm32f4xx_gpio.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="startup_stm32f4xx.c" tooltip="VGA_Core/cmsis_boot/startup/startup_stm32f4xx.c">
+<persistable path="/VGA_Core/cmsis_boot/startup/startup_stm32f4xx.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="UI.c" tooltip="VGA_Core/UI.c">
+<persistable path="/VGA_Core/UI.c"/>
+>>>>>>> 9ae6e993bd5e9bdc24d95542520f61ca8aeb76e2
 </file>
 </mruList>
 </workbench>
