@@ -187,7 +187,7 @@ int main(void)
 
 	API_io_clearscherm(VGA_COL_BLUE);
 //	API_draw_line(200, 0, 0, 200, 50, 5, 0);
-//	API_draw_text(50,50,VGA_COL_WHITE,"The quick brown fox jumps over the lazy dog",NULL,1,1, VGA_COL_RED);
+	API_draw_text(0,50,VGA_COL_WHITE,"The quick brown fox jumps over the lazy dog",NULL,1,1, VGA_COL_RED);
 //	API_IO_clearscherm(VGA_COL_RED);
 
 //	API_IO_UART_puts("\n\rCode done\n\r");
@@ -213,7 +213,7 @@ char buffer[100];
 //API_IO_UART_putchar(buffer[0]);
 
   while(1)
-  {
+  {/*
 	  // put the code here
 //		API_IO_UART_gets(buffer);
 //		API_IO_UART_putchar(buffer[1]);
@@ -247,7 +247,7 @@ char buffer[100];
 //		  API_IO_UART_puts(string);
 //		  string[0] = '\0';
 //		  charcounter = 0;
-//	  }
+//	  }*/
   }
-  return 0;
+  //return 0;
 }
