@@ -208,7 +208,7 @@ int main(void)
 //	API_DRAW_bitmap(API_IO_SMILY_BOOS, 175, 70, FALSE);
 ////	API_draw_line(0, 0, 200, 200, VGA_COL_BLUE, 5);
 
-char buffer[100];
+//char buffer[100];
 
 //API_IO_UART_putchar(buffer[0]);
 
@@ -220,28 +220,28 @@ char buffer[100];
 //		API_IO_UART_puts(buffer);
 //		API_IO_UART_puts("\n\r");
 //		DELAY_s(1);
-	  API_io_UART_INT_gets(buffer);
-	  API_io_UART_puts(buffer);
-//	  API_io_clearscherm(atoi(buffer));
-	  API_io_rp_c(buffer, ',', '\0');
-	  int red 	= atoi(LL_STRING_param(buffer,0));
-	  int green = atoi(LL_STRING_param(buffer,1));
-	  int blue 	= atoi(LL_STRING_param(buffer,2));
-	  int bitval = (int)((((int)((float)red/(float)256*8))<<5) | (((int)((float)green/(float)256*8))<<2) | ((int)((float)blue/(float)256*4)));
-
-	  if (strlen(buffer)!= 0)
-	  {
-		  API_io_UART_puts("RGB:\t8-bit val: \n\r");
-		  API_io_UART_putint(red);
-		  API_io_UART_puts(" ");
-		  API_io_UART_putint(green);
-		  API_io_UART_puts(" ");
-		  API_io_UART_putint(blue);
-		  API_io_UART_puts(" \t0x");
-		  API_io_UART_putnum(bitval, 16);
-		  API_io_UART_puts("\n\r\n\r");
-		  API_io_clearscherm(bitval);
-	  }
+//	  API_io_UART_INT_gets(buffer);
+//	  API_io_UART_puts(buffer);
+////	  API_io_clearscherm(atoi(buffer));
+//	  API_io_rp_c(buffer, ',', '\0');
+//	  int red 	= atoi(LL_STRING_param(buffer,0));
+//	  int green = atoi(LL_STRING_param(buffer,1));
+//	  int blue 	= atoi(LL_STRING_param(buffer,2));
+//	  int bitval = (int)((((int)((float)red/(float)256*8))<<5) | (((int)((float)green/(float)256*8))<<2) | ((int)((float)blue/(float)256*4)));
+//
+//	  if (strlen(buffer)!= 0)
+//	  {
+//		  API_io_UART_puts("RGB:\t8-bit val: \n\r");
+//		  API_io_UART_putint(red);
+//		  API_io_UART_puts(" ");
+//		  API_io_UART_putint(green);
+//		  API_io_UART_puts(" ");
+//		  API_io_UART_putint(blue);
+//		  API_io_UART_puts(" \t0x");
+//		  API_io_UART_putnum(bitval, 16);
+//		  API_io_UART_puts("\n\r\n\r");
+//		  API_io_clearscherm(bitval);
+//	  }
 //	  if((string[strlen(string)-1]=='\n')&&(strlen(string) > 1))
 //	  {
 //		  API_IO_UART_puts(string);
