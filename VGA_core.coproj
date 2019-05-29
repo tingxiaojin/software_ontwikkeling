@@ -34,7 +34,7 @@
         <LocateLinkFile path="c:/coocox/coide/configuration/programdata/VGA_Core/arm-gcc-link.ld" type="0"/>
       </Link>
       <Output>
-        <Option name="OutputFileType" value="0"/>
+        <Option name="OutputFileType" value="1"/>
         <Option name="Path" value="./"/>
         <Option name="Name" value="VGA_API"/>
         <Option name="HEX" value="1"/>
