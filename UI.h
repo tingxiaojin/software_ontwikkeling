@@ -83,6 +83,7 @@ typedef struct
 	int starty4;
 	int starty5;
 	int starty6;
+
 	int eindx;
 	int eindy;
 	int breedte;

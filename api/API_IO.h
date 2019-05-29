@@ -44,7 +44,7 @@ extern void  API_io_UART_INT_init	(void);
 extern int   API_io_ERROR_inrange	(int startx, int starty, int eindx, int eindy);
 
 extern void  API_io_DELAY_us		(unsigned int x);
-extern void  API_io_DELAY_ms			(unsigned int x);
+extern void  API_io_DELAY_ms		(unsigned int x);
 extern void  API_io_DELAY_s 		(unsigned int x);
 
 extern void  API_io_UART_INT_gets	(char* buffer);

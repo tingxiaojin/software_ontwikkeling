@@ -248,7 +248,7 @@ int LL_exe(FUNCTIE* input)
 		API_io_UART_puts(" \n\r");
 #endif
 		if(input->parameters < PARAM4) return TOOLITTLEPARAM;
-		error = API_draw_text(input->startx, input->starty, LL_kstoki(input->kleur), input->tekst, (void*)0, 1, 1, -1);
+		error = API_draw_text(input->startx, input->starty, LL_kstoki(input->kleur), input->tekst, input->font, input->fontgrootte, input->fontstijl, input->achtergrond);
 		break;
 
 	case BITMAP:
