@@ -20,7 +20,6 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
-<part id="2"/>
 </presentation>
 </folder>
 </info>
@@ -28,10 +27,6 @@
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/tingx/Desktop/software_ontwikkeling-API_ting/main.c" title="main.c" tooltip="C:/Users/tingx/Desktop/software_ontwikkeling-API_ting/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/VGA_Core/main.c"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5361" selectionTopPixel="3060"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="Arial.h" partName="Arial.h" path="C:/Users/tingx/Desktop/software_ontwikkeling-API_ting/bitmaps/Arial.h" title="Arial.h" tooltip="C:/Users/tingx/Desktop/software_ontwikkeling-API_ting/bitmaps/Arial.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/VGA_Core/Arial.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="18" selectionOffset="132" selectionTopPixel="51"/>
 </editor>
 <editor activePart="true" focus="true" id="org.coocox.builder.ui.editors.ConfigEditor" name="" partName="Configuration" title="Configuration" tooltip="" workbook="DefaultEditorWorkbook">
 <input factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory">
@@ -41,14 +36,11 @@
 </editors>
 <views>
 <view id="org.coocox.builder.ui.views.ProjectView" partName="Project">
-<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="0">
+<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="9">
 <expanded>
 <element path="/VGA_Core"/>
 <element path="/VGA_Core/api"/>
 </expanded>
-<selection>
-<element path="/VGA_Core/api/API_IO.h"/>
-</selection>
 </viewState>
 </view>
 <view id="org.coocox.component.ui.ComponentView" partName="Components">
@@ -70,7 +62,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.coocox.builder.ui.editors.ConfigEditor" activePerspective="org.coocox.builder.perspective.CoBuilder">
+<perspectives activePart="org.coocox.builder.ui.views.ProjectView" activePerspective="org.coocox.builder.perspective.CoBuilder">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.coocox.builder.ui.PerspectiveCoBuilder" id="org.coocox.builder.perspective.CoBuilder" label="CooCox CoBuilder"/>
 <alwaysOnActionSet id="org.coocox.component.ui.actionSet"/>
@@ -272,13 +264,13 @@
 <editor factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.builder.ui.editors.ConfigEditor">
 <org.coocox.builder.ui.editors.ConfigEditor horizontalPosition="0" subTagIndex="3" verticalPosition="0"/>
 </editor>
+<editor factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.builder.ui.editors.ConfigEditor">
+<org.coocox.builder.ui.editors.ConfigEditor horizontalPosition="0" subTagIndex="3" verticalPosition="0"/>
+</editor>
+<editor factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.builder.ui.editors.ConfigEditor">
+<org.coocox.builder.ui.editors.ConfigEditor horizontalPosition="0" subTagIndex="3" verticalPosition="0"/>
+</editor>
 </editors>
-<item historyLabel="API_IO.h" index="4">
-<position info="not_deleted" x="1315" y="7"/>
-</item>
-<item historyLabel="API_IO.c" index="0">
-<position info="not_deleted" x="4521" y="0"/>
-</item>
 <item historyLabel="API_IO.h" index="4">
 <position info="not_deleted" x="1315" y="7"/>
 </item>
@@ -418,7 +410,9 @@
 <position info="not_deleted" x="5361" y="0"/>
 </item>
 <item historyLabel="Configuration" index="9"/>
-<item active="true" historyLabel="Configuration" index="10"/>
+<item historyLabel="Configuration" index="10"/>
+<item historyLabel="Configuration" index="11"/>
+<item active="true" historyLabel="Configuration" index="12"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
