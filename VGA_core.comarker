@@ -105,6 +105,7 @@
 <attrib name="org.eclipse.debug.core.enabled" value="true"/>
 </marker>
 </breakpoint>
+<<<<<<< HEAD
 <breakpoint enabled="true" persistant="true" registered="true">
 <resource path="/VGA_Core/API_IO.c" type="1"/>
 <marker lineNumber="210" type="org.eclipse.cdt.debug.core.cLineBreakpointMarker">
@@ -125,4 +126,6 @@
 <attrib name="org.eclipse.debug.core.enabled" value="true"/>
 </marker>
 </breakpoint>
+=======
+>>>>>>> cb3e681d534bcc23c78a492c6e7c8b833057d756
 </breakpoints>

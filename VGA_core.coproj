@@ -34,7 +34,7 @@
         <LocateLinkFile path="c:/coocox/coide/configuration/programdata/VGA_Core/arm-gcc-link.ld" type="0"/>
       </Link>
       <Output>
-        <Option name="OutputFileType" value="0"/>
+        <Option name="OutputFileType" value="1"/>
         <Option name="Path" value="./"/>
         <Option name="Name" value="VGA_API"/>
         <Option name="HEX" value="1"/>
@@ -88,12 +88,14 @@
     <File name="ports/uart.h" path="ports/uart.h" type="1"/>
     <File name="ports/delay.c" path="ports/delay.c" type="1"/>
     <File name="bitmaps/smiley_boos.h" path="bitmaps/smiley_boos.h" type="1"/>
-    <File name="Arial.h" path="bitmaps/Arial.h" type="1"/>
     <File name="cmsis_boot" path="" type="2"/>
     <File name="cmsis_lib/include/stm32f4xx_syscfg.h" path="cmsis_lib/include/stm32f4xx_syscfg.h" type="1"/>
     <File name="bitmaps" path="" type="2"/>
     <File name="cmsis_lib/include/stm32f4xx_usart.h" path="cmsis_lib/include/stm32f4xx_usart.h" type="1"/>
+<<<<<<< HEAD
     <File name="cmsis_boot/startup" path="" type="2"/>
+=======
+>>>>>>> cb3e681d534bcc23c78a492c6e7c8b833057d756
     <File name="cmsis/core_cm4_simd.h" path="cmsis/core_cm4_simd.h" type="1"/>
     <File name="cmsis_boot/stm32f4xx.h" path="cmsis_boot/stm32f4xx.h" type="1"/>
     <File name="api/API_IO.h" path="api/API_IO.h" type="1"/>
@@ -121,6 +123,11 @@
     <File name="cmsis/core_cmInstr.h" path="cmsis/core_cmInstr.h" type="1"/>
     <File name="bitmaps/pijl_links.h" path="bitmaps/pijl_links.h" type="1"/>
     <File name="ub_lib" path="" type="2"/>
+<<<<<<< HEAD
+=======
+    <File name="bitmaps/Consolas.h" path="bitmaps/Consolas.h" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_exti.h" path="cmsis_lib/include/stm32f4xx_exti.h" type="1"/>
+>>>>>>> cb3e681d534bcc23c78a492c6e7c8b833057d756
     <File name="cmsis_lib/source/stm32f4xx_exti.c" path="cmsis_lib/source/stm32f4xx_exti.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_exti.h" path="cmsis_lib/include/stm32f4xx_exti.h" type="1"/>
     <File name="cmsis_boot/system_stm32f4xx.c" path="cmsis_boot/system_stm32f4xx.c" type="1"/>
@@ -135,6 +142,7 @@
     <File name="ports/uart.c" path="ports/uart.c" type="1"/>
     <File name="ub_lib/stm32_ub_vga_screen.h" path="ub_lib/stm32_ub_vga_screen.h" type="1"/>
     <File name="syscalls" path="" type="2"/>
+    <File name="bitmaps/Arial.h" path="bitmaps/Arial.h" type="1"/>
     <File name="ports/includes.h" path="includes.h" type="1"/>
     <File name="cmsis_lib/include/misc.h" path="cmsis_lib/include/misc.h" type="1"/>
     <File name="cmsis_lib/include" path="" type="2"/>

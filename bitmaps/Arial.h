@@ -1,10 +1,69 @@
+/**
+  ******************************************************************************
+  * @file    ARIAL.h
+  * @author  SOFT_ONT groep 7
+  * @version V1.0.0
+  * @date    28-05-2019
+  * @brief   In deze file staan de stringarrays van het font "arial".
+  * 		 Er is per fontstyle en grootte een bitmaparray en een
+  * 		 description array bijgevoegd.
+  ******************************************************************************
+  * @attention
+  *
+  * De volgende fonstylen en groottes zijn haalbaar:
+  * arial standaard 8pt
+  * arial bold		8pt
+  * arial cursief	8pt
+  * arial standaard 16pt
+  * arial bold		16pt
+  * arial cursief	16pt
+  ****************************************************************
+  * array:					state:
+  * S_arial_8ptBitmaps		0
+  * S_arial_8ptDescription	0
+  * B_arial_8ptBitmaps		1
+  * B_arial_8ptDescription	1
+  * C_arial_8ptBitmaps		2
+  * C_arial_8ptDescription	2
+  *
+  * S_arial_16ptBitmaps		3
+  * S_arial_16ptDescription	3
+  * B_arial_16ptBitmaps		4
+  * B_arial_16ptDescription	4
+  * C_arial_16ptBitmaps		5
+  * C_arial_16ptDescription	5
+  *
+  ******************************************************************************
+  */
 
+/* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __ARIAL_H
 #define __ARIAL_H
 
+/** @addtogroup API
+  * @{
+  */
+
+/** @defgroup API_FONT
+  * @brief bitmaparray voor font arial
+  * @{
+  */
+
+/** @defgroup FONT_ARRAY_SIZE
+  * @{
+  */
 #define TEKENS 94
 #define GEGEVENS 2
 
+/**
+  * @}
+  */
+
+/** @defgroup FONT_ARIAL
+  * @{
+  */
+
+/*bitmaparray voor arial standaard 8pt*/
 const uint8_t S_arial_8ptBitmaps[]={
 		// @0 ' ' (0 pixels wide)
 			0x00, //
@@ -1135,6 +1194,7 @@ const uint8_t S_arial_8ptBitmaps[]={
 			0x80, // #
 };
 
+/*descriptionarray voor arial standaard 8pt*/
 const int S_arial_8ptDescriptors[TEKENS][GEGEVENS]={
 {1,0}, //[0][ ]
 {1,10}, //[1][!]
@@ -1232,6 +1292,7 @@ const int S_arial_8ptDescriptors[TEKENS][GEGEVENS]={
 {1,970}, //[93][}]
 };
 
+/*bitmaparray voor arial bold 8pt*/
 const uint8_t B_arial_8ptBitmaps[]={
 		// @0 ' ' (0 pixels wide)
 		0x00, //
@@ -2456,6 +2517,7 @@ const uint8_t B_arial_8ptBitmaps[]={
 		0xC0, // ##
 };
 
+/*descriptionarray voor arial bold 8pt*/
 const int B_arial_8ptDescriptors[TEKENS][GEGEVENS]={
 		{1,0}, //[0][ ]
 		{1,11}, //[1][!]
@@ -2553,6 +2615,7 @@ const int B_arial_8ptDescriptors[TEKENS][GEGEVENS]={
 		{1,1078}, //[93][}]
 };
 
+/*bitmaparray voor arial cursief 8pt*/
 const uint8_t C_arial_8ptBitmaps[]={
 		// @0 ' ' (0 pixels wide)
 		0x00, //
@@ -3871,6 +3934,7 @@ const uint8_t C_arial_8ptBitmaps[]={
 		0x00, //
 };
 
+/*descriptionarray voor arial cursief 8pt*/
 const int C_arial_8ptDescriptors[TEKENS][GEGEVENS]={
 {1,0}, //[0][ ]
 {1,12}, //[1][!]
@@ -3967,10 +4031,8 @@ const int C_arial_8ptDescriptors[TEKENS][GEGEVENS]={
 {1,1152}, //[92][|]
 {1,1164}, //[93][}]
 };
-////////////////////////////////////////////////////////////////////
-//Ander lettertype
-///////////////////////////////////////////////////////////////////
 
+/*bitmaparray voor arial standaard 16pt*/
 const uint8_t S_arial_16ptBitmaps[]={
 		// @0 ' ' (0 pixels wide)
 			0x00, //
@@ -6135,6 +6197,7 @@ const uint8_t S_arial_16ptBitmaps[]={
 			0x00, //
 };
 
+/*descriptionarray voor arial standaard 16pt*/
 const int S_arial_16ptDescriptors[TEKENS][GEGEVENS]={
 {1,0}, //[0][ ]
 {1,21}, //[1][!]
@@ -6232,6 +6295,7 @@ const int S_arial_16ptDescriptors[TEKENS][GEGEVENS]={
 {1,3360}, //[93][}]
 };
 
+/*bitmaparray voor arial bold 16pt*/
 const uint8_t B_arial_16ptBitmaps[]={
 		// @0 ' ' (0 pixels wide)
 		0x00, //
@@ -8396,6 +8460,7 @@ const uint8_t B_arial_16ptBitmaps[]={
 		0x00, //
 };
 
+/*descriptionarray voor arial bold 16pt*/
 const int B_arial_16ptDescriptors[TEKENS][GEGEVENS]={
 		{1,0}, //[0][ ]
 		{1,21}, //[1][!]
@@ -8493,6 +8558,7 @@ const int B_arial_16ptDescriptors[TEKENS][GEGEVENS]={
 		{1,3402}, //[93][}]
 };
 
+/*bitmaparray voor arial cursief 16pt*/
 const uint8_t C_arial_16ptBitmaps[]={
 		// @0 ' ' (0 pixels wide)
 			0x00, //
@@ -10657,6 +10723,7 @@ const uint8_t C_arial_16ptBitmaps[]={
 			0x00, //
 };
 
+/*descriptionarray voor arial cursief 16pt*/
 const int C_arial_16ptDescriptors[TEKENS][GEGEVENS]={
 		{1,0}, //[0][ ]
 		{1,21}, //[1][!]
@@ -10754,5 +10821,15 @@ const int C_arial_16ptDescriptors[TEKENS][GEGEVENS]={
 		{1,3423}, //[93][}]
 };
 
-#endif
+/**
+  * @}
+  */
 
+#endif/*__ARIAL_H */
+
+/**
+  * @}
+  */
+/**
+  * @}
+  */

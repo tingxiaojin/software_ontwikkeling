@@ -55,16 +55,12 @@
 *********************************************************************************************************
 */
 
-//#include  "os_cpu.h"
-//#include  "os_cfg.h"
 
 /*
 *********************************************************************************************************
 *                                                 OS
 *********************************************************************************************************
 */
-
-//#include  "ucos_ii.h"
 
 #include "misc.h"
 #include "stm32f4xx.h"
@@ -85,10 +81,7 @@
 */
 
 #include "uart.h"
-//#include "lcd.h"
 #include "delay.h"
-//#include "Arial.h"
-
 
 //--------------------------------------------------------------
 // Defines
@@ -110,6 +103,8 @@
 
 #define UART_BUFF	100
 
+#define DEFAULT		0xFF
+
 enum
 {
 	FOUTX =1,
@@ -121,7 +116,6 @@ enum
 
 extern char string[100];
 extern int  charcounter;
-//extern unsigned char* pijl_links;
 
 #endif
 
