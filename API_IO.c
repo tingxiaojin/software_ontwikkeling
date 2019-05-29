@@ -190,43 +190,27 @@ void  API_io_rm_c_ut(char* buffer, char c, char stopc)
 
 int STRING_check(char* input, char* font)
 {
-	int i;
-	for(i=0;*(input+i)!='\0'; i++)
+	int i = 0;
+	int buffer;
+	/*for(i=0;*(input+i)!='\0'; i++)
 		*(input+i) = toupper(*(input+i));
 
 	if(!(strncmp(input,font,strlen(font)))==TRUE)
 		return TRUE;
 	else
-		return FALSE;
-}
-
-/*int API_io_putc(char c, int x, int y, int kleur, int achtergrond)
-{
-	int i,j,k;//, error;
-	int start, stop;
-
-
-	c = c-' ';
-	start = C_arial_16ptDescriptors[(int)c][1];
-	stop  = (c == TEKENS-1)? sizeof(C_arial_16ptBitmaps):C_arial_16ptDescriptors[(int)c+1][1];
-
-	for(i=0; start<stop; start+=C_arial_16ptDescriptors[(int)c][0], i++)
+		return FALSE;*/
+	while(input[i] != '\0')
 	{
-		for(k=0; k<C_arial_16ptDescriptors[(int)c][0]; k++)
-		{
-			for(j=0; j<BIT; j++)
-			{
-				int test = 0x80>>j & C_arial_16ptBitmaps[start+k];
-				if(test)
-					UB_VGA_SetPixel((BIT*k)+j+x, y, kleur);
-				else if(achtergrond != -1)
-					UB_VGA_SetPixel((BIT*k)+j+x, y, achtergrond);
-			}
-		}
-		y++;
+		if(input[i] == font[i])
+			buffer = 1;
+		else
+			buffer = 0;
+		i++;
 	}
-	return 0;
-}*/
+
+	return buffer;
+
+}
 
 
 int API_io_tekst(char* zin, int x_lup, int y_lup, int kleur, char* font, int fontgrootte, int fontstyle, int reserved)
