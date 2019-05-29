@@ -1,5 +1,6 @@
 #include "includes.h"
 #include "Arial.h"
+#include "Consolas.h"
 
 
 ///////////////////////////////////////////
@@ -189,24 +190,40 @@ void  API_io_rm_c_ut(char* buffer, char c, char stopc)
 	}
 }
 
+int STRING_check(char* input, char* font)
+{
+	int i;
+	for(i=0;*(input+i)!='\0'; i++)
+		*(input+i) = toupper(*(input+i));
+
+	if(!(strncmp(input,font,strlen(font)))==TRUE)
+		return TRUE;
+	else
+		return FALSE;
+}
+
 int API_io_putc(char c, int x, int y, int kleur, int achtergrond)
 {
 	int i,j,k;//, error;
 	int start, stop;
 
-	c = c-' ';
-	start = arial_16ptDescriptors[(int)c][1];
-	stop  = (c == TEKENS-1)? sizeof(arial_16ptDescriptors):arial_16ptDescriptors[(int)c+1][1];
 
-	for(i=0; start<stop; start+=arial_16ptDescriptors[(int)c][0], i++)
+	c = c-' ';
+	start = C_arial_16ptDescriptors[(int)c][1];
+	stop  = (c == TEKENS-1)? sizeof(C_arial_16ptBitmaps):C_arial_16ptDescriptors[(int)c+1][1];
+
+	for(i=0; start<stop; start+=C_arial_16ptDescriptors[(int)c][0], i++)
 	{
-		for(k=0; k<arial_16ptDescriptors[(int)c][0]; k++)
+		for(k=0; k<C_arial_16ptDescriptors[(int)c][0]; k++)
 		{
 			for(j=0; j<BIT; j++)
-				if(0x80>>j & arial_16ptBitmaps[start+k])
+			{
+				int test = 0x80>>j & C_arial_16ptBitmaps[start+k];
+				if(test)
 					UB_VGA_SetPixel((BIT*k)+j+x, y, kleur);
 				else if(achtergrond != -1)
 					UB_VGA_SetPixel((BIT*k)+j+x, y, achtergrond);
+			}
 		}
 		y++;
 	}
@@ -216,19 +233,31 @@ int API_io_putc(char c, int x, int y, int kleur, int achtergrond)
 
 int API_io_puts(char* zin, int x_lup, int y_lup, int kleur, char* font, int fontgrootte, int fonststyle, int reserved)
 {
+
 	int i, error=0;
 	int x = x_lup;
 	int y = y_lup;
 
 	error = API_io_putc(*(zin), x, y, kleur, reserved);
+
 	for(i=1; i<strlen(zin); i++)
 	{
-		error = API_io_ERROR_inrange(x, y, x+(8*arial_16ptDescriptors[zin[i-1]-' '][0]), y+20);
-		if (error == FOUTX){ y+=20;x=x_lup-(8*arial_16ptDescriptors[zin[i-1]-' '][0]);}
+		error = API_io_ERROR_inrange(x, y, x+(8*C_arial_16ptDescriptors[zin[i-1]-' '][0]), y+20);
+		if 		(error == FOUTX){ y+=20;x=x_lup-(8*C_arial_16ptDescriptors[zin[i-1]-' '][0]);}
+		else if	(error == FOUTY) return error;
+
+		error |=API_io_putc(*(zin+i), x+=(8*C_arial_16ptDescriptors[zin[i-1]-' '][0]), y, kleur, reserved);
+	}
+
+	//Hier moet je iets doen
+	/*for(i=1; i<strlen(zin); i++)
+	{
+		error = API_io_ERROR_inrange(x, y, x+(8*arial_12ptDescriptors[zin[i-1]-' '][0]), y+20);
+		if (error == FOUTX){ y+=20;x=x_lup-(8*arial_12ptDescriptors[zin[i-1]-' '][0]);}
 		else if(error == FOUTY) return error;
 
-		error +=API_io_putc(*(zin+i), x+=(8*arial_16ptDescriptors[zin[i-1]-' '][0]), y, kleur, reserved);
-	}
+		error +=API_io_putc(*(zin+i), x+=(8*arial_12ptDescriptors[zin[i-1]-' '][0]), y, kleur, reserved);
+	}*/
 	return error;
 }
 
