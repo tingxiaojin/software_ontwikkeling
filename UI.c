@@ -1,3 +1,17 @@
+/**
+  ******************************************************************************
+  * @file    UI.c
+  * @author  SOFT_ONT groep 7
+  * @version V1.0.5
+  * @date    29-5-2019
+  * @brief   Dit bestand biedt string functies om de volgende GUI
+  *          functionaliteiten te regelen (UI):
+  *           - Error handling
+  *           - Parameter teller
+  *           - String opmaken
+  */
+
+//--------------------------------------------------------------
 
 
 #include "UI.h"
@@ -5,8 +19,25 @@
 #include "API_IO.h"
 #include "API_DRAW.h"
 
+/** @addtogroup UI
+  * @brief UI driver modules
+  * @{
+  */
+
+/** @addtogroup Error
+  * @brief Error functions
+  * @{
+  */
 
 
+
+
+/**
+  * @brief  Geeft error-code en betekenis aan gebruiker
+  * 		terug via de UART.
+  * @param  error: integer waarde van een error code.
+  * @retval None
+  */
 void UI_ERR_put(int error)
 {
 	if (!error) return;
@@ -48,12 +79,24 @@ void UI_ERR_put(int error)
 	}
 	API_io_UART_puts("\n\r");
 }
+/**
+  * @}
+  */
 
 
-/*
- * @Note: counts the num of param, seperated by the sep character
- * @Return: num of parameters in function
- */
+/** @addtogroup StringUI
+  * @brief String functions
+  * @{
+  */
+
+/**
+  * @brief  Telt het aantal string-delen, gescheiden door sep.
+  * @param  buffer: Pointer naar een string waarvan de parameters
+  * 		   geteld moeten worden.
+  * @param  sep: Char met de waarde waarmee de string gescheiden
+  * 		   moet worden.
+  * @retval Num of parameters in function.
+  */
 int UI_PARAMCNT(char* buffer, char sep)
 {
 	int paramcnt, i;
@@ -68,7 +111,17 @@ int UI_PARAMCNT(char* buffer, char sep)
 	return paramcnt;
 }
 
-// replaces a character in a buffer with another character
+
+
+/**
+  * @brief  Vervangt old_char in een string met new_char
+  * @param  buffer: Pointer naar een string waarvan de parameters
+  * 		   geteld moeten worden.
+  * @param  old_char: Char-waarde in de string die vervangen moet
+  * 		   worden met new_char.
+  * @param  new_char: Char-waarde waarmee old_char vervangen wordt.
+  * @retval None
+  */
 void UI_CH_rp(char* buffer, char old_char, char new_char)
 {
 	int i;
@@ -86,6 +139,19 @@ void UI_CH_rp(char* buffer, char old_char, char new_char)
 	}
 }
 
+
+
+
+/**
+  * @brief 	Verwijderd een character in een string.
+  * @param 	buffer: Pointer naar een string waarvan de character
+  * 		verwijderd moet worden.
+  * @param 	c: Char-waarde in de string die verwijderd moet
+  * 		worden.
+  * @param 	stopc: Char-waarde waar de functie moet stoppen met
+  * 		verwijderen.
+  * @retval None
+  */
 void UI_CH_rm(char* buffer, char c, char stopc)
 {
 	int i, j=0;
@@ -104,6 +170,15 @@ void UI_CH_rm(char* buffer, char c, char stopc)
 		buffer++;
 	}
 }
+
+/**
+  * @}
+  */
+
+/**
+  * @}
+  */
+
 
 int main(void)
 {
@@ -131,44 +206,33 @@ int main(void)
 //		// if input = empty
 //		if(buffer[0] == CR)
 //		{
-//			error = STR_LEEG;
+//UI_STR_CR	error = STR_LEEG;
 //			UI_ERR_put(error);
 //			continue;
 //		}
 
-//		API_io_rm_c_ut	(buffer, ' ', ST);	// remove spaces until first ST found
-//		API_io_rp_c		(buffer, ',', ST);	// replace comma's (',') with a ST ('\0')
-
-		UI_CH_rm		  (buffer, ' ', ST);			// remove spaces until first ST found
-		input.parameters = UI_PARAMCNT	(buffer, ',');	// count the parameters
-		UI_CH_rp		  (buffer, ',', ST); 			// replace comma's (',') with a ST ('\0')
-
-		API_io_UART_puts("\n\rBuffer : ");
-		API_io_UART_puts(buffer);
-		API_io_UART_puts("\n\r");
+		UI_CH_rm		  (buffer, UI_STR_SPAT , UI_STR_T);			// remove spaces until first ST found
+		input.parameters = UI_PARAMCNT(buffer, UI_STR_KOMMA);		// count the parameters
+		UI_CH_rp		  (buffer, UI_STR_KOMMA, UI_STR_T); 		// replace comma's (',') with a ST ('\0')
 
 		if (LL_STRING_check(buffer,"LIJN"))
 		{
 			LL_FIG_init(buffer, &input, LIJN);
-//			memset(buffer, 0, sizeof(buffer));
 			error = LL_exe(&input);
 		}
 		else if (LL_STRING_check(buffer,"RECHTHOEK"))
 		{
 			LL_FIG_init(buffer, &input, RECHTHOEK);
-//			memset(buffer, 0, sizeof(buffer));
 			error = LL_exe(&input);
 		}
 		else if (LL_STRING_check(buffer,"BITMAP"))
 		{
 			LL_FIG_init(buffer, &input, BITMAP);
-//			memset(buffer, 0, sizeof(buffer));
 			error = LL_exe(&input);
 		}
 		else if (LL_STRING_check(buffer,"CLEARSCHERM"))
 		{
 			LL_FIG_init(buffer, &input, CLEARSCHERM);
-//			memset(buffer, 0, sizeof(buffer));
 			error = LL_exe(&input);
 		}
 		else if (LL_STRING_check(buffer,"WACHT"))
@@ -180,38 +244,32 @@ int main(void)
 		else if (LL_STRING_check(buffer,"TEKST"))
 		{
 			LL_FIG_init(buffer, &input, TEKST);
-//			memset(buffer, 0, sizeof(buffer));
 			error = LL_exe(&input);
 		}
 		else if (LL_STRING_check(buffer,"FIGUUR"))
 		{
 			LL_FIG_init(buffer, &input, FIGUUR);
-//			memset(buffer, 0, sizeof(buffer));
 			error = LL_exe(&input);
 		}
 		else if (LL_STRING_check(buffer,"NL-FLAG"))
 		{
 			LL_FIG_init(buffer, &input, NLFLAG);
-//			memset(buffer, 0, sizeof(buffer));
 			error = LL_exe(&input);
 		}
 		else if (LL_STRING_check(buffer,"IT-FLAG"))
 		{
 			LL_FIG_init(buffer, &input, ITFLAG);
-//			memset(buffer, 0, sizeof(buffer));
 			error = LL_exe(&input);
 		}
 		else if (LL_STRING_check(buffer,"TOREN"))
 		{
 			LL_FIG_init(buffer, &input, TOREN);
-//			memset(buffer, 0, sizeof(buffer));
 			error = LL_exe(&input);
 		}
 		else
 			error = INPUTERROR;
 
 		UI_ERR_put(error);
-//		memset(buffer, 0, sizeof(buffer));
-
 	}
 }
+

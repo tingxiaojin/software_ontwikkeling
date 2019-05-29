@@ -1,7 +1,4 @@
 
-
-
-
 #ifndef API_DRAW_H
 #define API_DRAW_H
 
