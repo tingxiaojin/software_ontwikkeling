@@ -242,10 +242,10 @@ int API_io_puts(char* zin, int x_lup, int y_lup, int kleur, char* font, int font
 	for(i=1; i<strlen(zin); i++)
 	{
 		error = API_io_ERROR_inrange(x, y, x+(8*C_arial_16ptDescriptors[zin[i-1]-' '][0]), y+20);
-		if (error == FOUTX){ y+=20;x=x_lup-(8*C_arial_16ptDescriptors[zin[i-1]-' '][0]);}
-		else if(error == FOUTY) return error;
+		if 		(error == FOUTX){ y+=20;x=x_lup-(8*C_arial_16ptDescriptors[zin[i-1]-' '][0]);}
+		else if	(error == FOUTY) return error;
 
-		error +=API_io_putc(*(zin+i), x+=(8*C_arial_16ptDescriptors[zin[i-1]-' '][0]), y, kleur, reserved);
+		error |=API_io_putc(*(zin+i), x+=(8*C_arial_16ptDescriptors[zin[i-1]-' '][0]), y, kleur, reserved);
 	}
 
 	//Hier moet je iets doen
