@@ -122,7 +122,6 @@ void USART2_IRQHandler(void)
 		USART_ClearITPendingBit(USART2, USART_IT_RXNE);
 		char c = USART2->DR & 0xFF;
 
-		// als 13 of kleiner ontvangen, maak string 1 byte kleiner
 		if(c == BS)
 		{
 			if(charcounter>0)

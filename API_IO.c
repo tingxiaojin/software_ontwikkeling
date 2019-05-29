@@ -57,7 +57,7 @@ void API_io_DELAY_s(unsigned int x)
 ///////////////////////////////////////////
 void API_io_UART_INT_gets(char* buffer)
 {
-	if((string[strlen(string)-1]=='\n')&&(strlen(string) > 1))
+	if((string[strlen(string)-1]=='\n')&&(strlen(string) > 0))
 	{
 //		API_io_UART_puts(string);
 		strcpy(buffer, string);
