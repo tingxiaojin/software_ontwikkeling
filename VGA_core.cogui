@@ -26,15 +26,6 @@
 </folder>
 </info>
 </editorArea>
-<<<<<<< HEAD
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/REPOSITORY/main.c" title="main.c" tooltip="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/REPOSITORY/main.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/VGA_Core/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5077" selectionTopPixel="3735"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="API_IO.c" partName="API_IO.c" path="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/REPOSITORY/API_IO.c" title="API_IO.c" tooltip="C:/Users/Raymo/Documents/School huiswerk/Jaar 3/Blok D/Software ontwikkeling/REPOSITORY/API_IO.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/VGA_Core/API_IO.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="45" selectionTopPixel="0"/>
-=======
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="API_DRAW.c" partName="API_DRAW.c" path="C:/Users/tingx/Desktop/School/6D/DEMO=ZOOI/API_DRAW.c" title="API_DRAW.c" tooltip="C:/Users/tingx/Desktop/School/6D/DEMO=ZOOI/API_DRAW.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/VGA_Core/API_DRAW.c"/>
 <editorState selectionHorizontalPixel="0" selectionLength="55" selectionOffset="5578" selectionTopPixel="2127"/>
@@ -42,7 +33,6 @@
 <editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="API_IO.c" partName="API_IO.c" path="C:/Users/tingx/Desktop/School/6D/DEMO=ZOOI/API_IO.c" title="API_IO.c" tooltip="C:/Users/tingx/Desktop/School/6D/DEMO=ZOOI/API_IO.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/VGA_Core/API_IO.c"/>
 <editorState selectionHorizontalPixel="0" selectionLength="191" selectionOffset="18025" selectionTopPixel="9656"/>
->>>>>>> cb3e681d534bcc23c78a492c6e7c8b833057d756
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="uart.c" partName="uart.c" path="C:/Users/tingx/Desktop/School/6D/DEMO=ZOOI/ports/uart.c" title="uart.c" tooltip="C:/Users/tingx/Desktop/School/6D/DEMO=ZOOI/ports/uart.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/VGA_Core/ports/uart.c"/>
@@ -56,12 +46,6 @@
 </editors>
 <views>
 <view id="org.coocox.builder.ui.views.ProjectView" partName="Project">
-<<<<<<< HEAD
-<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="0">
-<expanded>
-<element path="/VGA_Core"/>
-</expanded>
-=======
 <viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="3">
 <expanded>
 <element path="/VGA_Core"/>
@@ -71,7 +55,6 @@
 <selection>
 <element path="/VGA_Core/bitmaps/pijl_omlaag.h"/>
 </selection>
->>>>>>> cb3e681d534bcc23c78a492c6e7c8b833057d756
 </viewState>
 </view>
 <view id="org.coocox.component.ui.ComponentView" partName="Components">
@@ -120,8 +103,8 @@
 <hide_menu_item_id id="org.coocox.codebugger.configuration.showPeripheralsAction"/>
 <hide_menu_item_id id="org.coocox.codebugger.configuration.showVariablesAction"/>
 <hide_menu_item_id id="org.coocox.builder.ui.openProjectExplorerAction"/>
-<hide_menu_item_id id="org.coocox.codebugger.trace.actions.ShowTraceControlAction"/>
 <hide_menu_item_id id="org.eclipse.debug.ui.commands.TerminateAndRelaunch"/>
+<hide_menu_item_id id="org.coocox.codebugger.trace.actions.ShowTraceControlAction"/>
 <hide_menu_item_id id="org.coocox.codebugger.configuration.showRegistersAction"/>
 <hide_toolbar_item_id id="org.eclipse.cdt.debug.internal.ui.actions.ToggleInstructionStepModeAction"/>
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
@@ -156,11 +139,7 @@
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 </folder>
 </info>
-<<<<<<< HEAD
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@1d9354c" ratio="0.8642173" ratioLeft="541" ratioRight="85" relationship="4" relative="org.eclipse.ui.internal.ViewStack@1d99ec7">
-=======
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@1d9354c" ratio="0.16613418" ratioLeft="104" ratioRight="522" relationship="4" relative="org.eclipse.ui.internal.ViewStack@1d99ec7">
->>>>>>> cb3e681d534bcc23c78a492c6e7c8b833057d756
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
@@ -289,15 +268,6 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/VGA_Core/API_IO.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/VGA_Core/API_DRAW.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/VGA_Core/api/API_IO.h"/>
-<<<<<<< HEAD
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/VGA_Core/main.c"/>
-</editors>
-<item historyLabel="API_IO.c" index="0">
-<position info="not_deleted" x="4895" y="12"/>
-</item>
-<item historyLabel="Arial.h" index="2">
-<position info="not_deleted" x="38021" y="11"/>
-=======
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/VGA_Core/ports/includes.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/VGA_Core/api/API_DRAW.h"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/VGA_Core/bitmaps/pijl_omlaag.h"/>
@@ -313,7 +283,6 @@
 </editors>
 <item historyLabel="API_IO.h" index="2">
 <position info="not_deleted" x="985" y="0"/>
->>>>>>> cb3e681d534bcc23c78a492c6e7c8b833057d756
 </item>
 <item historyLabel="API_IO.c" index="0">
 <position info="not_deleted" x="17253" y="3"/>
@@ -456,17 +425,9 @@
 <item historyLabel="API_IO.c" index="10">
 <position info="not_deleted" x="21871" y="0"/>
 </item>
-<<<<<<< HEAD
-<item historyLabel="API_IO.c" index="0">
-<position info="not_deleted" x="4767" y="0"/>
-=======
 <item historyLabel="Configuration" index="12"/>
 <item active="true" historyLabel="API_IO.c" index="10">
 <position info="not_deleted" x="18025" y="191"/>
->>>>>>> cb3e681d534bcc23c78a492c6e7c8b833057d756
-</item>
-<item active="true" historyLabel="main.c" index="6">
-<position info="not_deleted" x="5121" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -475,50 +436,6 @@
 <actionBarAdvisor/>
 </window>
 <mruList>
-<<<<<<< HEAD
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="VGA_Core/main.c">
-<persistable path="/VGA_Core/main.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="API_DRAW.c" tooltip="VGA_Core/API_DRAW.c">
-<persistable path="/VGA_Core/API_DRAW.c"/>
-</file>
-<file factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory" id="org.coocox.builder.ui.editors.repository.RepositoryBrowser" name="Repository" tooltip="Repository">
-<persistable>&#x0A;<subPage/>
-</persistable>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="API_IO.c" tooltip="VGA_Core/API_IO.c">
-<persistable path="/VGA_Core/API_IO.c"/>
-</file>
-<file factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="UI.h" tooltip="C:\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D\Software ontwikkeling\REPOSITORY\UI.h">
-<persistable path="C:\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D\Software ontwikkeling\REPOSITORY\UI.h" project="VGA_Core"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32_ub_vga_screen.h" tooltip="VGA_Core/ub_lib/stm32_ub_vga_screen.h">
-<persistable path="/VGA_Core/ub_lib/stm32_ub_vga_screen.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="delay.c" tooltip="VGA_Core/ports/delay.c">
-<persistable path="/VGA_Core/ports/delay.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="delay.h" tooltip="VGA_Core/ports/delay.h">
-<persistable path="/VGA_Core/ports/delay.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="includes.h" tooltip="VGA_Core/ports/includes.h">
-<persistable path="/VGA_Core/ports/includes.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="uart.c" tooltip="VGA_Core/ports/uart.c">
-<persistable path="/VGA_Core/ports/uart.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="misc.h" tooltip="VGA_Core/cmsis_lib/include/misc.h">
-<persistable path="/VGA_Core/cmsis_lib/include/misc.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="Arial.h" tooltip="VGA_Core/Arial.h">
-<persistable path="/VGA_Core/Arial.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="API_IO.h" tooltip="VGA_Core/api/API_IO.h">
-<persistable path="/VGA_Core/api/API_IO.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="API_DRAW.h" tooltip="VGA_Core/api/API_DRAW.h">
-<persistable path="/VGA_Core/api/API_DRAW.h"/>
-=======
 <file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.builder.ui.editors.ConfigEditor" name="" tooltip="">
 <persistable>
 <org.coocox.builder.ui.editors.ConfigEditor horizontalPosition="0" subTagIndex="3" verticalPosition="0"/>
@@ -562,7 +479,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="smiley_blij.h" tooltip="VGA_Core/bitmaps/smiley_blij.h">
 <persistable path="/VGA_Core/bitmaps/smiley_blij.h"/>
->>>>>>> cb3e681d534bcc23c78a492c6e7c8b833057d756
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="pijl_links.h" tooltip="VGA_Core/bitmaps/pijl_links.h">
 <persistable path="/VGA_Core/bitmaps/pijl_links.h"/>

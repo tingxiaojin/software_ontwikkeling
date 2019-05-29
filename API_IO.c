@@ -17,6 +17,7 @@
 
 #include "includes.h"
 #include "Arial.h"
+#include "Consolas.h"
 
 /** @addtogroup API
   * @{
