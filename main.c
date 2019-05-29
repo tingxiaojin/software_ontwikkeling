@@ -187,7 +187,12 @@ int main(void)
 
 	API_io_clearscherm(VGA_COL_WHITE);
 //	API_draw_line(200, 0, 0, 200, 50, 5, 0);
-	API_draw_text(0,50,VGA_COL_WHITE, "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}","arial",1,1, VGA_COL_RED);
+	API_draw_text(0,0,VGA_COL_RED, "klein S","arial",1,0, VGA_COL_RED);
+	API_draw_text(0,50,VGA_COL_RED, "groot S","consolas",2,0, VGA_COL_RED);
+	API_draw_text(0,100,VGA_COL_RED, "klein vet","arial",1,1, VGA_COL_RED);
+	API_draw_text(0,150,VGA_COL_RED, "groot vet","consolas",2,1, VGA_COL_RED);
+	API_draw_text(0,200,VGA_COL_RED, "klein cur","consolas",1,2, VGA_COL_RED);
+	API_draw_text(0,220,VGA_COL_RED, "groot cur","consolas",2,2, VGA_COL_RED);
 //	API_IO_clearscherm(VGA_COL_RED);
 
 //	API_IO_UART_puts("\n\rCode done\n\r");

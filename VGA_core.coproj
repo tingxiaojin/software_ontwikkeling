@@ -92,7 +92,10 @@
     <File name="cmsis_boot" path="" type="2"/>
     <File name="cmsis_lib/include/stm32f4xx_syscfg.h" path="cmsis_lib/include/stm32f4xx_syscfg.h" type="1"/>
     <File name="bitmaps" path="" type="2"/>
+<<<<<<< HEAD
     <File name="cmsis_lib/include/stm32f4xx_usart.h" path="cmsis_lib/include/stm32f4xx_usart.h" type="1"/>
+=======
+>>>>>>> f5d64a18dff110c84075cab869e35e215ea71df6
     <File name="cmsis/core_cm4_simd.h" path="cmsis/core_cm4_simd.h" type="1"/>
     <File name="cmsis_boot/stm32f4xx.h" path="cmsis_boot/stm32f4xx.h" type="1"/>
     <File name="cmsis_boot/startup" path="" type="2"/>
@@ -119,12 +122,17 @@
     <File name="cmsis_boot/startup/startup_stm32f4xx.c" path="cmsis_boot/startup/startup_stm32f4xx.c" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_rcc.c" path="cmsis_lib/source/stm32f4xx_rcc.c" type="1"/>
     <File name="cmsis/core_cmInstr.h" path="cmsis/core_cmInstr.h" type="1"/>
+    <File name="tekst_bitmap_functions.c" path="tekst_bitmap_functions.c" type="1"/>
     <File name="bitmaps/pijl_links.h" path="bitmaps/pijl_links.h" type="1"/>
     <File name="ub_lib" path="" type="2"/>
     <File name="cmsis_lib/include/stm32f4xx_exti.h" path="cmsis_lib/include/stm32f4xx_exti.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_exti.c" path="cmsis_lib/source/stm32f4xx_exti.c" type="1"/>
     <File name="cmsis_boot/system_stm32f4xx.c" path="cmsis_boot/system_stm32f4xx.c" type="1"/>
     <File name="ports" path="" type="2"/>
+<<<<<<< HEAD
+=======
+    <File name="Consolas.h" path="Consolas.h" type="1"/>
+>>>>>>> f5d64a18dff110c84075cab869e35e215ea71df6
     <File name="cmsis" path="" type="2"/>
     <File name="bitmaps/pijl_omhoog.h" path="bitmaps/pijl_omhoog.h" type="1"/>
     <File name="cmsis_lib" path="" type="2"/>
@@ -137,6 +145,7 @@
     <File name="syscalls" path="" type="2"/>
     <File name="ports/includes.h" path="includes.h" type="1"/>
     <File name="cmsis_lib/include/misc.h" path="cmsis_lib/include/misc.h" type="1"/>
+    <File name="tekst_bitmap_functions.h" path="tekst_bitmap_functions.h" type="1"/>
     <File name="cmsis_lib/include" path="" type="2"/>
     <File name="main.c" path="main.c" type="1"/>
   </Files>
