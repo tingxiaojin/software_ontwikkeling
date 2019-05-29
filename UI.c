@@ -108,31 +108,33 @@ void UI_CH_rm(char* buffer, char c, char stopc)
 int main(void)
 {
 	API_io_init();
-	API_io_UART_INT_init();
+//	API_io_UART_INT_init();
 	API_draw_clearscreen(VGA_COL_BLACK);
 	FUNCTIE input;
 	char buffer [100];
 	int error=-1;
 
 
-	API_io_UART_puts("WELKOM MIJN CODE :D\n\r");
-//	API_io_UART_putint(API_draw_line(1, 1, 1, 200, 50, 1));
+//	API_io_UART_puts("WELKOM MIJN CODE :D\n\r");
 
 	while(1)
 	{
-		API_io_UART_INT_gets(buffer); // get user input
-//		API_io_UART_puts(buffer);
-
-		if(strlen(buffer)==EMPTY)
-			continue;
-
-		// if input = empty
-		if(buffer[0] == CR)
-		{
-			error = STR_LEEG;
-			UI_ERR_put(error);
-			continue;
-		}
+//		API_io_UART_INT_gets(buffer); // get user input
+//		API_io_DELAY_s(5);
+		API_io_UART_gets(buffer);
+//		for(i=0; i<sizeof(buffer); i++)
+//			API_io_UART_putchar(buffer[i]);
+//		return 0;
+//		if(strlen(buffer)==EMPTY)
+//			continue;
+//
+//		// if input = empty
+//		if(buffer[0] == CR)
+//		{
+//			error = STR_LEEG;
+//			UI_ERR_put(error);
+//			continue;
+//		}
 
 //		API_io_rm_c_ut	(buffer, ' ', ST);	// remove spaces until first ST found
 //		API_io_rp_c		(buffer, ',', ST);	// replace comma's (',') with a ST ('\0')
@@ -141,54 +143,68 @@ int main(void)
 		input.parameters = UI_PARAMCNT	(buffer, ',');	// count the parameters
 		UI_CH_rp		  (buffer, ',', ST); 			// replace comma's (',') with a ST ('\0')
 
+		API_io_UART_puts("\n\rBuffer : ");
+		API_io_UART_puts(buffer);
+		API_io_UART_puts("\n\r");
+
 		if (LL_STRING_check(buffer,"LIJN"))
 		{
 			LL_FIG_init(buffer, &input, LIJN);
+//			memset(buffer, 0, sizeof(buffer));
 			error = LL_exe(&input);
 		}
 		else if (LL_STRING_check(buffer,"RECHTHOEK"))
 		{
 			LL_FIG_init(buffer, &input, RECHTHOEK);
+//			memset(buffer, 0, sizeof(buffer));
 			error = LL_exe(&input);
 		}
 		else if (LL_STRING_check(buffer,"BITMAP"))
 		{
 			LL_FIG_init(buffer, &input, BITMAP);
+//			memset(buffer, 0, sizeof(buffer));
 			error = LL_exe(&input);
 		}
 		else if (LL_STRING_check(buffer,"CLEARSCHERM"))
 		{
 			LL_FIG_init(buffer, &input, CLEARSCHERM);
+//			memset(buffer, 0, sizeof(buffer));
 			error = LL_exe(&input);
 		}
 		else if (LL_STRING_check(buffer,"WACHT"))
 		{
 			LL_FIG_init(buffer, &input, WACHT);
+			memset(buffer, 0, sizeof(buffer));
 			error = LL_exe(&input);
 		}
 		else if (LL_STRING_check(buffer,"TEKST"))
 		{
 			LL_FIG_init(buffer, &input, TEKST);
+//			memset(buffer, 0, sizeof(buffer));
 			error = LL_exe(&input);
 		}
 		else if (LL_STRING_check(buffer,"FIGUUR"))
 		{
 			LL_FIG_init(buffer, &input, FIGUUR);
+//			memset(buffer, 0, sizeof(buffer));
 			error = LL_exe(&input);
 		}
 		else if (LL_STRING_check(buffer,"NL-FLAG"))
 		{
 			LL_FIG_init(buffer, &input, NLFLAG);
+//			memset(buffer, 0, sizeof(buffer));
 			error = LL_exe(&input);
 		}
 		else if (LL_STRING_check(buffer,"IT-FLAG"))
 		{
 			LL_FIG_init(buffer, &input, ITFLAG);
+//			memset(buffer, 0, sizeof(buffer));
 			error = LL_exe(&input);
 		}
 		else if (LL_STRING_check(buffer,"TOREN"))
 		{
 			LL_FIG_init(buffer, &input, TOREN);
+//			memset(buffer, 0, sizeof(buffer));
 			error = LL_exe(&input);
 		}
 		else

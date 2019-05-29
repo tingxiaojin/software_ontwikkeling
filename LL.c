@@ -4,7 +4,7 @@
 #include "API_IO.h"
 
 
-//#define DEBUG
+#define DEBUG
 //#define DEBUG_ERROR
 
 
@@ -105,6 +105,7 @@ void LL_FIG_init(char* buffer, FUNCTIE* input, int vorm)
 		input->font	   		= 	   LL_STRING_param(&buffer[0], PARAM5) ;
 		input->fontgrootte	= atoi(LL_STRING_param(&buffer[0], PARAM6));
 		input->fontstijl	= atoi(LL_STRING_param(&buffer[0], PARAM7));
+		input->achtergrond	= atoi(LL_STRING_param(&buffer[0], PARAM8));
 		break;
 
 	case BITMAP:
@@ -240,10 +241,10 @@ int LL_exe(FUNCTIE* input)
 		API_io_UART_puts(" ");
 		API_io_UART_puts(input->tekst);
 		API_io_UART_puts(" ");
-//		API_io_UART_puts(input->font);
-		API_io_UART_puts(" \n\r");
+		API_io_UART_puts(input->font);
+		API_io_UART_puts(" ");
 		API_io_UART_putint(input->fontgrootte);
-		API_io_UART_puts(" \n\r");
+		API_io_UART_puts(" ");
 		API_io_UART_putint(input->fontstijl);
 		API_io_UART_puts(" \n\r");
 #endif
