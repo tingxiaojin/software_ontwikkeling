@@ -1,116 +1,56 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
-<<<<<<< HEAD
    <processor signature="arm-none-eabi-gcc 4.9.2 x86_64-w64-mingw32 -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F407VG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -I..\..\..\..\..\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D\Software ontwikkeling\REPOSITORY\ports -I..\..\..\..\..\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D\Software ontwikkeling\REPOSITORY\cmsis_lib\include -I..\..\..\..\..\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D\Software ontwikkeling\REPOSITORY\ub_lib -I..\..\..\..\..\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D\Software ontwikkeling -I..\..\..\..\..\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D\Software ontwikkeling\REPOSITORY\bitmaps -I..\..\..\..\..\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D\Software ontwikkeling\REPOSITORY\cmsis_lib -I..\..\..\..\..\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D -I..\..\..\..\..\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D\Software ontwikkeling\REPOSITORY\api -I..\..\..\..\..\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D\Software ontwikkeling\REPOSITORY -I..\..\..\..\..\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D\Software ontwikkeling\REPOSITORY\cmsis_boot -I..\..\..\..\..\Users\Raymo\Documents\School huiswerk\Jaar 3\Blok D\Software ontwikkeling\REPOSITORY\cmsis">
-      <target file="stm32f4xx_exti.o" lastModified="16b0066beaf">
-         <source file="..\..\..\cmsis_lib\source\stm32f4xx_exti.c" lastModified="16adfeaad47"/>
-      </target>
-      <target file="stm32f4xx_gpio.o" lastModified="16b0066ba14">
-         <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="152a1cbad50"/>
-      </target>
-      <target file="API_DRAW.o" lastModified="16b0066b36f">
-         <source file="..\..\..\API_DRAW.c" lastModified="16af1ad706d"/>
-      </target>
-      <target file="stm32f4xx_syscfg.o" lastModified="16b0066b435">
-         <source file="..\..\..\cmsis_lib\source\stm32f4xx_syscfg.c" lastModified="16adfec2916"/>
-      </target>
-      <target file="stm32_ub_vga_screen.o" lastModified="16b0066bdf7">
-         <source file="..\..\..\ub_lib\stm32_ub_vga_screen.c" lastModified="16adba16a45"/>
-      </target>
-      <target file="startup_stm32f4xx.o" lastModified="16b0066b73f">
-         <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="152a1cbad50"/>
-      </target>
-      <target file="stm32f4xx_tim.o" lastModified="16b0066c06d">
-         <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="152a1cbad50"/>
-      </target>
-      <target file="printf.o" lastModified="16b0066b971">
-         <source file="..\..\..\stdio\printf.c" lastModified="16adfea4f31"/>
-      </target>
-      <target file="system_stm32f4xx.o" lastModified="16b0066bab2">
-         <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="152a1cbad50"/>
-      </target>
-      <target file="misc.o" lastModified="16b0066bf50">
-         <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="152a1cbad50"/>
-      </target>
-      <target file="stm32f4xx_dma.o" lastModified="16b0066bc09">
-         <source file="..\..\..\cmsis_lib\source\stm32f4xx_dma.c" lastModified="152a1cbad50"/>
-      </target>
-      <target file="API_IO.o" lastModified="16b0066bd35">
-         <source file="..\..\..\API_IO.c" lastModified="16b0066a402"/>
-      </target>
-      <target file="stm32f4xx_rcc.o" lastModified="16b0066b8aa">
-         <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="152a1cbad50"/>
-      </target>
-      <target file="uart.o" lastModified="16b0066b6c5">
-         <source file="..\..\..\ports\uart.c" lastModified="16aec37ce95"/>
-      </target>
-      <target file="delay.o" lastModified="16b0066b517">
-         <source file="..\..\..\ports\delay.c" lastModified="1429c91e3a0"/>
-      </target>
-      <target file="syscalls.o" lastModified="16b0066bb58">
+      <target file="syscalls.o" lastModified="16b02a0e64b">
          <source file="..\..\..\syscalls\syscalls.c" lastModified="16adfea4ea5"/>
       </target>
-      <target file="main.o" lastModified="16b0066b7e4">
-         <source file="..\..\..\main.c" lastModified="16afe77bffa"/>
+      <target file="stm32f4xx_gpio.o" lastModified="16b02a0e4cf">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="152a1cbad50"/>
       </target>
-      <target file="stm32f4xx_usart.o" lastModified="16b0066b5d7">
+      <target file="uart.o" lastModified="16b02a0e10f">
+         <source file="..\..\..\ports\uart.c" lastModified="16b010baa10"/>
+      </target>
+      <target file="stm32_ub_vga_screen.o" lastModified="16b02a0e871">
+         <source file="..\..\..\ub_lib\stm32_ub_vga_screen.c" lastModified="16adba16a45"/>
+      </target>
+      <target file="stm32f4xx_dma.o" lastModified="16b02a0e6fe">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_dma.c" lastModified="152a1cbad50"/>
+      </target>
+      <target file="stm32f4xx_tim.o" lastModified="16b02a0eb06">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="152a1cbad50"/>
+      </target>
+      <target file="system_stm32f4xx.o" lastModified="16b02a0e566">
+         <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="152a1cbad50"/>
+      </target>
+      <target file="printf.o" lastModified="16b02a0e423">
+         <source file="..\..\..\stdio\printf.c" lastModified="16b010baa28"/>
+      </target>
+      <target file="startup_stm32f4xx.o" lastModified="16b02a0e19a">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="152a1cbad50"/>
+      </target>
+      <target file="stm32f4xx_usart.o" lastModified="16b02a0df78">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_usart.c" lastModified="16adbcc6267"/>
-=======
-   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F407VG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -I..\..\..\..\..\Users\tingx\Desktop\School\6D\DEMO=ZOOI\software_ontwikkeling-API_ting\cmsis_boot -I..\..\..\..\..\Users\tingx\Desktop\School\6D -I..\..\..\..\..\Users\tingx\Desktop\School\6D\DEMO=ZOOI -I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont -I..\..\..\..\..\Users\tingx\Desktop\School\6D\DEMO=ZOOI\software_ontwikkeling-API_ting\cmsis -I..\..\..\..\..\Users\tingx\Desktop\School\6D\DEMO=ZOOI\software_ontwikkeling-API_ting\ports -I..\..\..\..\..\Users\tingx\Desktop\School\6D\DEMO=ZOOI\software_ontwikkeling-API_ting\bitmaps -I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont\GitHub -I..\..\..\..\..\Users\tingx\Desktop\School\6D\DEMO=ZOOI\software_ontwikkeling-API_ting\cmsis_lib -I..\..\..\..\..\Users\tingx\Desktop\School\6D\DEMO=ZOOI\software_ontwikkeling-API_ting\cmsis_lib\include -I..\..\..\..\..\Users\tingx\Desktop\School\6D\DEMO=ZOOI\software_ontwikkeling-API_ting\api -I..\..\..\..\..\Users\tingx\Desktop\School\6D\DEMO=ZOOI\software_ontwikkeling-API_ting\ub_lib -I..\..\..\..\..\Users\tingx\Desktop\School\6D\DEMO=ZOOI\software_ontwikkeling-API_ting">
-      <target file="stm32f4xx_exti.o" lastModified="16b001e80e5">
-         <source file="..\..\..\cmsis_lib\source\stm32f4xx_exti.c" lastModified="16afe7ee838"/>
       </target>
-      <target file="stm32f4xx_gpio.o" lastModified="16b001e7da9">
-         <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="16afe7ee838"/>
+      <target file="stm32f4xx_exti.o" lastModified="16b02a0e90d">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_exti.c" lastModified="16b010ba9b9"/>
       </target>
-      <target file="API_DRAW.o" lastModified="16b001e792c">
-         <source file="..\..\..\API_DRAW.c" lastModified="16afe7ee838"/>
+      <target file="stm32f4xx_syscfg.o" lastModified="16b02a0dd10">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_syscfg.c" lastModified="16b010ba9c9"/>
       </target>
-      <target file="stm32f4xx_syscfg.o" lastModified="16b001e79a1">
-         <source file="..\..\..\cmsis_lib\source\stm32f4xx_syscfg.c" lastModified="16afe7ee838"/>
+      <target file="API_DRAW.o" lastModified="16b02a0dc23">
+         <source file="..\..\..\API_DRAW.c" lastModified="16b010ba8b7"/>
       </target>
-      <target file="stm32_ub_vga_screen.o" lastModified="16b001e8071">
-         <source file="..\..\..\ub_lib\stm32_ub_vga_screen.c" lastModified="16afe7ee838"/>
+      <target file="main.o" lastModified="16b02a0e23f">
+         <source file="..\..\..\main.c" lastModified="16b01144f21"/>
       </target>
-      <target file="startup_stm32f4xx.o" lastModified="16b001e7bad">
-         <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="16afe7ee838"/>
+      <target file="delay.o" lastModified="16b02a0de68">
+         <source file="..\..\..\ports\delay.c" lastModified="16b010ba9e4"/>
       </target>
-      <target file="stm32f4xx_tim.o" lastModified="16b001e822c">
-         <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="16afe7ee838"/>
+      <target file="stm32f4xx_rcc.o" lastModified="16b02a0e322">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="152a1cbad50"/>
       </target>
-      <target file="system_stm32f4xx.o" lastModified="16b001e7e0f">
-         <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="16afe7ee838"/>
-      </target>
-      <target file="printf.o" lastModified="16b001e7d31">
-         <source file="..\..\..\stdio\printf.c" lastModified="16afe7ee838"/>
-      </target>
-      <target file="misc.o" lastModified="16b001e8150">
-         <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="16afe7ee838"/>
-      </target>
-      <target file="stm32f4xx_dma.o" lastModified="16b001e7efc">
-         <source file="..\..\..\cmsis_lib\source\stm32f4xx_dma.c" lastModified="16afe7ee838"/>
-      </target>
-      <target file="API_IO.o" lastModified="16b00ca04f8">
-         <source file="..\..\..\API_IO.c" lastModified="16b00c9f86a"/>
-      </target>
-      <target file="stm32f4xx_rcc.o" lastModified="16b001e7caa">
-         <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="16afe7ee838"/>
-      </target>
-      <target file="uart.o" lastModified="16b001e7b51">
-         <source file="..\..\..\ports\uart.c" lastModified="16afe7ee838"/>
-      </target>
-      <target file="delay.o" lastModified="16b001e7a2a">
-         <source file="..\..\..\ports\delay.c" lastModified="16afe7ee838"/>
-      </target>
-      <target file="syscalls.o" lastModified="16b001e7e7d">
-         <source file="..\..\..\syscalls\syscalls.c" lastModified="16afe7ee838"/>
-      </target>
-      <target file="stm32f4xx_usart.o" lastModified="16b001e7ab8">
-         <source file="..\..\..\cmsis_lib\source\stm32f4xx_usart.c" lastModified="16afe7ee838"/>
-      </target>
-      <target file="main.o" lastModified="16b00c6014f">
-         <source file="..\..\..\main.c" lastModified="16b00bf078d"/>
->>>>>>> ca1b2dec1b4f2637364d86da4a0f2ad794bf4e6a
+      <target file="misc.o" lastModified="16b02a0e9af">
+         <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="152a1cbad50"/>
       </target>
    </processor>
 </history>
