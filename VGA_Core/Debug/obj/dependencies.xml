@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dependencies>
+<<<<<<< HEAD
    <includePath signature="/I..\..\..\..\..\Users\tingx\Desktop\School\6D\DEMO=ZOOI\software_ontwikkeling-API_ting\cmsis_boot /I..\..\..\..\..\Users\tingx\Desktop\School\6D\DEMO=ZOOI\software_ontwikkeling-API_ting\cmsis_lib /I..\..\..\..\..\Users\tingx\Desktop\School\6D /I..\..\..\..\..\Users\tingx\Desktop\School\6D\DEMO=ZOOI\software_ontwikkeling-API_ting\cmsis_lib\include /I..\..\..\..\..\Users\tingx\Desktop\School\6D\DEMO=ZOOI\software_ontwikkeling-API_ting\api /I..\..\..\..\..\Users\tingx\Desktop\School\6D\DEMO=ZOOI /I..\..\..\..\..\Users\tingx\Desktop\School\6D\DEMO=ZOOI\software_ontwikkeling-API_ting\ub_lib /I..\..\..\..\..\Users\tingx\Desktop\School\6D\DEMO=ZOOI\software_ontwikkeling-API_ting\cmsis /I..\..\..\..\..\Users\tingx\Desktop\School\6D\DEMO=ZOOI\software_ontwikkeling-API_ting\ports /I..\..\..\..\..\Users\tingx\Desktop\School\6D\DEMO=ZOOI\software_ontwikkeling-API_ting\bitmaps /I..\..\..\..\..\Users\tingx\Desktop\School\6D\DEMO=ZOOI\software_ontwikkeling-API_ting">
       <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="16afe7ee838">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
@@ -157,10 +158,59 @@
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
       <source file="..\..\..\cmsis_boot\stm32f4xx.h" lastModified="16afe7eec20">
+=======
+   <includePath signature="/I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont\GitHub /I..\..\..\..\..\Users\tingx\Desktop\School\6D /I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont\GitHub\api /I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont\GitHub\ports /I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont /I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont\GitHub\bitmaps /I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont\GitHub\cmsis_boot /I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont\GitHub\cmsis_lib /I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont\GitHub\ub_lib /I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont\GitHub\cmsis_lib\include /I..\..\..\..\..\Users\tingx\Desktop\School\6D\soft_ont\GitHub\cmsis">
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="16afe73df12">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\bitmaps\pijl_rechts.h" lastModified="16afe73dee0">
+      </source>
+      <source file="..\..\..\bitmaps\pijl_links.h" lastModified="16afe73dedb">
+      </source>
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_syscfg.h" lastModified="16afe73df07">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\include\misc.h" lastModified="16afe73defe">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_syscfg.c" lastModified="16afe73df16">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_syscfg.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\api\API_DRAW.h" lastModified="16afe73ded4">
+      </source>
+      <source file="..\..\..\api\API_IO.h" lastModified="16afe73ded5">
+      </source>
+      <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="16afe73df0c">
+         <include file="..\..\..\cmsis_lib\include\misc.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="16afe73df14">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h" lastModified="16afe73df05">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis\core_cmFunc.h" lastModified="16afe73e2d3">
+      </source>
+      <source file="..\..\..\bitmaps\Arial.h" lastModified="16afe73ded9">
+      </source>
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_dma.c" lastModified="16afe73df0f">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_dma.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\cmsis\core_cm4_simd.h" lastModified="16afe73e2d1">
+      </source>
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_dma.h" lastModified="16afe73df00">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\stm32f4xx.h" lastModified="16afe73e2de">
+>>>>>>> origin/API_ting
          <include file="..\..\..\cmsis\core_cm4.h"/>
          <include file="..\..\..\cmsis_boot\system_stm32f4xx.h"/>
          <include file="..\..\..\cmsis_boot\stm32f4xx_conf.h"/>
       </source>
+<<<<<<< HEAD
       <source file="..\..\..\bitmaps\smiley_boos.h" lastModified="16afe7ee838">
       </source>
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_exti.h" lastModified="16afe7ee838">
@@ -179,6 +229,26 @@
          <include file="..\..\..\includes.h"/>
       </source>
       <source file="..\..\..\cmsis_boot\stm32f4xx_conf.h" lastModified="16afe7f2aa0">
+=======
+      <source file="..\..\..\bitmaps\smiley_boos.h" lastModified="16afe73dee4">
+      </source>
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_exti.h" lastModified="16afe73df02">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\stdio\printf.c" lastModified="16afe73e70d">
+      </source>
+      <source file="..\..\..\ports\uart.h" lastModified="16afe73df39">
+      </source>
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h" lastModified="16afe73df03">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\syscalls\syscalls.c" lastModified="16afe73eedf">
+      </source>
+      <source file="..\..\..\ports\uart.c" lastModified="16afe73df36">
+         <include file="..\..\..\includes.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\stm32f4xx_conf.h" lastModified="16afe742160">
+>>>>>>> origin/API_ting
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_dma.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_exti.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
@@ -188,7 +258,11 @@
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_usart.h"/>
          <include file="..\..\..\cmsis_lib\include\misc.h"/>
       </source>
+<<<<<<< HEAD
       <source file="..\..\..\ub_lib\stm32_ub_vga_screen.h" lastModified="16afe7ee838">
+=======
+      <source file="..\..\..\ub_lib\stm32_ub_vga_screen.h" lastModified="16afe73df42">
+>>>>>>> origin/API_ting
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
@@ -196,6 +270,7 @@
          <include file="..\..\..\cmsis_lib\include\misc.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_dma.h"/>
       </source>
+<<<<<<< HEAD
       <source file="..\..\..\main.c" lastModified="16b00bf1345">
          <include file="..\..\..\api\API_IO.h"/>
          <include file="..\..\..\api\API_DRAW.h"/>
@@ -203,6 +278,11 @@
       <source file="..\..\..\cmsis\core_cmInstr.h" lastModified="16afe7eec20">
       </source>
       <source file="..\..\..\API_DRAW.c" lastModified="16afe7ee838">
+=======
+      <source file="..\..\..\cmsis\core_cmInstr.h" lastModified="16afe73e2d5">
+      </source>
+      <source file="..\..\..\API_DRAW.c" lastModified="16afe73de90">
+>>>>>>> origin/API_ting
          <include file="..\..\..\includes.h"/>
          <include file="..\..\..\api\API_IO.h"/>
          <include file="..\..\..\bitmaps\pijl_links.h"/>
@@ -212,7 +292,11 @@
          <include file="..\..\..\bitmaps\smiley_blij.h"/>
          <include file="..\..\..\bitmaps\smiley_boos.h"/>
       </source>
+<<<<<<< HEAD
       <source file="..\..\..\includes.h" lastModified="16afe7f0390">
+=======
+      <source file="..\..\..\includes.h" lastModified="16afe73fa73">
+>>>>>>> origin/API_ting
          <include file="..\..\..\cmsis_lib\include\misc.h"/>
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
          <include file="..\..\..\cmsis_boot\stm32f4xx_conf.h"/>
@@ -226,6 +310,7 @@
          <include file="..\..\..\ports\uart.h"/>
          <include file="..\..\..\ports\delay.h"/>
       </source>
+<<<<<<< HEAD
       <source file="..\..\..\ports\delay.h" lastModified="16afe7ee838">
       </source>
       <source file="..\..\..\ub_lib\stm32_ub_vga_screen.c" lastModified="16afe7ee838">
@@ -246,10 +331,37 @@
       <source file="..\..\..\bitmaps\smiley_blij.h" lastModified="16afe7ee838">
       </source>
       <source file="..\..\..\cmsis\core_cm4.h" lastModified="16afe7eec20">
+=======
+      <source file="..\..\..\ports\delay.h" lastModified="16afe73df2a">
+      </source>
+      <source file="..\..\..\ub_lib\stm32_ub_vga_screen.c" lastModified="16afe73df41">
+         <include file="..\..\..\ub_lib\stm32_ub_vga_screen.h"/>
+      </source>
+      <source file="..\..\..\API_IO.c" lastModified="16afe73de92">
+         <include file="..\..\..\includes.h"/>
+         <include file="..\..\..\bitmaps\Arial.h"/>
+      </source>
+      <source file="..\..\..\ports\delay.c" lastModified="16afe73df28">
+         <include file="..\..\..\includes.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_usart.h" lastModified="16afe73df0a">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_usart.c" lastModified="16afe73df19">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_usart.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\bitmaps\pijl_omhoog.h" lastModified="16afe73dedc">
+      </source>
+      <source file="..\..\..\bitmaps\smiley_blij.h" lastModified="16afe73dee2">
+      </source>
+      <source file="..\..\..\cmsis\core_cm4.h" lastModified="16afe73e2cf">
+>>>>>>> origin/API_ting
          <include file="..\..\..\cmsis\core_cmInstr.h"/>
          <include file="..\..\..\cmsis\core_cmFunc.h"/>
          <include file="..\..\..\cmsis\core_cm4_simd.h"/>
       </source>
+<<<<<<< HEAD
       <source file="..\..\..\cmsis_boot\system_stm32f4xx.h" lastModified="16afe7ee838">
       </source>
       <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="16afe7ee838">
@@ -267,6 +379,25 @@
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
       <source file="..\..\..\cmsis_lib\source\stm32f4xx_exti.c" lastModified="16afe7ee838">
+=======
+      <source file="..\..\..\cmsis_boot\system_stm32f4xx.h" lastModified="16afe73defc">
+      </source>
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="16afe73df18">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\bitmaps\pijl_omlaag.h" lastModified="16afe73dede">
+      </source>
+      <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="16afe73def0">
+      </source>
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h" lastModified="16afe73df09">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="16afe73defb">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_exti.c" lastModified="16afe73df10">
+>>>>>>> origin/API_ting
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_exti.h"/>
       </source>
    </includePath>

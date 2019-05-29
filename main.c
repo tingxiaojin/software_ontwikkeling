@@ -187,7 +187,11 @@ int main(void)
 
 	API_io_clearscherm(VGA_COL_WHITE);
 //	API_draw_line(200, 0, 0, 200, 50, 5, 0);
+<<<<<<< HEAD
 	API_draw_text(0,50,VGA_COL_WHITE, "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}","arial",1,1, VGA_COL_RED);
+=======
+	API_draw_text(0,50,VGA_COL_WHITE,"The quick brown fox jumps over the lazy dog",NULL,1,1, VGA_COL_RED);
+>>>>>>> origin/API_ting
 //	API_IO_clearscherm(VGA_COL_RED);
 
 //	API_IO_UART_puts("\n\rCode done\n\r");
