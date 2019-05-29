@@ -257,13 +257,13 @@ int API_io_tekst(char* zin, int x_lup, int y_lup, int kleur, char* font, int fon
 					state = 5;
 				break;
 			default:
-				error = 1;
+				error = 2;
 				break;
 		}
 	}
 	else
 	{
-		if(STRING_check(font, "CONSOLAS"))
+		if(STRING_check(font, "consolas"))
 		{
 			switch(fontstyle)
 			{
@@ -286,12 +286,12 @@ int API_io_tekst(char* zin, int x_lup, int y_lup, int kleur, char* font, int fon
 						state = 11;
 					break;
 				default:
-					error = 1;
+					error = 3;
 					break;
 			}
 		}
 		else {
-			error = 1;
+			error = 4;
 		}
 	}
 
@@ -334,7 +334,7 @@ int API_io_tekst(char* zin, int x_lup, int y_lup, int kleur, char* font, int fon
 			API_io_puts_11(zin, x_lup, y_lup, kleur, reserved);
 			break;
 		default:
-			error = 1;
+			error = 5;
 			break;
 	}
 
