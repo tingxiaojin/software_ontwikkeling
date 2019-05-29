@@ -11,7 +11,7 @@ void API_io_init()
 //	LCD_init();
 	DELAY_init();
 	UART_init();
-	UART_INT_init();
+//	UART_INT_init();
 }
 
 void  API_io_UART_INT_init(void)
