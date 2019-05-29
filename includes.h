@@ -110,6 +110,8 @@
 
 #define UART_BUFF	100
 
+#define DEFAULT		0xFF
+
 enum
 {
 	FOUTX =1,

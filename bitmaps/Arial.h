@@ -5,6 +5,21 @@
 #define TEKENS 94
 #define GEGEVENS 2
 
+/* S_arial_8ptBitmaps		0
+ * S_arial_8ptDescription	0
+ * B_arial_8ptBitmaps		1
+ * B_arial_8ptDescription	1
+ * C_arial_8ptBitmaps		2
+ * C_arial_8ptDescription	2
+ *
+ * S_arial_16ptBitmaps		3
+ * S_arial_16ptDescription	3
+ * B_arial_16ptBitmaps		4
+ * B_arial_16ptDescription	4
+ * C_arial_16ptBitmaps		5
+ * C_arial_16ptDescription	5
+ */
+
 const uint8_t S_arial_8ptBitmaps[]={
 		// @0 ' ' (0 pixels wide)
 			0x00, //
