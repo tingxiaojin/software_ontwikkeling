@@ -1,5 +1,5 @@
 #include "includes.h"
-#include "API_IO.h"
+//#include "API_IO.h"
 
 // Load .bmp files
 #include "pijl_links.h"
@@ -56,7 +56,7 @@ int API_draw_text(int x_lup, int y_lup, int color, char* tekst, char* fontname, 
 {
 	int error;
 //						(* zin, x_lup, y_lup, kleur, char* font, int fontgrootte, int fonststyle, int reserved);
-	error = API_io_tekst(tekst, x_lup, y_lup, color, fontname, fontsize, fontstyle, reserved);
+	error = API_io_puts(tekst, x_lup, y_lup, color, fontname, fontsize, fontstyle, reserved);
 	return error;
 }
 
