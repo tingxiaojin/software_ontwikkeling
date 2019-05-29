@@ -1,29 +1,83 @@
+/**
+  ******************************************************************************
+  * @file    API_IO.c
+  * @author  SOFTONT groep 7
+  * @version V1.0.1
+  * @date    29-05-2019
+  * @brief   Deze file bezit alle IO functies waarmee hardware-matig het
+* 			 VGA-scherm wordt aangestuurd
+  *
+  ******************************************************************************
+  * @attention
+  *
+  ******************************************************************************
+  */
+
+/* Includes ------------------------------------------------------------------*/
+
 #include "includes.h"
 #include "Arial.h"
 #include "Consolas.h"
 
+/** @addtogroup API
+  * @{
+  */
 
-///////////////////////////////////////////
- // init
-//////////////////////////////////////////
+/** @defgroup API_IO
+  * @brief IO-functies
+  * @{
+  */
+
+/** @defgroup IO_init functies
+  * @{
+  */
+
+/**
+  * @brief  Deze functie voert alle init functies uit.
+  * @note	De volgende onderdelen hebben een init nodig:
+  * 		- system klok
+  * 		- VGA-scherm
+  * 		- delay
+  * 		- uart
+  * @param  void
+  * @retval void
+  */
+/*API_io_init*/
 void API_io_init()
 {
 	SystemInit(); 			// System speed to 168MHz
 	UB_VGA_Screen_Init(); 	// Init VGA-Screen
-//	LCD_init();
 	DELAY_init();
 	UART_init();
 	UART_INT_init();
 }
 
+/**
+  * @brief  Deze functie voert een init voor de uart uit
+  * @note   void
+  * @param  void
+  * @retval void
+  */
 void  API_io_UART_INT_init(void)
 {
 	UART_INT_init();
 }
+/**
+  * @}
+  */
 
-///////////////////////////////////////////
- // errors
-//////////////////////////////////////////
+/** @defgroup IO_error functies
+  * @{
+  */
+/**
+  * @brief  Deze functie bekijkt of de coordinaten van een figuur niet buiten het scherm vallen.
+  * @note   Als de coordinaten buiten het scherm vallen zal deze functie een error meegegeven.
+  * @param  startx: Dit argument geeft het x coordinaat van het beginpunt mee.
+  * @param  starty: Dit argument geeft het y coordinaat van het beginpunt mee
+  * @param  eindx: 	Dit argument geeft het x coordinaat van het eindpunt mee
+  * @param  eindy:	Dit argument geeft het y coordinaat van het eindpunt mee
+  * @retval int error
+  */
 int  API_io_ERROR_inrange (int startx, int starty, int eindx, int eindy)
 {
 	int error=0;
@@ -31,32 +85,65 @@ int  API_io_ERROR_inrange (int startx, int starty, int eindx, int eindy)
 	if((starty>VGA_DISPLAY_Y)||(starty<0)||(eindy>VGA_DISPLAY_Y)||(eindy<0)) error|=FOUTY;
 	return error;
 }
+/**
+  * @}
+  */
 
 
-///////////////////////////////////////////
- // delays
-//////////////////////////////////////////
+/** @defgroup IO_delay functies
+  * @{
+  */
+
+/**
+  * @brief  Deze functie voert een delay uit in us.
+  * @note   Deze functie zorgt ervoor dat het programma wacht in microseconden.
+  * @param  x:  Dit argument geeft de hoeveelheid microseconde er gewacht
+  * 			moet worden.
+  * @retval void
+  */
 void API_io_DELAY_us(unsigned int x)
 {
 	DELAY_us(x);
 }
 
+/**
+  * @brief  Deze functie voert een delay uit in ms.
+  * @note   Deze functie zorgt ervoor dat het programma wacht in miliseconden.
+  * @param  x:  Dit argument geeft de hoeveelheid miliseconde er gewacht
+  * 			moet worden.
+  * @retval void
+  */
 void API_io_DELAY_ms(unsigned int x)
 {
 	DELAY_ms(x);
 }
 
+/**
+  * @brief  Deze functie voert een delay uit in s.
+  * @note   Deze functie zorgt ervoor dat het programma wacht in seconden.
+  * @param  x:  Dit argument geeft de hoeveelheid seconde er gewacht
+  * 			moet worden.
+  * @retval void
+  */
 void API_io_DELAY_s(unsigned int x)
 {
 	DELAY_s(x);
 }
 
+/**
+  * @}
+  */
 
+/** @defgroup IO_uart functies
+  * @{
+  */
 
-
-///////////////////////////////////////////
- // uart
-///////////////////////////////////////////
+/**
+  * @brief  Deze functie laad de string in een buffer
+  * @note   void
+  * @param  buffer: Dit argument is een string.
+  * @retval void
+  */
 void API_io_UART_INT_gets(char* buffer)
 {
 	if((string[strlen(string)-1]=='\n')&&(strlen(string) > 1))
@@ -70,86 +157,90 @@ void API_io_UART_INT_gets(char* buffer)
 		*buffer = '\0';
 }
 
-
+/**
+  * @brief  Deze functie laadt strings op de uart in buffer
+  * @note   void
+  * @param  buffer: Dit argument is een string van de uart
+  * @retval void
+  */
 void API_io_UART_gets(char* buffer)
 {
 	UART_gets(buffer, FALSE);
 }
 
-
+/**
+  * @brief  Deze functie laadt een character van de uart
+  * @note   void
+  * @param  void
+  * @retval char output van uart
+  */
 char API_io_UART_get()
 {
 	return UART_get();
 }
 
 
-
+/**
+  * @brief  Deze functie print een string op de terminal
+  * @note   void
+  * @param  buffer: De string die geput gaat worden
+  * @retval void
+  */
 void API_io_UART_puts(char* buffer)
 {
 	UART_puts(buffer);
 }
 
-
+/**
+  * @brief  Deze functie print een charakter op de terminal
+  * @note   void
+  * @param  c: de charakter die geput wordt op de terminal
+  * @retval void
+  */
 void API_io_UART_putchar(char c)
 {
 	UART_putchar(c);
 }
 
-
+/**
+  * @brief  Deze functie print getallen integers op de terminal
+  * @note   void
+  * @param  num: de decimale waarde van het getal dat geprint wordt
+  * @retval void
+  */
 void API_io_UART_putint(int num)
 {
 	UART_putint(num);
 }
 
+/**
+  * @brief  Stuurt meegegeven getal uit op de UART in het aangegeven getallenstelsel
+  * @note   void
+  * @param  num: decimale getal
+  * @param  deel: gewenste talstelsel
+  * @retval void
+  */
 void API_io_UART_putnum(unsigned int num, unsigned char deel)
 {
 	UART_putnum(num, deel);
 }
+/**
+  * @}
+  */
 
-///////////////////////////////////////////
- // tekst
-///////////////////////////////////////////
+/** @defgroup IO_string functies
+  * @{
+  */
 
-
-//// replaces a character in a buffer with another character
-//void UI_CH_rp(char* buffer, char old_char, char new_char)
-//{
-//	int i;
-//	while (*(buffer++) != '\0')
-//	{
-//		if(*(buffer-1)=='\'')
-//			for(i=0; i<200; i++)				// for loops are safer then while loops
-//				if(*(buffer++) == '\'')break;
-//
-//		if(*(buffer)==old_char)
-//		{
-//			*buffer = new_char;
-//			buffer++;
-//		}
-//	}
-//}
-//
-//void UI_CH_rm(char* buffer, char c, char stopc)
-//{
-//	int i, j=0;
-//
-//	while (*(buffer) != stopc)
-//	{
-//		if (*(buffer+j-1) == '\'')
-//			for(i=0;i<200; i++) //while(1) 	// for loops are safer then while loops
-//			{
-//				*(buffer) = *(buffer+j);
-//				if(*(++buffer+j) == '\'') break;
-//			}
-//
-//		for(i=0;*(buffer+j)==c && i<200; i++) j++; // for loops are safer then while loops
-//		*(buffer) = *(buffer+j);
-//		buffer++;
-//	}
-//}
-
-
-// replaces a character in a buffer with another character
+/**
+  * @brief 	Verandert een karakter in een buffer met een ander karakter
+  * 		replaces a character in a buffer with another character
+  * @note   void
+  * @param  buffer: de string
+  * @param  old_char: het karakter dat vervangen wordt
+  * @param  new_char: het karakter dat geplaatst wordt
+  * @retval void
+  */
 void API_io_rp_c(char* buffer, char old_char, char new_char)
 {
 	int i;
@@ -167,10 +258,14 @@ void API_io_rp_c(char* buffer, char old_char, char new_char)
 	}
 }
 
-
-/*
- * note: removes characters until stopc found
- */
+/**
+  * @brief 	Loopt door een string heeft totdat het gewenste karakter is gevonden
+  * @note   removes characters until stopc found
+  * @param  buffer: de string
+  * @param  c: wordt als buffer gebruikt om door de string heen te lopen
+  * @param  stopc: het karakter gevonden moet worden
+  * @retval void
+  */
 void  API_io_rm_c_ut(char* buffer, char c, char stopc)
 {
 	int i, j=0;
@@ -190,6 +285,14 @@ void  API_io_rm_c_ut(char* buffer, char c, char stopc)
 	}
 }
 
+/**
+  * @brief 	Maakt van een string alle kleine letters hoofdletter. Als dit al een hoofdletter was
+  * 		blijft dit zo
+  * @note   Deze functie wordt gebruikt voor uitlezen van het font(arial of consolas)
+  * @param  input: de string
+  * @param  font: string die gelezen moet worden.
+  * @retval TRUE or FALSE
+  */
 int STRING_check(char* input, char* font)
 {
 	int i;
@@ -202,6 +305,22 @@ int STRING_check(char* input, char* font)
 		return FALSE;
 }
 
+/**
+  * @brief  Deze functie kan een karakter op een VGA-scherm printen
+  * @note   Deze functie print alleen één karakter op het scherm. Afhankelijk van de bitmap en description array
+  * 		wordt bepaald welk font grootte en style toegepast gaat worden.
+  * @param  c: Dit argument is het karakter dat geprint gaat worden.
+  * @param  x: Dit argument geeft de x-waarde linksboven.
+  * @param  y: Dit argument geeft de y-waarde linksboven.
+  * @param  kleur: Dit argument geeft de kleur van de letter.
+  * @param  achtergrond: Dit argument geeft de kleur de achtergrond
+  * @param  bitmap: Dit argument geeft de bitmap met het juiste font mee
+  * @param  description: Dit argument geeft de description met het juiste font mee
+  * 					 Hierin staat hoeveel bytes lang een letter is en de offset
+  * 					 in het bitmap array van elke letter.
+  * @param  bitmap_size: Dit argument geeft de grootte van de bitmap mee
+  * @retval int error
+  */
 int API_io_putc(char c, int x, int y, int kleur, int achtergrond, uint8_t* bitmap, int description[TEKENS][GEGEVENS], int bitmapsize)
 {
 	int i,j,k;//, error;
@@ -209,20 +328,22 @@ int API_io_putc(char c, int x, int y, int kleur, int achtergrond, uint8_t* bitma
 
 
 	c = c-' ';
-	start = description[(int)c][1];
-	stop  = (c == TEKENS-1)? sizeof(bitmap):description[(int)c+1][1];
+	start = description[(int)c][1];										//bepaling startpositie in de bitmaparray
+	stop  = (c == TEKENS-1)? sizeof(bitmap):description[(int)c+1][1];	//bepaling stoppositie in de bitmaparray
 
 	for(i=0; start<stop; start+=description[(int)c][0], i++)
 	{
+		//k bekijkt of de letter breedte groter is dan 1 byte
+		// zo ja moet de forloop met j meerdere keren printen
 		for(k=0; k<description[(int)c][0]; k++)
 		{
-			for(j=0; j<BIT; j++)
+			for(j=0; j<BIT; j++)										//print per 8bits 8 pixels
 			{
 				int test = 0x80>>j & bitmap[start+k];
 				if(test)
-					UB_VGA_SetPixel((BIT*k)+j+x, y, kleur);
+					UB_VGA_SetPixel((BIT*k)+j+x, y, kleur);				//letterkleur
 				else if(achtergrond != -1)
-					UB_VGA_SetPixel((BIT*k)+j+x, y, achtergrond);
+					UB_VGA_SetPixel((BIT*k)+j+x, y, achtergrond);		//achtergrondkleur
 			}
 		}
 		y++;
@@ -230,7 +351,21 @@ int API_io_putc(char c, int x, int y, int kleur, int achtergrond, uint8_t* bitma
 	return 0;
 }
 
-
+/**
+  * @brief  Deze functie kan een zin op een VGA-scherm printen
+  * @note   API_io_putc wordt gebruikt om alle letters één voor één te printen van zin.
+  * 		Verder wordt in een switchcase bepaald welk font meegegeven gaat worden aan
+  * 		API_io_putc.
+  * @param  zin: 		Dit argument is de string die op het scherm moet worden geprint
+  * @param  x_lup: 		Dit argument geeft de x-waarde linksboven.
+  * @param  y_lup: 		Dit argument geeft de y-waarde linksboven.
+  * @param  kleur: 		Dit argument geeft de kleur van de letters.
+  * @param  font: 		Dit argument is het gewenste font(arial/ consolas)
+  * @param  fontgrootte:Dit argument geeft de grootte van het font mee (1/2)
+  * @param  fontstyle: 	Dit argument geeft de style mee (standaar/vet/cursief)
+  * @param  reserved: 	Dit argument mag gebruikt worden voor extra's
+  * @retval int error
+  */
 int API_io_puts(char* zin, int x_lup, int y_lup, int kleur, char* font, int fontgrootte, int fontstyle, int reserved)
 {
 
@@ -440,11 +575,25 @@ int API_io_puts(char* zin, int x_lup, int y_lup, int kleur, char* font, int font
 	}
 	return error;
 }
+/**
+  * @}
+  */
 
+/** @defgroup IO_bitmap functies
+  * @{
+  */
 
-///////////////////////////////////////////
- // bitmap
-//////////////////////////////////////////
+/**
+  * @brief  Deze functie kan een bitmap op een VGA-scherm printen
+  * @note   Er wordt een bitmaparray meegegeven aan de functie.
+  * 		Daaruit kan de hoogte en de breedte worden gehaald
+  * 		die met een dubbele forloop de bitmap kunnen printen
+  * @param  x: 			Dit argument geeft de x-waarde linksboven.
+  * @param  y: 			Dit argument geeft de y-waarde linksboven.
+  * @param  bitmap:		Dit argument geeft het array mee van de juiste bitmap
+  * @param  background: Dit argument geeft de kleur van de achtergrond
+  * @retval void
+  */
 void API_io_bitmap(int x, int y, unsigned char* bitmap, int background)
 {
 	int i,j;
@@ -457,19 +606,43 @@ void API_io_bitmap(int x, int y, unsigned char* bitmap, int background)
 			else if (background == TRUE)
 				UB_VGA_SetPixel(x+i,y+j, bitmap[j*breedte+i+8]);
 }
+/**
+  * @}
+  */
 
+/** @defgroup IO_clearscherm functies
+  * @{
+  */
 
-///////////////////////////////////////////
- // clearscherm
-//////////////////////////////////////////
+/**
+  * @brief  Deze functie maakt het hele scherm de gewenste kleur
+  * @note   void
+  * @param  kleur: dit argument geeft de kleur van scherm.
+  * @retval void
+  */
 void API_io_clearscherm(int kleur)
 {
 	UB_VGA_FillScreen(kleur);
 }
+/**
+  * @}
+  */
 
-///////////////////////////////////////////
- // figuren
-//////////////////////////////////////////
+/** @defgroup IO_figuren functies
+  * @{
+  */
+
+/**
+  * @brief  Deze functie put een lijn op het VGA-scherm
+  * @note   Er wordt met behulp van y=ax+b een lijn getekend.
+  * @param  startx: Dit argument geeft de x-waarde van het beginpunt.
+  * @param  starty: Dit argument geeft de y-waarde van het beginpunt.
+  * @param  eindx: 	Dit argument geeft de x-waarde van het eindpunt.
+  * @param  eindy: 	Dit argument geeft de y-waarde van het eindpunt.
+  * @param  kleur: Dit argument geeft de kleur van de lijn.
+  * @param  dikte: Dit argument geeft de dikte van de lijn.
+  * @retval int error
+  */
 int API_io_line(int startx, int starty, int eindx, int eindy, char kleur, int dikte)
 {
   int x, y, i;
@@ -513,7 +686,19 @@ int API_io_line(int startx, int starty, int eindx, int eindy, char kleur, int di
   }
   return 0;
 }
-
+/**
+  * @brief  Deze functie tekent een rechthoek op het VGA-scherm
+  * @note   afhankelijke van gevuld wordt het rechthoek met of zonder rand
+  * 		gevuld= 0 -> rechthoek met rand
+  * 		gevuld= 1 -> rechthoek gevuld zonder rand
+  * @param  x: 		Dit argument geeft de x-waarde van het punt linksboven.
+  * @param  y: 		Dit argument geeft de y-waarde van het punt linksboven.
+  * @param  breedte:Dit argument geeft de breedte van de rechthoek
+  * @param  hoogte: Dit argument geeft dehoogte van de rechthoek
+  * @param  kleur: 	Dit argument geeft de kleur van de rechthoek
+  * @param  gevuld: Dit argument geeft aan of de rechthoek een rand heeft of gevuld is
+  * @retval 0
+  */
 int API_io_rechthoek(int x, int y, int breedte, int hoogte, int kleur, int gevuld)
 {
 	breedte +=x;
@@ -538,4 +723,12 @@ int API_io_rechthoek(int x, int y, int breedte, int hoogte, int kleur, int gevul
 	}
 	return 0;
 }
-
+/**
+  * @}
+  */
+/**
+  * @}
+  */
+/**
+  * @}
+  */

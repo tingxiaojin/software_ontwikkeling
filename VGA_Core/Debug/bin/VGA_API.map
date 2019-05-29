@@ -1106,7 +1106,7 @@ LOAD c:/program files (x86)/gnu tools arm embedded/4.8 2013q4/bin/../lib/gcc/arm
 END GROUP
 OUTPUT(VGA_API.elf elf32-littlearm)
 
-.debug_info     0x00000000     0x7135
+.debug_info     0x00000000     0x716b
  .debug_info    0x00000000      0x459 ..\obj\API_DRAW.o
  .debug_info    0x00000459      0x27a ..\obj\delay.o
  .debug_info    0x000006d3      0x996 ..\obj\stm32f4xx_usart.o
@@ -1117,12 +1117,12 @@ OUTPUT(VGA_API.elf elf32-littlearm)
  .debug_info    0x000027d8      0x5d6 ..\obj\stm32f4xx_gpio.o
  .debug_info    0x00002dae      0x566 ..\obj\system_stm32f4xx.o
  .debug_info    0x00003314      0x718 ..\obj\stm32f4xx_dma.o
- .debug_info    0x00003a2c      0xb11 ..\obj\API_IO.o
- .debug_info    0x0000453d      0xaa7 ..\obj\stm32_ub_vga_screen.o
- .debug_info    0x00004fe4      0x51c ..\obj\misc.o
- .debug_info    0x00005500     0x1c35 ..\obj\stm32f4xx_tim.o
+ .debug_info    0x00003a2c      0xb47 ..\obj\API_IO.o
+ .debug_info    0x00004573      0xaa7 ..\obj\stm32_ub_vga_screen.o
+ .debug_info    0x0000501a      0x51c ..\obj\misc.o
+ .debug_info    0x00005536     0x1c35 ..\obj\stm32f4xx_tim.o
 
-.debug_abbrev   0x00000000     0x1351
+.debug_abbrev   0x00000000     0x1326
  .debug_abbrev  0x00000000      0x110 ..\obj\API_DRAW.o
  .debug_abbrev  0x00000110      0x100 ..\obj\delay.o
  .debug_abbrev  0x00000210      0x155 ..\obj\stm32f4xx_usart.o
@@ -1133,10 +1133,10 @@ OUTPUT(VGA_API.elf elf32-littlearm)
  .debug_abbrev  0x00000834      0x1a3 ..\obj\stm32f4xx_gpio.o
  .debug_abbrev  0x000009d7      0x136 ..\obj\system_stm32f4xx.o
  .debug_abbrev  0x00000b0d      0x155 ..\obj\stm32f4xx_dma.o
- .debug_abbrev  0x00000c62      0x262 ..\obj\API_IO.o
- .debug_abbrev  0x00000ec4      0x1c1 ..\obj\stm32_ub_vga_screen.o
- .debug_abbrev  0x00001085      0x145 ..\obj\misc.o
- .debug_abbrev  0x000011ca      0x187 ..\obj\stm32f4xx_tim.o
+ .debug_abbrev  0x00000c62      0x237 ..\obj\API_IO.o
+ .debug_abbrev  0x00000e99      0x1c1 ..\obj\stm32_ub_vga_screen.o
+ .debug_abbrev  0x0000105a      0x145 ..\obj\misc.o
+ .debug_abbrev  0x0000119f      0x187 ..\obj\stm32f4xx_tim.o
 
 .debug_aranges  0x00000000      0x968
  .debug_aranges
@@ -1184,21 +1184,21 @@ OUTPUT(VGA_API.elf elf32-littlearm)
  .debug_ranges  0x00000570       0x30 ..\obj\misc.o
  .debug_ranges  0x000005a0      0x2e8 ..\obj\stm32f4xx_tim.o
 
-.debug_line     0x00000000     0x3143
- .debug_line    0x00000000      0x2cb ..\obj\API_DRAW.o
- .debug_line    0x000002cb      0x215 ..\obj\delay.o
- .debug_line    0x000004e0      0x452 ..\obj\stm32f4xx_usart.o
- .debug_line    0x00000932      0x3c4 ..\obj\uart.o
- .debug_line    0x00000cf6       0xa4 ..\obj\startup_stm32f4xx.o
- .debug_line    0x00000d9a       0x74 ..\obj\main.o
- .debug_line    0x00000e0e      0x54a ..\obj\stm32f4xx_rcc.o
- .debug_line    0x00001358      0x2ef ..\obj\stm32f4xx_gpio.o
- .debug_line    0x00001647      0x191 ..\obj\system_stm32f4xx.o
- .debug_line    0x000017d8      0x38c ..\obj\stm32f4xx_dma.o
- .debug_line    0x00001b64      0x68f ..\obj\API_IO.o
- .debug_line    0x000021f3      0x346 ..\obj\stm32_ub_vga_screen.o
- .debug_line    0x00002539      0x1f5 ..\obj\misc.o
- .debug_line    0x0000272e      0xa15 ..\obj\stm32f4xx_tim.o
+.debug_line     0x00000000     0x314c
+ .debug_line    0x00000000      0x2cf ..\obj\API_DRAW.o
+ .debug_line    0x000002cf      0x215 ..\obj\delay.o
+ .debug_line    0x000004e4      0x452 ..\obj\stm32f4xx_usart.o
+ .debug_line    0x00000936      0x3c4 ..\obj\uart.o
+ .debug_line    0x00000cfa       0xa4 ..\obj\startup_stm32f4xx.o
+ .debug_line    0x00000d9e       0x74 ..\obj\main.o
+ .debug_line    0x00000e12      0x54a ..\obj\stm32f4xx_rcc.o
+ .debug_line    0x0000135c      0x2ef ..\obj\stm32f4xx_gpio.o
+ .debug_line    0x0000164b      0x191 ..\obj\system_stm32f4xx.o
+ .debug_line    0x000017dc      0x38c ..\obj\stm32f4xx_dma.o
+ .debug_line    0x00001b68      0x694 ..\obj\API_IO.o
+ .debug_line    0x000021fc      0x346 ..\obj\stm32_ub_vga_screen.o
+ .debug_line    0x00002542      0x1f5 ..\obj\misc.o
+ .debug_line    0x00002737      0xa15 ..\obj\stm32f4xx_tim.o
 
 .debug_str      0x00000000     0x2ff5
  .debug_str     0x00000000      0x2f0 ..\obj\API_DRAW.o
