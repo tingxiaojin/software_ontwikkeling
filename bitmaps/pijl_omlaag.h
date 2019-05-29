@@ -13,8 +13,8 @@
   */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-//#ifndef __PIJL_OMLAAG_H
-//#define __PIJL_OMLAAG_H
+#ifndef __PIJL_OMLAAG_H
+#define __PIJL_OMLAAG_H
 
 /** @addtogroup API
   * @{
@@ -74,7 +74,7 @@ unsigned char pijl_omlaag [] = {0x1b, 0x0, 0x0, 0x0, 0x28, 0x0, 0x0, 0x0,
   * @}
   */
 
-//#endif /*__PIJL_OMLAAG_H */
+#endif /*__PIJL_OMLAAG_H */
 
 /**
   * @}

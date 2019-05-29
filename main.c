@@ -215,7 +215,7 @@ int main(void)
 //	API_DRAW_bitmap(API_IO_SMILY_BOOS, 175, 70, FALSE);
 ////	API_draw_line(0, 0, 200, 200, VGA_COL_BLUE, 5);
 
-char buffer[100];
+//char buffer[100];
 
 //API_IO_UART_putchar(buffer[0]);
 

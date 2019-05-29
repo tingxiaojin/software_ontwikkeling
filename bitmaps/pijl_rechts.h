@@ -13,8 +13,8 @@
   */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __PIJL_OMLAAG_H
-#define __PIJL_OMLAAG_H
+#ifndef __PIJL_RECHTS_H
+#define __PIJL_RECHTS_H
 
 /** @addtogroup API
   * @{

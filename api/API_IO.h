@@ -32,7 +32,7 @@
   * @{
   */
 
-/** @defgroup API_IO
+/** @addtogroup API_IO
  *  @brief I/O functions en colors
  *  @{
  */
@@ -40,7 +40,7 @@
 //--------------------------------------------------------------
 // Defines
 //--------------------------------------------------------------
-/** @defgroup API_IO_COLORS
+/** @addtogroup API_IO_COLORS
   * @{
   */
 #define  VGA_COL_BLACK          0  //0x00
@@ -65,7 +65,7 @@
   * @}
   */
 
-/** @defgroup Exported functions
+/** @addtogroup Exported functions
   * @{
   */
 

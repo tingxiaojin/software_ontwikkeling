@@ -23,12 +23,12 @@
   * @{
   */
 
-/** @defgroup API_IO
+/** @addtogroup API_IO
   * @brief IO-functies
   * @{
   */
 
-/** @defgroup IO_init functies
+/** @addtogroup IO_init_functies
   * @{
   */
 
@@ -39,24 +39,19 @@
   * 		- VGA-scherm
   * 		- delay
   * 		- uart
-  * @param  void
-  * @retval void
+  * @retval None
   */
-/*API_io_init*/
 void API_io_init()
 {
 	SystemInit(); 			// System speed to 168MHz
 	UB_VGA_Screen_Init(); 	// Init VGA-Screen
 	DELAY_init();
 	UART_init();
-	UART_INT_init();
 }
 
 /**
-  * @brief  Deze functie voert een init voor de uart uit
-  * @note   void
-  * @param  void
-  * @retval void
+  * @brief  Deze functie voert een init voor de uart uit.
+  * @retval None
   */
 void  API_io_UART_INT_init(void)
 {
@@ -66,7 +61,7 @@ void  API_io_UART_INT_init(void)
   * @}
   */
 
-/** @defgroup IO_error functies
+/** @addtogroup IO_error_functies
   * @{
   */
 /**
@@ -90,7 +85,7 @@ int  API_io_ERROR_inrange (int startx, int starty, int eindx, int eindy)
   */
 
 
-/** @defgroup IO_delay functies
+/** @addtogroup IO_delay_functies
   * @{
   */
 
@@ -99,7 +94,7 @@ int  API_io_ERROR_inrange (int startx, int starty, int eindx, int eindy)
   * @note   Deze functie zorgt ervoor dat het programma wacht in microseconden.
   * @param  x:  Dit argument geeft de hoeveelheid microseconde er gewacht
   * 			moet worden.
-  * @retval void
+  * @retval None
   */
 void API_io_DELAY_us(unsigned int x)
 {
@@ -111,7 +106,7 @@ void API_io_DELAY_us(unsigned int x)
   * @note   Deze functie zorgt ervoor dat het programma wacht in miliseconden.
   * @param  x:  Dit argument geeft de hoeveelheid miliseconde er gewacht
   * 			moet worden.
-  * @retval void
+  * @retval None
   */
 void API_io_DELAY_ms(unsigned int x)
 {
@@ -123,7 +118,7 @@ void API_io_DELAY_ms(unsigned int x)
   * @note   Deze functie zorgt ervoor dat het programma wacht in seconden.
   * @param  x:  Dit argument geeft de hoeveelheid seconde er gewacht
   * 			moet worden.
-  * @retval void
+  * @retval None
   */
 void API_io_DELAY_s(unsigned int x)
 {
@@ -134,15 +129,14 @@ void API_io_DELAY_s(unsigned int x)
   * @}
   */
 
-/** @defgroup IO_uart functies
+/** @addtogroup IO_uart_functies
   * @{
   */
 
 /**
   * @brief  Deze functie laad de string in een buffer
-  * @note   void
   * @param  buffer: Dit argument is een string.
-  * @retval void
+  * @retval None
   */
 void API_io_UART_INT_gets(char* buffer)
 {
@@ -159,9 +153,8 @@ void API_io_UART_INT_gets(char* buffer)
 
 /**
   * @brief  Deze functie laadt strings op de uart in buffer
-  * @note   void
   * @param  buffer: Dit argument is een string van de uart
-  * @retval void
+  * @retval None
   */
 void API_io_UART_gets(char* buffer)
 {
@@ -170,8 +163,6 @@ void API_io_UART_gets(char* buffer)
 
 /**
   * @brief  Deze functie laadt een character van de uart
-  * @note   void
-  * @param  void
   * @retval char output van uart
   */
 char API_io_UART_get()
@@ -182,9 +173,8 @@ char API_io_UART_get()
 
 /**
   * @brief  Deze functie print een string op de terminal
-  * @note   void
   * @param  buffer: De string die geput gaat worden
-  * @retval void
+  * @retval None
   */
 void API_io_UART_puts(char* buffer)
 {
@@ -193,9 +183,8 @@ void API_io_UART_puts(char* buffer)
 
 /**
   * @brief  Deze functie print een charakter op de terminal
-  * @note   void
   * @param  c: de charakter die geput wordt op de terminal
-  * @retval void
+  * @retval None
   */
 void API_io_UART_putchar(char c)
 {
@@ -204,9 +193,8 @@ void API_io_UART_putchar(char c)
 
 /**
   * @brief  Deze functie print getallen integers op de terminal
-  * @note   void
   * @param  num: de decimale waarde van het getal dat geprint wordt
-  * @retval void
+  * @retval None
   */
 void API_io_UART_putint(int num)
 {
@@ -215,10 +203,9 @@ void API_io_UART_putint(int num)
 
 /**
   * @brief  Stuurt meegegeven getal uit op de UART in het aangegeven getallenstelsel
-  * @note   void
   * @param  num: decimale getal
   * @param  deel: gewenste talstelsel
-  * @retval void
+  * @retval None
   */
 void API_io_UART_putnum(unsigned int num, unsigned char deel)
 {
@@ -228,18 +215,17 @@ void API_io_UART_putnum(unsigned int num, unsigned char deel)
   * @}
   */
 
-/** @defgroup IO_string functies
+/** @addtogroup IO_string_functies
   * @{
   */
 
 /**
   * @brief 	Verandert een karakter in een buffer met een ander karakter
   * 		replaces a character in a buffer with another character
-  * @note   void
   * @param  buffer: de string
   * @param  old_char: het karakter dat vervangen wordt
   * @param  new_char: het karakter dat geplaatst wordt
-  * @retval void
+  * @retval None
   */
 void API_io_rp_c(char* buffer, char old_char, char new_char)
 {
@@ -264,7 +250,7 @@ void API_io_rp_c(char* buffer, char old_char, char new_char)
   * @param  buffer: de string
   * @param  c: wordt als buffer gebruikt om door de string heen te lopen
   * @param  stopc: het karakter gevonden moet worden
-  * @retval void
+  * @retval None
   */
 void  API_io_rm_c_ut(char* buffer, char c, char stopc)
 {
@@ -318,10 +304,10 @@ int STRING_check(char* input, char* font)
   * @param  description: Dit argument geeft de description met het juiste font mee
   * 					 Hierin staat hoeveel bytes lang een letter is en de offset
   * 					 in het bitmap array van elke letter.
-  * @param  bitmap_size: Dit argument geeft de grootte van de bitmap mee
+  * @param  bitmapsize: Dit argument geeft de grootte van de bitmap mee
   * @retval int error
   */
-int API_io_putc(char c, int x, int y, int kleur, int achtergrond, uint8_t* bitmap, int description[TEKENS][GEGEVENS], int bitmapsize)
+int API_io_putc(char c, int x, int y, int kleur, int achtergrond, const uint8_t* bitmap, const int description[TEKENS][GEGEVENS], int bitmapsize)
 {
 	int i,j,k;//, error;
 	int start, stop;
@@ -356,14 +342,14 @@ int API_io_putc(char c, int x, int y, int kleur, int achtergrond, uint8_t* bitma
   * @note   API_io_putc wordt gebruikt om alle letters één voor één te printen van zin.
   * 		Verder wordt in een switchcase bepaald welk font meegegeven gaat worden aan
   * 		API_io_putc.
-  * @param  zin: 		Dit argument is de string die op het scherm moet worden geprint
-  * @param  x_lup: 		Dit argument geeft de x-waarde linksboven.
-  * @param  y_lup: 		Dit argument geeft de y-waarde linksboven.
-  * @param  kleur: 		Dit argument geeft de kleur van de letters.
-  * @param  font: 		Dit argument is het gewenste font(arial/ consolas)
-  * @param  fontgrootte:Dit argument geeft de grootte van het font mee (1/2)
-  * @param  fontstyle: 	Dit argument geeft de style mee (standaar/vet/cursief)
-  * @param  reserved: 	Dit argument mag gebruikt worden voor extra's
+  * @param  zin: 		 Dit argument is de string die op het scherm moet worden geprint
+  * @param  x_lup: 		 Dit argument geeft de x-waarde linksboven.
+  * @param  y_lup: 		 Dit argument geeft de y-waarde linksboven.
+  * @param  kleur: 		 Dit argument geeft de kleur van de letters.
+  * @param  font: 		 Dit argument is het gewenste font(arial/ consolas)
+  * @param  fontgrootte: Dit argument geeft de grootte van het font mee (1/2)
+  * @param  fontstyle: 	 Dit argument geeft de style mee (standaar/vet/cursief)
+  * @param  reserved: 	 Dit argument mag gebruikt worden voor extra's
   * @retval int error
   */
 int API_io_puts(char* zin, int x_lup, int y_lup, int kleur, char* font, int fontgrootte, int fontstyle, int reserved)
@@ -579,7 +565,7 @@ int API_io_puts(char* zin, int x_lup, int y_lup, int kleur, char* font, int font
   * @}
   */
 
-/** @defgroup IO_bitmap functies
+/** @addtogroup IO_bitmap_functies
   * @{
   */
 
@@ -592,7 +578,7 @@ int API_io_puts(char* zin, int x_lup, int y_lup, int kleur, char* font, int font
   * @param  y: 			Dit argument geeft de y-waarde linksboven.
   * @param  bitmap:		Dit argument geeft het array mee van de juiste bitmap
   * @param  background: Dit argument geeft de kleur van de achtergrond
-  * @retval void
+  * @retval None
   */
 void API_io_bitmap(int x, int y, unsigned char* bitmap, int background)
 {
@@ -610,15 +596,14 @@ void API_io_bitmap(int x, int y, unsigned char* bitmap, int background)
   * @}
   */
 
-/** @defgroup IO_clearscherm functies
+/** @addtogroup IO_clearscherm_functies
   * @{
   */
 
 /**
   * @brief  Deze functie maakt het hele scherm de gewenste kleur
-  * @note   void
   * @param  kleur: dit argument geeft de kleur van scherm.
-  * @retval void
+  * @retval None
   */
 void API_io_clearscherm(int kleur)
 {
@@ -628,7 +613,7 @@ void API_io_clearscherm(int kleur)
   * @}
   */
 
-/** @defgroup IO_figuren functies
+/** @addtogroup IO_figuren_functies
   * @{
   */
 
@@ -686,18 +671,19 @@ int API_io_line(int startx, int starty, int eindx, int eindy, char kleur, int di
   }
   return 0;
 }
+
 /**
   * @brief  Deze functie tekent een rechthoek op het VGA-scherm
   * @note   afhankelijke van gevuld wordt het rechthoek met of zonder rand
   * 		gevuld= 0 -> rechthoek met rand
   * 		gevuld= 1 -> rechthoek gevuld zonder rand
-  * @param  x: 		Dit argument geeft de x-waarde van het punt linksboven.
-  * @param  y: 		Dit argument geeft de y-waarde van het punt linksboven.
-  * @param  breedte:Dit argument geeft de breedte van de rechthoek
-  * @param  hoogte: Dit argument geeft dehoogte van de rechthoek
-  * @param  kleur: 	Dit argument geeft de kleur van de rechthoek
-  * @param  gevuld: Dit argument geeft aan of de rechthoek een rand heeft of gevuld is
-  * @retval 0
+  * @param  x: 		 Dit argument geeft de x-waarde van het punt linksboven.
+  * @param  y: 		 Dit argument geeft de y-waarde van het punt linksboven.
+  * @param  breedte: Dit argument geeft de breedte van de rechthoek
+  * @param  hoogte:  Dit argument geeft dehoogte van de rechthoek
+  * @param  kleur: 	 Dit argument geeft de kleur van de rechthoek
+  * @param  gevuld:  Dit argument geeft aan of de rechthoek een rand heeft of gevuld is
+  * @retval int error
   */
 int API_io_rechthoek(int x, int y, int breedte, int hoogte, int kleur, int gevuld)
 {

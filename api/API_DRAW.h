@@ -58,7 +58,7 @@ extern int API_draw_rectangle	(int x, int y, int width, int height, int color, i
 /* Deze functie kan de kleur op het VGA-scherm veranderen*/
 extern int API_draw_clearscreen (int color);
 /* Deze functie kan tekst schrijven op het VGA-scherm*/
-extern int API_draw_text		(int x_lup, int y_lup, int color, char* tekst, char* fontname, int fontsize, int fonstsytle, int reserved);
+extern int API_draw_text		(int x_lup, int y_lup, int color, char* tekst, char* fontname, int fontsize, int fontstytle, int reserved);
 /* Deze functie kan een bitmap tekenen op het VGA-scherm*/
 extern int API_draw_bitmap		(int x_lup, int y_lup, int bm_nr, int reserved);
 /**

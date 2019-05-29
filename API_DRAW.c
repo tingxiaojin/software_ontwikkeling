@@ -43,12 +43,12 @@
   * @{
   */
 
-/** @defgroup API_DRAW
+/** @addtogroup API_DRAW
   * @brief Tekenfuncties
   * @{
   */
 
-/** @defgroup DRAW functies
+/** @addtogroup DRAW_functies
   * @brief   De functies die iets kunnen tekenen op het scherm
   * @{
   */
@@ -85,9 +85,9 @@ int API_draw_line (int x_1, int y_1, int x_2, int y_2, int color, int weight, in
   * @note   Deze functie is vanuit de LL aangeroepen. Deze functie zal een rechthoek tekenen
   * 		en kijkt doormiddel van error handling of de rechthoek in het bereik van het
   * 		scherm zit.
-  * @param  x:Dit argument geeft de x-waarde van het punt linksboven. Als deze buiten het scherm valt
+  * @param  x: Dit argument geeft de x-waarde van het punt linksboven. Als deze buiten het scherm valt
   * 		zit returnt hij een error.
-  * @param  y:Dit argument geeft de y-waarde van het punt linksboven. Als deze buiten het scherm valt
+  * @param  y: Dit argument geeft de y-waarde van het punt linksboven. Als deze buiten het scherm valt
   * 		zit returnt hij een error.
   * @param  width: Dit argument geeft de lengte van de rechthoek. Als deze buiten het scherm valt
   * 		zit returnt hij een error.
@@ -109,7 +109,7 @@ int API_draw_rectangle	(int x, int y, int width, int height, int color, int fill
 }
 
 /**
-  * @brief  Deze functie laat het hele scherm één kleur aanhouden.
+  * @brief  Deze functie cleared het scherm met een kleur.
   * @note   Deze functie is vanuit de LL aangeroepen. Deze functie zal het hele scherm vullen met
   * 		meegegeven kleur
   * @param  color: Dit argument geeft de kleur van het scherm
@@ -126,35 +126,35 @@ int API_draw_clearscreen (int color)
   * @note   Deze functie is vanuit de LL aangeroepen. Deze functie zal tekst op het scherm schrijven.
   * 		Als de letters voorbij de schermlengte gaan zal er een regel eronder verder gegaan worden met de tekst
   * @param  x_lup: Dit argument geeft de x-waarde coordinaat van het punt linksboven.
-  * 			Als de letters voorbij de schermlengte gaan zal er een regel eronder verder gegaan worden met de tekst
+  * 		Als de letters voorbij de schermlengte gaan zal er een regel eronder verder gegaan worden met de tekst
   * @param  y_lup: Dit argument geeft de y-waarde coordinaat van het punt linksboven.
   * 		Als de letters voorbij de schermlengte gaan zal er een regel eronder verder gegaan worden met de tekst
   * @param  color: Dit argument geeft de kleur van de tekst
   * @param  tekst: Dit argument geeft de string van de tekst die geprint moet worden
-  * @param  fotname: Dit argument geeft de naam van het font (arial, consolas)
+  * @param  fontname: Dit argument geeft de naam van het font (arial, consolas)
   * @param  fontsize: Dit argument geeft de grootte van de letters(1,2)
-  * @param  fontstyle: Dit argument geeft de style van de tekst(standaard, vet, cursief)
+  * @param  fontstytle: Dit argument geeft de style van de tekst(standaard, vet, cursief)
   * @param  reserved: Dit argument mag gebruikt worden voor extra's
   * @retval int error
   */
-int API_draw_text(int x_lup, int y_lup, int color, char* tekst, char* fontname, int fontsize, int fontsytle, int reserved)
+int API_draw_text(int x_lup, int y_lup, int color, char* tekst, char* fontname, int fontsize, int fontstytle, int reserved)
 {
 	int error;
 //						(* zin, x_lup, y_lup, kleur, char* font, int fontgrootte, int fonststyle, int reserved);
-	error = API_io_puts(tekst, x_lup, y_lup, color, fontname, fontsize, fontsytle, reserved);
+	error = API_io_puts(tekst, x_lup, y_lup, color, fontname, fontsize, fontstytle, reserved);
 	return error;
 }
 
 
 /**
-  * @brief  Deze functie wordt er bitmap gekozen en geprint op het VGA-scherm.
+  * @brief  In deze functie wordt er een bitmap gekozen en geprint op het VGA-scherm.
   * @note   Deze functie is vanuit de LL aangeroepen. Deze functie zal een bitmap op het VGA-scherm printen
   * 		De error handling geeft aan of de bitmap buiten het scherm komt.
-  * @param  x_lup:Dit argument geeft de x-waarde van het punt linksboven. Als deze buiten het scherm valt
-  * 			  returnt hij een error.
-  * @param  y_lup:Dit argument geeft de y-waarde van het punt linksboven. Als deze buiten het scherm valt
-  * 			  returnt hij een error.
-  * @param  bm_nr:Dit argument geeft het volgnummer van de bitmap.
+  * @param  x_lup: Dit argument geeft de x-waarde van het punt linksboven. Als deze buiten het scherm valt
+  * 			   returnt hij een error.
+  * @param  y_lup: Dit argument geeft de y-waarde van het punt linksboven. Als deze buiten het scherm valt
+  * 			   returnt hij een error.
+  * @param  bm_nr: Dit argument geeft het volgnummer van de bitmap.
   * @param  reserved: Dit argument mag gebruikt worden voor extra's
   * @retval int error
   */
