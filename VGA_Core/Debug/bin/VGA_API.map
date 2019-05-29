@@ -67,8 +67,8 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x48 ..\obj\stm32f4xx_syscfg.o
  .debug_ranges  0x00000000       0x38 ..\obj\stm32f4xx_syscfg.o
- .debug_line    0x00000000      0x1e5 ..\obj\stm32f4xx_syscfg.o
- .debug_str     0x00000000      0x2e3 ..\obj\stm32f4xx_syscfg.o
+ .debug_line    0x00000000      0x1c4 ..\obj\stm32f4xx_syscfg.o
+ .debug_str     0x00000000      0x2d8 ..\obj\stm32f4xx_syscfg.o
  .comment       0x00000000       0x71 ..\obj\stm32f4xx_syscfg.o
  .ARM.attributes
                 0x00000000       0x33 ..\obj\stm32f4xx_syscfg.o
@@ -271,8 +271,8 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0xa0 ..\obj\printf.o
  .debug_ranges  0x00000000       0x90 ..\obj\printf.o
- .debug_line    0x00000000      0x3a6 ..\obj\printf.o
- .debug_str     0x00000000      0x67e ..\obj\printf.o
+ .debug_line    0x00000000      0x39b ..\obj\printf.o
+ .debug_str     0x00000000      0x668 ..\obj\printf.o
  .comment       0x00000000       0x71 ..\obj\printf.o
  .ARM.attributes
                 0x00000000       0x33 ..\obj\printf.o
@@ -326,8 +326,8 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x60 ..\obj\syscalls.o
  .debug_ranges  0x00000000       0x50 ..\obj\syscalls.o
- .debug_line    0x00000000      0x186 ..\obj\syscalls.o
- .debug_str     0x00000000      0x2ef ..\obj\syscalls.o
+ .debug_line    0x00000000      0x17b ..\obj\syscalls.o
+ .debug_str     0x00000000      0x2d9 ..\obj\syscalls.o
  .comment       0x00000000       0x71 ..\obj\syscalls.o
  .ARM.attributes
                 0x00000000       0x33 ..\obj\syscalls.o
@@ -421,8 +421,8 @@ Discarded input sections
  .debug_aranges
                 0x00000000       0x58 ..\obj\stm32f4xx_exti.o
  .debug_ranges  0x00000000       0x48 ..\obj\stm32f4xx_exti.o
- .debug_line    0x00000000      0x281 ..\obj\stm32f4xx_exti.o
- .debug_str     0x00000000      0x352 ..\obj\stm32f4xx_exti.o
+ .debug_line    0x00000000      0x255 ..\obj\stm32f4xx_exti.o
+ .debug_str     0x00000000      0x347 ..\obj\stm32f4xx_exti.o
  .comment       0x00000000       0x71 ..\obj\stm32f4xx_exti.o
  .ARM.attributes
                 0x00000000       0x33 ..\obj\stm32f4xx_exti.o
@@ -1263,54 +1263,54 @@ OUTPUT(VGA_API.elf elf32-littlearm)
  .debug_ranges  0x00000630       0x30 ..\obj\misc.o
  .debug_ranges  0x00000660      0x2e8 ..\obj\stm32f4xx_tim.o
 
-.debug_line     0x00000000     0x3970
- .debug_line    0x00000000      0x2f7 ..\obj\API_DRAW.o
- .debug_line    0x000002f7      0x241 ..\obj\delay.o
- .debug_line    0x00000538      0x47e ..\obj\stm32f4xx_usart.o
- .debug_line    0x000009b6      0x3fb ..\obj\uart.o
- .debug_line    0x00000db1       0xaf ..\obj\startup_stm32f4xx.o
- .debug_line    0x00000e60      0x85b ..\obj\tekst_bitmap_functions.o
- .debug_line    0x000016bb       0x7f ..\obj\main.o
- .debug_line    0x0000173a      0x576 ..\obj\stm32f4xx_rcc.o
- .debug_line    0x00001cb0      0x31b ..\obj\stm32f4xx_gpio.o
- .debug_line    0x00001fcb      0x1a7 ..\obj\system_stm32f4xx.o
- .debug_line    0x00002172      0x3b8 ..\obj\stm32f4xx_dma.o
- .debug_line    0x0000252a      0x472 ..\obj\API_IO.o
- .debug_line    0x0000299c      0x372 ..\obj\stm32_ub_vga_screen.o
- .debug_line    0x00002d0e      0x221 ..\obj\misc.o
- .debug_line    0x00002f2f      0xa41 ..\obj\stm32f4xx_tim.o
+.debug_line     0x00000000     0x3703
+ .debug_line    0x00000000      0x2cb ..\obj\API_DRAW.o
+ .debug_line    0x000002cb      0x215 ..\obj\delay.o
+ .debug_line    0x000004e0      0x452 ..\obj\stm32f4xx_usart.o
+ .debug_line    0x00000932      0x3c4 ..\obj\uart.o
+ .debug_line    0x00000cf6       0xa4 ..\obj\startup_stm32f4xx.o
+ .debug_line    0x00000d9a      0x7fe ..\obj\tekst_bitmap_functions.o
+ .debug_line    0x00001598       0x74 ..\obj\main.o
+ .debug_line    0x0000160c      0x54a ..\obj\stm32f4xx_rcc.o
+ .debug_line    0x00001b56      0x2ef ..\obj\stm32f4xx_gpio.o
+ .debug_line    0x00001e45      0x191 ..\obj\system_stm32f4xx.o
+ .debug_line    0x00001fd6      0x38c ..\obj\stm32f4xx_dma.o
+ .debug_line    0x00002362      0x451 ..\obj\API_IO.o
+ .debug_line    0x000027b3      0x346 ..\obj\stm32_ub_vga_screen.o
+ .debug_line    0x00002af9      0x1f5 ..\obj\misc.o
+ .debug_line    0x00002cee      0xa15 ..\obj\stm32f4xx_tim.o
 
-.debug_str      0x00000000     0x3206
- .debug_str     0x00000000      0x300 ..\obj\API_DRAW.o
-                                0x354 (size before relaxing)
- .debug_str     0x00000300       0xb6 ..\obj\delay.o
-                                0x2a5 (size before relaxing)
- .debug_str     0x000003b6      0x4c4 ..\obj\stm32f4xx_usart.o
-                                0x673 (size before relaxing)
- .debug_str     0x0000087a      0x806 ..\obj\uart.o
-                                0xb22 (size before relaxing)
- .debug_str     0x00001080       0xbe ..\obj\startup_stm32f4xx.o
-                                0x155 (size before relaxing)
- .debug_str     0x0000113e      0x3fd ..\obj\tekst_bitmap_functions.o
-                                0x611 (size before relaxing)
- .debug_str     0x0000153b       0x49 ..\obj\main.o
-                                0x1a0 (size before relaxing)
- .debug_str     0x00001584      0x5eb ..\obj\stm32f4xx_rcc.o
-                                0x834 (size before relaxing)
- .debug_str     0x00001b6f      0x1b1 ..\obj\stm32f4xx_gpio.o
-                                0x487 (size before relaxing)
- .debug_str     0x00001d20      0x126 ..\obj\system_stm32f4xx.o
-                                0x38e (size before relaxing)
- .debug_str     0x00001e46      0x3a5 ..\obj\stm32f4xx_dma.o
-                                0x530 (size before relaxing)
- .debug_str     0x000021eb      0x1f2 ..\obj\API_IO.o
-                                0x510 (size before relaxing)
- .debug_str     0x000023dd      0x2ae ..\obj\stm32_ub_vga_screen.o
-                                0xcc1 (size before relaxing)
- .debug_str     0x0000268b      0x16f ..\obj\misc.o
-                                0x3bd (size before relaxing)
- .debug_str     0x000027fa      0xa0c ..\obj\stm32f4xx_tim.o
-                                0xdb4 (size before relaxing)
+.debug_str      0x00000000     0x315b
+ .debug_str     0x00000000      0x2ea ..\obj\API_DRAW.o
+                                0x33e (size before relaxing)
+ .debug_str     0x000002ea       0xab ..\obj\delay.o
+                                0x28f (size before relaxing)
+ .debug_str     0x00000395      0x4b9 ..\obj\stm32f4xx_usart.o
+                                0x668 (size before relaxing)
+ .debug_str     0x0000084e      0x7fb ..\obj\uart.o
+                                0xb0c (size before relaxing)
+ .debug_str     0x00001049       0xb3 ..\obj\startup_stm32f4xx.o
+                                0x14a (size before relaxing)
+ .debug_str     0x000010fc      0x3f7 ..\obj\tekst_bitmap_functions.o
+                                0x600 (size before relaxing)
+ .debug_str     0x000014f3       0x3e ..\obj\main.o
+                                0x18a (size before relaxing)
+ .debug_str     0x00001531      0x5e0 ..\obj\stm32f4xx_rcc.o
+                                0x829 (size before relaxing)
+ .debug_str     0x00001b11      0x1a6 ..\obj\stm32f4xx_gpio.o
+                                0x47c (size before relaxing)
+ .debug_str     0x00001cb7      0x11b ..\obj\system_stm32f4xx.o
+                                0x383 (size before relaxing)
+ .debug_str     0x00001dd2      0x39a ..\obj\stm32f4xx_dma.o
+                                0x525 (size before relaxing)
+ .debug_str     0x0000216c      0x1e7 ..\obj\API_IO.o
+                                0x4fa (size before relaxing)
+ .debug_str     0x00002353      0x2a3 ..\obj\stm32_ub_vga_screen.o
+                                0xcb6 (size before relaxing)
+ .debug_str     0x000025f6      0x164 ..\obj\misc.o
+                                0x3b2 (size before relaxing)
+ .debug_str     0x0000275a      0xa01 ..\obj\stm32f4xx_tim.o
+                                0xda9 (size before relaxing)
 
 .comment        0x00000000       0x70
  .comment       0x00000000       0x70 ..\obj\API_DRAW.o

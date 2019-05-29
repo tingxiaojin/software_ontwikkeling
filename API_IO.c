@@ -200,34 +200,6 @@ int STRING_check(char* input, char* font)
 		return FALSE;
 }
 
-/*int API_io_putc(char c, int x, int y, int kleur, int achtergrond)
-{
-	int i,j,k;//, error;
-	int start, stop;
-
-
-	c = c-' ';
-	start = C_arial_16ptDescriptors[(int)c][1];
-	stop  = (c == TEKENS-1)? sizeof(C_arial_16ptBitmaps):C_arial_16ptDescriptors[(int)c+1][1];
-
-	for(i=0; start<stop; start+=C_arial_16ptDescriptors[(int)c][0], i++)
-	{
-		for(k=0; k<C_arial_16ptDescriptors[(int)c][0]; k++)
-		{
-			for(j=0; j<BIT; j++)
-			{
-				int test = 0x80>>j & C_arial_16ptBitmaps[start+k];
-				if(test)
-					UB_VGA_SetPixel((BIT*k)+j+x, y, kleur);
-				else if(achtergrond != -1)
-					UB_VGA_SetPixel((BIT*k)+j+x, y, achtergrond);
-			}
-		}
-		y++;
-	}
-	return 0;
-}*/
-
 
 int API_io_tekst(char* zin, int x_lup, int y_lup, int kleur, char* font, int fontgrootte, int fontstyle, int reserved)
 {
