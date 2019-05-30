@@ -48,7 +48,9 @@
 //#define DEBUG
 
 
-/** @addtogroup StringLL
+/** @addtogroup LL_string
+  * @{
+  * @addtogroup LL_string_functions
   * @{
   */
 
@@ -120,6 +122,7 @@ char* LL_STRING_param(char* buffer, int paramnum)
 }
 
 /**
+  * @}
   * @}
   */
 
@@ -266,7 +269,7 @@ int LL_FIG_exe(FUNCTIE* input)
 		API_io_UART_puts(" \n\r");
 #endif
 		if(input->parameters < PARAM6) return TOOLITTLEPARAM;
-		error = API_draw_line(input->startx, input->starty, input->eindx, input->eindy, LL_kstoki(input->kleur), input->dikte, 0);
+		error = API_draw_line(input->startx, input->starty, input->eindx, input->eindy, LL_STRING_kstoki(input->kleur), input->dikte, 0);
 		break;
 
 	case RECHTHOEK:
@@ -289,7 +292,7 @@ int LL_FIG_exe(FUNCTIE* input)
 #endif
 		if(input->parameters < PARAM6) return TOOLITTLEPARAM;
 		error = API_draw_rectangle(input->startx, input->starty, input->breedte,
-				input->hoogte, LL_kstoki(input->kleur), input->gevuld, 0, 0);
+				input->hoogte, LL_STRING_kstoki(input->kleur), input->gevuld, 0, 0);
 		break;
 
 	case TEKST:
@@ -313,7 +316,7 @@ int LL_FIG_exe(FUNCTIE* input)
 		API_io_UART_puts(" \n\r");
 #endif
 		if(input->parameters < PARAM8) return TOOLITTLEPARAM; // error handling (func niet uitvoeren als fout)
-		error = API_draw_text(input->startx, input->starty, LL_kstoki(input->kleur),
+		error = API_draw_text(input->startx, input->starty, LL_STRING_kstoki(input->kleur),
 				input->tekst, input->font, input->fontgrootte, input->fontstijl, input->achtergrond);
 		break;
 
@@ -344,7 +347,7 @@ int LL_FIG_exe(FUNCTIE* input)
 		API_io_UART_puts(" \n\r");
 #endif
 		if(input->parameters < PARAM1) return TOOLITTLEPARAM;
-		API_io_clearscherm(LL_kstoki(input->kleur));
+		API_io_clearscherm(LL_STRING_kstoki(input->kleur));
 		break;
 
 	case WACHT:
@@ -362,7 +365,7 @@ int LL_FIG_exe(FUNCTIE* input)
 			API_io_UART_puts(" ");
 			API_io_UART_putint(*(pstarty+i));
 			error += API_draw_line(*(pstartx+i), *(pstarty+i), *(pstartx+i+1),
-					*(pstarty+i+1), LL_kstoki(input->kleur), input->dikte, 0);
+					*(pstarty+i+1), LL_STRING_kstoki(input->kleur), input->dikte, 0);
 		}
 		API_io_UART_puts(" ");
 		API_io_UART_puts(input->kleur);
@@ -383,14 +386,14 @@ int LL_FIG_exe(FUNCTIE* input)
 
 	case TOREN:
 		// Bloks
-		API_draw_rectangle(input->startx   , input->starty		, 10, 20, LL_kstoki(input->kleur), 0, 0, 0);
-		API_draw_rectangle(input->startx+25, input->starty		, 10, 20, LL_kstoki(input->kleur), 0, 0, 0);
-		API_draw_rectangle(input->startx+50, input->starty		, 10, 20, LL_kstoki(input->kleur), 0, 0, 0);
+		API_draw_rectangle(input->startx   , input->starty		, 10, 20, LL_STRING_kstoki(input->kleur), 0, 0, 0);
+		API_draw_rectangle(input->startx+25, input->starty		, 10, 20, LL_STRING_kstoki(input->kleur), 0, 0, 0);
+		API_draw_rectangle(input->startx+50, input->starty		, 10, 20, LL_STRING_kstoki(input->kleur), 0, 0, 0);
 
 		// Base structure
-		API_draw_rectangle(input->startx	,input->starty+20	, 60, 20, LL_kstoki(input->kleur), 0, 0, 0);
-		API_draw_rectangle(input->startx+15	,input->starty+40	, 30, 60, LL_kstoki(input->kleur), 0, 0, 0);
-		API_draw_rectangle(input->startx	,input->starty+100	, 60, 40, LL_kstoki(input->kleur), 0, 0, 0);
+		API_draw_rectangle(input->startx	,input->starty+20	, 60, 20, LL_STRING_kstoki(input->kleur), 0, 0, 0);
+		API_draw_rectangle(input->startx+15	,input->starty+40	, 30, 60, LL_STRING_kstoki(input->kleur), 0, 0, 0);
+		API_draw_rectangle(input->startx	,input->starty+100	, 60, 40, LL_STRING_kstoki(input->kleur), 0, 0, 0);
 
 
 		// Cosmetica
@@ -423,4 +426,3 @@ int LL_FIG_exe(FUNCTIE* input)
 /**
   * @}
   */
-

@@ -20,11 +20,11 @@
   * @{
   */
 
-/** @addtogroup StringUI
+/** @addtogroup UI_string
   * @{
   */
 
-/** @addtogroup Ascii_waardes
+/** @addtogroup UI_string_asciiwaardes
   * @{
   */
 #define UI_STR_EMPTY 0 		/*!< Waarde van een lege string */

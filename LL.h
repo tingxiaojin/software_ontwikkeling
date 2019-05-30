@@ -19,15 +19,25 @@
 #include <string.h>
 #include <stdlib.h>
 
+/**
+  * @addtogroup LL
+  * @{
+  */
+
 #define FALSE 0
 #define TRUE  1
+
+
+
+/**
+  * @addtogroup LL_print_figuren
+  * @{
+  */
+
 
 //--------------------------------------------------------------
 // Structures
 //--------------------------------------------------------------
-/*
- * @brief: LL sturctiore module
- */
 typedef struct
 {
 	int functie;  	/*!< Functienaam (LIJN, RECHTHOEK, etc.) */
@@ -78,6 +88,18 @@ enum
 	TOREN
 };
 
+
+/**
+  * @}
+  */
+
+/**
+  * @addtogroup LL_string
+  *
+  * @brief LL string attributen
+  * @{
+  */
+
 enum PARAM
 {
 	PARAM0 = 0,
@@ -103,5 +125,11 @@ extern void  LL_FIG_init	 (char* buffer, FUNCTIE* input, int vorm);
 extern int 	 LL_STRING_kstoki(char* skleur);
 extern int   LL_STRING_check (char* buffer, char* figuur);
 extern char* LL_STRING_param (char* buffer, int paramnum);
+
+/**
+  *
+  * @}
+  * @}
+  */
 
 #endif

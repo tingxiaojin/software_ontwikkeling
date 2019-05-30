@@ -24,9 +24,11 @@
   * @{
   */
 
-/** @addtogroup Error
+/** @addtogroup UI_error
   * @brief Error functions
   * @{
+  * @addtogroup UI_error_functions
+  * {
   */
 
 
@@ -65,10 +67,6 @@ void UI_ERR_put(int error)
 		API_io_UART_puts("\tINPUT EMPTY!\n\rErrorcode: ");
 		API_io_UART_putint(error);
 		break;
-	case TOOMUCHPARAM:
-		API_io_UART_puts("\tTO MUCH PARAMETERS! GIVE ME LESS\n\rErrorcode: ");
-		API_io_UART_putint(error);
-		break;
 	case TOOLITTLEPARAM:
 		API_io_UART_puts("\tTO LITTLE PARAMETERS! GIVE ME MORE\n\rErrorcode: ");
 		API_io_UART_putint(error);
@@ -81,11 +79,14 @@ void UI_ERR_put(int error)
 }
 /**
   * @}
+  * @}
   */
 
 
-/** @addtogroup StringUI
+/** @addtogroup UI_string
   * @brief String functions
+  * @{
+  * @addtogroup UI_string_functions
   * @{
   */
 
@@ -177,6 +178,7 @@ void UI_CH_rm(char* buffer, char c, char stopc)
 
 /**
   * @}
+  * @}
   */
 
 
@@ -218,53 +220,53 @@ int main(void)
 		if (LL_STRING_check(buffer,"LIJN"))
 		{
 			LL_FIG_init(buffer, &input, LIJN);
-			error = LL_exe(&input);
+			error = LL_FIG_exe(&input);
 		}
 		else if (LL_STRING_check(buffer,"RECHTHOEK"))
 		{
 			LL_FIG_init(buffer, &input, RECHTHOEK);
-			error = LL_exe(&input);
+			error = LL_FIG_exe(&input);
 		}
 		else if (LL_STRING_check(buffer,"BITMAP"))
 		{
 			LL_FIG_init(buffer, &input, BITMAP);
-			error = LL_exe(&input);
+			error = LL_FIG_exe(&input);
 		}
 		else if (LL_STRING_check(buffer,"CLEARSCHERM"))
 		{
 			LL_FIG_init(buffer, &input, CLEARSCHERM);
-			error = LL_exe(&input);
+			error = LL_FIG_exe(&input);
 		}
 		else if (LL_STRING_check(buffer,"WACHT"))
 		{
 			LL_FIG_init(buffer, &input, WACHT);
 			memset(buffer, 0, sizeof(buffer));
-			error = LL_exe(&input);
+			error = LL_FIG_exe(&input);
 		}
 		else if (LL_STRING_check(buffer,"TEKST"))
 		{
 			LL_FIG_init(buffer, &input, TEKST);
-			error = LL_exe(&input);
+			error = LL_FIG_exe(&input);
 		}
 		else if (LL_STRING_check(buffer,"FIGUUR"))
 		{
 			LL_FIG_init(buffer, &input, FIGUUR);
-			error = LL_exe(&input);
+			error = LL_FIG_exe(&input);
 		}
 		else if (LL_STRING_check(buffer,"NL-FLAG"))
 		{
 			LL_FIG_init(buffer, &input, NLFLAG);
-			error = LL_exe(&input);
+			error = LL_FIG_exe(&input);
 		}
 		else if (LL_STRING_check(buffer,"IT-FLAG"))
 		{
 			LL_FIG_init(buffer, &input, ITFLAG);
-			error = LL_exe(&input);
+			error = LL_FIG_exe(&input);
 		}
 		else if (LL_STRING_check(buffer,"TOREN"))
 		{
 			LL_FIG_init(buffer, &input, TOREN);
-			error = LL_exe(&input);
+			error = LL_FIG_exe(&input);
 		}
 		else
 			error = INPUTERROR;
@@ -272,4 +274,3 @@ int main(void)
 		UI_ERR_put(error);
 	}
 }
-
