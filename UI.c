@@ -197,18 +197,17 @@ int main(void)
 	while(1)
 	{
 //		API_io_UART_INT_gets(buffer); // get user input
-//		API_io_DELAY_s(5);
+
 		API_io_UART_gets(buffer);
-//		for(i=0; i<sizeof(buffer); i++)
-//			API_io_UART_putchar(buffer[i]);
-//		return 0;
+
+		// uncomment this when you want to use UART_INT
 //		if(strlen(buffer)==EMPTY)
 //			continue;
 //
 //		// if input = empty
 //		if(buffer[0] == CR)
 //		{
-//UI_STR_CR	error = STR_LEEG;
+//			error = STR_LEEG;
 //			UI_ERR_put(error);
 //			continue;
 //		}
