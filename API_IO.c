@@ -1,5 +1,6 @@
 #include "includes.h"
-#include "API_IO.h"
+#include "Arial.h"
+#include "Consolas.h"
 
 ///////////////////////////////////////////
  // init
@@ -11,7 +12,7 @@ void API_io_init()
 //	LCD_init();
 	DELAY_init();
 	UART_init();
-	UART_INT_init();
+//	UART_INT_init();
 }
 
 void  API_io_UART_INT_init(void)
@@ -57,7 +58,7 @@ void API_io_DELAY_s(unsigned int x)
 ///////////////////////////////////////////
 void API_io_UART_INT_gets(char* buffer)
 {
-	if((string[strlen(string)-1]=='\n')&&(strlen(string) > 1))
+	if((string[strlen(string)-1]=='\n')&&(strlen(string) > 0))
 	{
 //		API_io_UART_puts(string);
 		strcpy(buffer, string);
@@ -190,18 +191,56 @@ void  API_io_rm_c_ut(char* buffer, char c, char stopc)
 
 int STRING_check(char* input, char* font)
 {
-	int i;
-	for(i=0;*(input+i)!='\0'; i++)
+	int i = 0;
+	int buffer;
+	/*for(i=0;*(input+i)!='\0'; i++)
 		*(input+i) = toupper(*(input+i));
 
 	if(!(strncmp(input,font,strlen(font)))==TRUE)
 		return TRUE;
 	else
-		return FALSE;
+		return FALSE;*/
+	while(input[i] != '\0')
+	{
+		if(input[i] == font[i])
+			buffer = 1;
+		else
+			buffer = 0;
+		i++;
+	}
+
+	return buffer;
+
 }
 
+int API_io_putc(char c, int x, int y, int kleur, int achtergrond,uint8_t* bitmap, int descriptors[TEKENS][GEGEVENS], int bitmapsize)
+{
+	int i,j,k;//, error;
+	int start, stop;
 
-int API_io_tekst(char* zin, int x_lup, int y_lup, int kleur, char* font, int fontgrootte, int fontstyle, int reserved)
+	c = c-' ';
+	start = descriptors[(int)c][1];
+	stop  = (c == TEKENS-1)? bitmapsize:descriptors[(int)c+1][1];
+
+	for(i=0; start<stop; start+=descriptors[(int)c][0], i++)
+	{
+		for(k=0; k<descriptors[(int)c][0]; k++)
+		{
+			for(j=0; j<BIT; j++)
+			{
+				int test = 0x80>>j & bitmap[start+k];
+				if(test)
+					UB_VGA_SetPixel((BIT*k)+j+x, y, kleur);
+				//else if(achtergrond != -1)
+					//UB_VGA_SetPixel((BIT*k)+j+x, y, achtergrond);
+			}
+		}
+		y++;
+	}
+	return 0;
+}
+
+int API_io_puts(char* zin, int x_lup, int y_lup, int kleur, char* font, int fontgrootte, int fontstyle, int reserved)
 {
 	int error = 0;
 	int state = DEFAULT;
@@ -229,7 +268,7 @@ int API_io_tekst(char* zin, int x_lup, int y_lup, int kleur, char* font, int fon
 					state = 5;
 				break;
 			default:
-				error = 1;
+				error = 2;
 				break;
 		}
 	}
@@ -258,55 +297,55 @@ int API_io_tekst(char* zin, int x_lup, int y_lup, int kleur, char* font, int fon
 						state = 11;
 					break;
 				default:
-					error = 1;
+					error = 3;
 					break;
 			}
 		}
 		else {
-			error = 1;
+			error = 4;
 		}
 	}
 
 	switch(state)
 	{
 		case 0: //arial, normaal, 8pt
-			API_io_puts_0(zin, x_lup, y_lup, kleur, reserved);
+			API_io_puts(zin, x_lup, y_lup, kleur, reserved, S_arial_8ptBitmaps, S_arial_8ptDescriptors, sizeof(S_arial_8ptBitmaps));
 			break;
 		case 1: //arial, vet, 8pt
-			API_io_puts_1(zin, x_lup, y_lup, kleur, reserved);
+			API_io_puts(zin, x_lup, y_lup, kleur, reserved, B_arial_8ptBitmaps, B_arial_8ptDescriptors, sizeof(B_arial_8ptBitmaps));
 			break;
 		case 2: //arial, cursief, 8pt
-			API_io_puts_2(zin, x_lup, y_lup, kleur, reserved);
+			API_io_puts(zin, x_lup, y_lup, kleur, reserved, C_arial_8ptBitmaps, C_arial_8ptDescriptors, sizeof(C_arial_8ptBitmaps));
 			break;
 		case 3: //arial, normaal, 16pt
-			API_io_puts_3(zin, x_lup, y_lup, kleur, reserved);
+			API_io_puts(zin, x_lup, y_lup, kleur, reserved, S_arial_16ptBitmaps, S_arial_16ptDescriptors, sizeof(S_arial_16ptBitmaps));
 			break;
 		case 4: //arial, vet, 16pt
-			API_io_puts_4(zin, x_lup, y_lup, kleur, reserved);
+			API_io_puts(zin, x_lup, y_lup, kleur, reserved, B_arial_16ptBitmaps, B_arial_16ptDescriptors, sizeof(B_arial_16ptBitmaps));
 			break;
 		case 5: //arial, cursief, 16pt
-			API_io_puts_5(zin, x_lup, y_lup, kleur, reserved);
+			API_io_puts(zin, x_lup, y_lup, kleur, reserved, C_arial_16ptBitmaps, C_arial_16ptDescriptors, sizeof(C_arial_16ptBitmaps));
 			break;
 		case 6: //consalas, normaal, 8pt
-			API_io_puts_6(zin, x_lup, y_lup, kleur, reserved);
+			API_io_puts(zin, x_lup, y_lup, kleur, reserved, S_consolas_8ptBitmaps, S_consolas_8ptDescriptors, sizeof(S_consolas_8ptBitmaps));
 			break;
 		case 7: //consalas, vet, 8pt
-			API_io_puts_7(zin, x_lup, y_lup, kleur, reserved);
+			API_io_puts(zin, x_lup, y_lup, kleur, reserved, B_consolas_8ptBitmaps, B_consolas_8ptDescriptors, sizeof(B_consolas_8ptBitmaps));
 			break;
 		case 8: //consalas, cursief, 8pt
-			API_io_puts_8(zin, x_lup, y_lup, kleur, reserved);
+			API_io_puts(zin, x_lup, y_lup, kleur, reserved, C_consolas_8ptBitmaps, C_consolas_8ptDescriptors, sizeof(C_consolas_8ptBitmaps));
 			break;
 		case 9: //consalas, normaal, 16pt
-			API_io_puts_9(zin, x_lup, y_lup, kleur, reserved);
+			API_io_puts(zin, x_lup, y_lup, kleur, reserved, S_consolas_16ptBitmaps, S_consolas_16ptDescriptors, sizeof(S_consolas_16ptBitmaps));
 			break;
 		case 10: //consalas, vet, 16pt
-			API_io_puts_10(zin, x_lup, y_lup, kleur, reserved);
+			API_io_puts(zin, x_lup, y_lup, kleur, reserved, B_consolas_16ptBitmaps, B_consolas_16ptDescriptors, sizeof(B_consolas_16ptBitmaps));
 			break;
 		case 11: //consalas, cursief, 16pt
-			API_io_puts_11(zin, x_lup, y_lup, kleur, reserved);
+			API_io_puts(zin, x_lup, y_lup, kleur, reserved, C_consolas_16ptBitmaps, C_consolas_16ptDescriptors, sizeof(C_consolas_16ptBitmaps));
 			break;
 		default:
-			error = 1;
+			error = 5;
 			break;
 	}
 

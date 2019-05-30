@@ -34,7 +34,7 @@
         <LocateLinkFile path="c:/coocox/coide/configuration/programdata/VGA_Core/arm-gcc-link.ld" type="0"/>
       </Link>
       <Output>
-        <Option name="OutputFileType" value="0"/>
+        <Option name="OutputFileType" value="1"/>
         <Option name="Path" value="./"/>
         <Option name="Name" value="VGA_API"/>
         <Option name="HEX" value="1"/>
@@ -95,9 +95,13 @@
 <<<<<<< HEAD
 =======
     <File name="bitmaps" path="" type="2"/>
+<<<<<<< HEAD
 >>>>>>> 8129987853fb6e1ba8e7d433ded7dcf938cf0f9f
     <File name="cmsis_boot/stm32f4xx.h" path="cmsis_boot/stm32f4xx.h" type="1"/>
+=======
+>>>>>>> c969de50b723587cb2d9b3cc8324dc59d3d43766
     <File name="cmsis/core_cm4_simd.h" path="cmsis/core_cm4_simd.h" type="1"/>
+    <File name="cmsis_boot/stm32f4xx.h" path="cmsis_boot/stm32f4xx.h" type="1"/>
     <File name="cmsis_boot/startup" path="" type="2"/>
     <File name="api/API_IO.h" path="api/API_IO.h" type="1"/>
     <File name="cmsis/core_cmFunc.h" path="cmsis/core_cmFunc.h" type="1"/>
@@ -136,8 +140,8 @@
     <File name="ports/delay.h" path="ports/delay.h" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_dma.h" path="cmsis_lib/include/stm32f4xx_dma.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_tim.c" path="cmsis_lib/source/stm32f4xx_tim.c" type="1"/>
-    <File name="cmsis_lib/include/stm32f4xx_gpio.h" path="cmsis_lib/include/stm32f4xx_gpio.h" type="1"/>
     <File name="ports/uart.c" path="ports/uart.c" type="1"/>
+    <File name="cmsis_lib/include/stm32f4xx_gpio.h" path="cmsis_lib/include/stm32f4xx_gpio.h" type="1"/>
     <File name="ub_lib/stm32_ub_vga_screen.h" path="ub_lib/stm32_ub_vga_screen.h" type="1"/>
     <File name="syscalls" path="" type="2"/>
     <File name="ports/includes.h" path="includes.h" type="1"/>

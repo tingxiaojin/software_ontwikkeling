@@ -34,7 +34,8 @@
 #define  VGA_COL_WHITE          0xFF
 
 #define	DEFAULT 				0xFF
-
+#define TEKENS 94
+#define GEGEVENS 2
 
 
 //--------------------------------------------------------------
@@ -60,8 +61,8 @@ extern void  API_io_UART_putnum		(unsigned int num, unsigned char deel);
 
 extern void  API_io_rp_c			(char* buffer, char old_char, char new_char);
 extern void  API_io_rm_c_ut			(char* buffer, char c		, char stopc);
-//extern int 	 API_io_putc 			(int c,    int x, 	   int y,	  int kleur, int achtergrond);
-extern int 	 API_io_tekst 			(char* zin, int x_lup, int y_lup, int kleur, char* font, int fontgrootte, int fonststyle, int reserved);
+extern int 	 API_io_putc 			(int c,    int x, 	   int y,	  int kleur, int achtergrond, uint8_t* bitmap, int descriptors[TEKENS][GEGEVENS], int bitmapsize);
+extern int 	 API_io_puts 			(char* zin, int x_lup, int y_lup, int kleur, char* font, int fontgrootte, int fonststyle, int reserved);
 
 extern void  API_io_bitmap	  		(int x, 	 int y, 	 unsigned char* bitmap, int background);
 extern void  API_io_clearscherm		(int kleur);
