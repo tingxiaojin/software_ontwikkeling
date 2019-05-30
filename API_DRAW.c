@@ -52,11 +52,11 @@ int API_draw_clearscreen (int color)
 ///////////////////////////////////////////
  // tekst
 //////////////////////////////////////////
-int API_draw_text(int x_lup, int y_lup, int color, char* tekst, char* fontname, int fontsize, int fontsytle, int reserved)
+int API_draw_text(int x_lup, int y_lup, int color, char* tekst, char* fontname, int fontsize, int fontstyle, int reserved)
 {
 	int error;
 //						(* zin, x_lup, y_lup, kleur, char* font, int fontgrootte, int fonststyle, int reserved);
-	error = API_io_puts(tekst, x_lup, y_lup, color, fontname, fontsize, fontsytle, reserved);
+	error = API_io_tekst(tekst, x_lup, y_lup, color, fontname, fontsize, fontstyle, reserved);
 	return error;
 }
 

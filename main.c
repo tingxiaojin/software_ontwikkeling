@@ -185,9 +185,14 @@ int main(void)
 
 //	char buffer[50];
 
-	API_io_clearscherm(VGA_COL_BLUE);
+	API_io_clearscherm(VGA_COL_WHITE);
 //	API_draw_line(200, 0, 0, 200, 50, 5, 0);
-//	API_draw_text(50,50,VGA_COL_WHITE,"The quick brown fox jumps over the lazy dog",NULL,1,1, VGA_COL_RED);
+	API_draw_text(0,0,VGA_COL_RED, "klein S","arial",1,0, VGA_COL_RED);
+	API_draw_text(0,50,VGA_COL_RED, "groot S","consolas",2,0, VGA_COL_RED);
+	API_draw_text(0,100,VGA_COL_RED, "klein vet","arial",1,1, VGA_COL_RED);
+	API_draw_text(0,150,VGA_COL_RED, "groot vet","consolas",2,1, VGA_COL_RED);
+	API_draw_text(0,200,VGA_COL_RED, "klein cur","consolas",1,2, VGA_COL_RED);
+	API_draw_text(0,220,VGA_COL_RED, "groot cur","consolas",2,2, VGA_COL_RED);
 //	API_IO_clearscherm(VGA_COL_RED);
 
 //	API_IO_UART_puts("\n\rCode done\n\r");
@@ -208,46 +213,46 @@ int main(void)
 //	API_DRAW_bitmap(API_IO_SMILY_BOOS, 175, 70, FALSE);
 ////	API_draw_line(0, 0, 200, 200, VGA_COL_BLUE, 5);
 
-//char buffer[100];
+char buffer[100];
 
 //API_IO_UART_putchar(buffer[0]);
 
   while(1)
-  {
+  {/*
 	  // put the code here
 //		API_IO_UART_gets(buffer);
 //		API_IO_UART_putchar(buffer[1]);
 //		API_IO_UART_puts(buffer);
 //		API_IO_UART_puts("\n\r");
 //		DELAY_s(1);
-//	  API_io_UART_INT_gets(buffer);
-//	  API_io_UART_puts(buffer);
-////	  API_io_clearscherm(atoi(buffer));
-//	  API_io_rp_c(buffer, ',', '\0');
-//	  int red 	= atoi(LL_STRING_param(buffer,0));
-//	  int green = atoi(LL_STRING_param(buffer,1));
-//	  int blue 	= atoi(LL_STRING_param(buffer,2));
-//	  int bitval = (int)((((int)((float)red/(float)256*8))<<5) | (((int)((float)green/(float)256*8))<<2) | ((int)((float)blue/(float)256*4)));
-//
-//	  if (strlen(buffer)!= 0)
-//	  {
-//		  API_io_UART_puts("RGB:\t8-bit val: \n\r");
-//		  API_io_UART_putint(red);
-//		  API_io_UART_puts(" ");
-//		  API_io_UART_putint(green);
-//		  API_io_UART_puts(" ");
-//		  API_io_UART_putint(blue);
-//		  API_io_UART_puts(" \t0x");
-//		  API_io_UART_putnum(bitval, 16);
-//		  API_io_UART_puts("\n\r\n\r");
-//		  API_io_clearscherm(bitval);
-//	  }
+	  API_io_UART_INT_gets(buffer);
+	  API_io_UART_puts(buffer);
+//	  API_io_clearscherm(atoi(buffer));
+	  API_io_rp_c(buffer, ',', '\0');
+	  int red 	= atoi(LL_STRING_param(buffer,0));
+	  int green = atoi(LL_STRING_param(buffer,1));
+	  int blue 	= atoi(LL_STRING_param(buffer,2));
+	  int bitval = (int)((((int)((float)red/(float)256*8))<<5) | (((int)((float)green/(float)256*8))<<2) | ((int)((float)blue/(float)256*4)));
+
+	  if (strlen(buffer)!= 0)
+	  {
+		  API_io_UART_puts("RGB:\t8-bit val: \n\r");
+		  API_io_UART_putint(red);
+		  API_io_UART_puts(" ");
+		  API_io_UART_putint(green);
+		  API_io_UART_puts(" ");
+		  API_io_UART_putint(blue);
+		  API_io_UART_puts(" \t0x");
+		  API_io_UART_putnum(bitval, 16);
+		  API_io_UART_puts("\n\r\n\r");
+		  API_io_clearscherm(bitval);
+	  }
 //	  if((string[strlen(string)-1]=='\n')&&(strlen(string) > 1))
 //	  {
 //		  API_IO_UART_puts(string);
 //		  string[0] = '\0';
 //		  charcounter = 0;
-//	  }
+//	  }*/
   }
-  return 0;
+  //return 0;
 }

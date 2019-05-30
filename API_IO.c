@@ -1,6 +1,5 @@
 #include "includes.h"
-#include "Arial.h"
-
+#include "API_IO.h"
 
 ///////////////////////////////////////////
  // init
@@ -189,61 +188,129 @@ void  API_io_rm_c_ut(char* buffer, char c, char stopc)
 	}
 }
 
-int API_io_putc(char c, int x, int y, int kleur, int achtergrond)
+int STRING_check(char* input, char* font)
 {
-	int i,j,k;//, error;
-	int start, stop;
+	int i;
+	for(i=0;*(input+i)!='\0'; i++)
+		*(input+i) = toupper(*(input+i));
 
-	c = c-' ';
-	start = arial_16ptDescriptors[(int)c][1];
-	stop  = (c == TEKENS-1)? sizeof(arial_16ptDescriptors):arial_16ptDescriptors[(int)c+1][1];
-
-	for(i=0; start<stop; start+=arial_16ptDescriptors[(int)c][0], i++)
-	{
-		for(k=0; k<arial_16ptDescriptors[(int)c][0]; k++)
-		{
-			for(j=0; j<BIT; j++)
-				if(0x80>>j & arial_16ptBitmaps[start+k])
-					UB_VGA_SetPixel((BIT*k)+j+x, y, kleur);
-				else if(achtergrond != -1)
-					UB_VGA_SetPixel((BIT*k)+j+x, y, achtergrond);
-		}
-		y++;
-	}
-	return 0;
+	if(!(strncmp(input,font,strlen(font)))==TRUE)
+		return TRUE;
+	else
+		return FALSE;
 }
 
 
-int API_io_puts(char* zin, int x_lup, int y_lup, int kleur, char* font, int fontgrootte, int fonststyle, int reserved)
+int API_io_tekst(char* zin, int x_lup, int y_lup, int kleur, char* font, int fontgrootte, int fontstyle, int reserved)
 {
-	int i, error=0;
-	int x = x_lup;
-	int y = y_lup;
-	int fontnaam;
-	char **pgvar;
+	int error = 0;
+	int state = DEFAULT;
 
-	if (==TRUE)fontnaam = CONSOLAS;
-	else if (==TRUE)
+	if(STRING_check(font, "arial"))
 	{
-		fontnaam = ARIAL;
-		pgvar = arial_16ptDescriptors;
+		switch(fontstyle)
+		{
+			case 0 : //S
+				if(fontgrootte == 1)//8pt
+					state = 0;
+				else				//16pt
+					state = 3;
+				break;
+			case 1 :
+				if(fontgrootte == 1)
+					state = 1;
+				else
+					state = 4;
+				break;
+			case 2 :
+				if(fontgrootte == 1)
+					state = 2;
+				else
+					state = 5;
+				break;
+			default:
+				error = 1;
+				break;
+		}
+	}
+	else
+	{
+		if(STRING_check(font, "consolas"))
+		{
+			switch(fontstyle)
+			{
+				case 0 :
+					if(fontgrootte == 1)//8pt
+						state = 6;
+					else				//16pt
+						state = 9;
+					break;
+				case 1 :
+					if(fontgrootte == 1)
+						state = 7;
+					else
+						state = 10;
+					break;
+				case 2 :
+					if(fontgrootte == 1)
+						state = 8;
+					else
+						state = 11;
+					break;
+				default:
+					error = 1;
+					break;
+			}
+		}
+		else {
+			error = 1;
+		}
 	}
 
-	switch(fontnaam)
+	switch(state)
 	{
-	case Arial:
-	error = API_io_putc(*(zin), x, y, kleur, reserved);
-	for(i=1; i<strlen(zin); i++)
-	{
-		error = API_io_ERROR_inrange(x, y, x+(8*arial_16ptDescriptors[zin[i-1]-' '][0]), y+20);
-		if (error == FOUTX){ y+=20;x=x_lup-(8*arial_16ptDescriptors[zin[i-1]-' '][0]);}
-		else if(error == FOUTY) return error;
-
-		error +=API_io_putc(*(zin+i), x+=(8*arial_16ptDescriptors[zin[i-1]-' '][0]), y, kleur, reserved);
+		case 0: //arial, normaal, 8pt
+			API_io_puts_0(zin, x_lup, y_lup, kleur, reserved);
+			break;
+		case 1: //arial, vet, 8pt
+			API_io_puts_1(zin, x_lup, y_lup, kleur, reserved);
+			break;
+		case 2: //arial, cursief, 8pt
+			API_io_puts_2(zin, x_lup, y_lup, kleur, reserved);
+			break;
+		case 3: //arial, normaal, 16pt
+			API_io_puts_3(zin, x_lup, y_lup, kleur, reserved);
+			break;
+		case 4: //arial, vet, 16pt
+			API_io_puts_4(zin, x_lup, y_lup, kleur, reserved);
+			break;
+		case 5: //arial, cursief, 16pt
+			API_io_puts_5(zin, x_lup, y_lup, kleur, reserved);
+			break;
+		case 6: //consalas, normaal, 8pt
+			API_io_puts_6(zin, x_lup, y_lup, kleur, reserved);
+			break;
+		case 7: //consalas, vet, 8pt
+			API_io_puts_7(zin, x_lup, y_lup, kleur, reserved);
+			break;
+		case 8: //consalas, cursief, 8pt
+			API_io_puts_8(zin, x_lup, y_lup, kleur, reserved);
+			break;
+		case 9: //consalas, normaal, 16pt
+			API_io_puts_9(zin, x_lup, y_lup, kleur, reserved);
+			break;
+		case 10: //consalas, vet, 16pt
+			API_io_puts_10(zin, x_lup, y_lup, kleur, reserved);
+			break;
+		case 11: //consalas, cursief, 16pt
+			API_io_puts_11(zin, x_lup, y_lup, kleur, reserved);
+			break;
+		default:
+			error = 1;
+			break;
 	}
+
 	return error;
-
-	case CONSOLAS:
 }
 
 
