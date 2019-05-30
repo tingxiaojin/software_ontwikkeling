@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
+<<<<<<< HEAD
    <processor signature="GNU ar (GNU Tools for ARM Embedded Processors) 2.23.2.20131129">
       <target file="libVGA_API.a" lastModified="16b03281d48">
          <source file="..\obj\API_DRAW.o" lastModified="16b03280c0c"/>
@@ -21,6 +22,28 @@
          <source file="..\obj\stm32f4xx_exti.o" lastModified="16b0328196b"/>
          <source file="..\obj\misc.o" lastModified="16b032819e1"/>
          <source file="..\obj\stm32f4xx_tim.o" lastModified="16b03281acb"/>
+=======
+   <processor signature="arm-none-eabi-ar">
+      <target file="libVGA_API.a" lastModified="16b08ef5943">
+         <source file="..\obj\API_DRAW.o" lastModified="16b08ef4df2"/>
+         <source file="..\obj\stm32f4xx_syscfg.o" lastModified="16b08ef4e60"/>
+         <source file="..\obj\delay.o" lastModified="16b08ef4f15"/>
+         <source file="..\obj\stm32f4xx_usart.o" lastModified="16b08ef4f99"/>
+         <source file="..\obj\uart.o" lastModified="16b08ef5044"/>
+         <source file="..\obj\startup_stm32f4xx.o" lastModified="16b08ef5098"/>
+         <source file="..\obj\main.o" lastModified="16b08ef511a"/>
+         <source file="..\obj\stm32f4xx_rcc.o" lastModified="16b08ef51a5"/>
+         <source file="..\obj\printf.o" lastModified="16b08ef5230"/>
+         <source file="..\obj\stm32f4xx_gpio.o" lastModified="16b08ef52a5"/>
+         <source file="..\obj\system_stm32f4xx.o" lastModified="16b08ef5311"/>
+         <source file="..\obj\syscalls.o" lastModified="16b08ef538b"/>
+         <source file="..\obj\stm32f4xx_dma.o" lastModified="16b08ef5413"/>
+         <source file="..\obj\API_IO.o" lastModified="16b08ef5541"/>
+         <source file="..\obj\stm32_ub_vga_screen.o" lastModified="16b08ef55bb"/>
+         <source file="..\obj\stm32f4xx_exti.o" lastModified="16b08ef562a"/>
+         <source file="..\obj\misc.o" lastModified="16b08ef5697"/>
+         <source file="..\obj\stm32f4xx_tim.o" lastModified="16b08ef5751"/>
+>>>>>>> 9fa6d06b74ec7cb8ac1c3e3c5739f8c894543937
       </target>
    </processor>
 </history>

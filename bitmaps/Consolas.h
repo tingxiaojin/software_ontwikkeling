@@ -1,30 +1,69 @@
+/**
+  ******************************************************************************
+  * @file    Consolas.h
+  * @author  SOFT_ONT groep 7
+  * @version V1.0.0
+  * @date    28-05-2019
+  * @brief   In deze file staan de stringarrays van het font "consolas".
+  * 		 Er is per fontstyle en grootte een bitmaparray en een
+  * 		 description array bijgevoegd.
+  ******************************************************************************
+  * @attention
+  *
+  * De volgende fonstylen en groottes zijn haalbaar:
+  * consolas standaard 8pt
+  * consolas bold		8pt
+  * consolas cursief	8pt
+  * consolas standaard 16pt
+  * consolas bold		16pt
+  * consolas cursief	16pt
+  ****************************************************************
+  * array:					state:
+  * S_consolas_8ptBitmaps		6
+  * S_consolas_8ptDescription	6
+  * B_consolas_8ptBitmaps		7
+  * B_consolas_8ptDescription	7
+  * C_consolas_8ptBitmaps		8
+  * C_consolas_8ptDescription	8
+  *
+  * S_consolas_16ptBitmaps		9
+  * S_consolas_16ptDescription	9
+  * B_consolas_16ptBitmaps		10
+  * B_consolas_16ptDescription	10
+  * C_consolas_16ptBitmaps		11
+  * C_consolas_16ptDescription	11
+  *
+  ******************************************************************************
+  */
 
+/* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __CONSOLAS_H
 #define __CONSOLAS_H
 
+/** @addtogroup API
+  * @{
+  */
+
+/** @defgroup API_FONT
+  * @brief bitmaparray voor font consolas
+  * @{
+  */
+
+/** @defgroup FONT_ARRAY_SIZE
+  * @{
+  */
 #define TEKENS 94
 #define GEGEVENS 2
 
-/* S_consolas_8ptBitmaps		6
- * S_consolas_8ptDescription	6
- * B_consolas_8ptBitmaps		7
- * B_consolas_8ptDescription	7
- * C_consolas_8ptBitmaps		8
- * C_consolas_8ptDescription	8
- *
- * S_consolas_16ptBitmaps		9
- * S_consolas_16ptDescription	9
- * B_consolas_16ptBitmaps		10
- * B_consolas_16ptDescription	10
- * C_consolas_16ptBitmaps		11
- * C_consolas_16ptDescription	11
- */
+/**
+  * @}
+  */
 
-//
-//  Font data for Consolas 16pt
-//
+/** @defgroup FONT_CONSOLAS
+  * @{
+  */
 
-// Character bitmaps for Consolas 16pt
+/*bitmaparray voor consolas standaard 8pt*/
 const uint8_t S_consolas_8ptBitmaps[] =
 {
 		// @0 ' ' (1 pixels wide)
@@ -1250,7 +1289,7 @@ const uint8_t S_consolas_8ptBitmaps[] =
 	0xC0 // ##
 };
 
-
+/*descriptionarray voor consolas standaard 8pt*/
 const int S_consolas_8ptDescriptors[TEKENS][GEGEVENS]={
 		{1,0}, //[0][ ]
 		{1,11}, //[1][!]
@@ -1348,6 +1387,7 @@ const int S_consolas_8ptDescriptors[TEKENS][GEGEVENS]={
 		{1,1023}, //[93][}]
 };
 
+/*bitmaparray voor consolas bold 8pt*/
 const uint8_t B_consolas_8ptBitmaps[]={
 		// @0 ' ' (0 pixels wide)
 			0x00, //
@@ -2572,6 +2612,7 @@ const uint8_t B_consolas_8ptBitmaps[]={
 			0xC0, // ##
 };
 
+/*descriptionarray voor consolas bold 8pt*/
 const int B_consolas_8ptDescriptors[TEKENS][GEGEVENS]={
 {1,0}, //[0][ ]
 {1,11}, //[1][!]
@@ -2669,6 +2710,7 @@ const int B_consolas_8ptDescriptors[TEKENS][GEGEVENS]={
 {1,1023}, //[93][}]
 };
 
+/*bitmaparray voor consolas cursief 8pt*/
 const uint8_t C_consolas_8ptBitmaps[]={
 		// @0 ' ' (0 pixels wide)
 		0x00, //
@@ -3893,6 +3935,7 @@ const uint8_t C_consolas_8ptBitmaps[]={
 		0xC0, // ##
 };
 
+/*descriptionarray voor consolas cursief 8pt*/
 const int C_consolas_8ptDescriptors[TEKENS][GEGEVENS]={
 		{1,0}, //[0][ ]
 		{1,11}, //[1][!]
@@ -3990,10 +4033,7 @@ const int C_consolas_8ptDescriptors[TEKENS][GEGEVENS]={
 		{1,1023}, //[93][}]
 };
 
-////////////////////////////////////////////////////////////
-// ANDER LETTERTYPE
-////////////////////////////////////////////////////////////
-
+/*bitmaparray voor consolas standaard 16pt*/
 const uint8_t S_consolas_16ptBitmaps[]={
 		// @0 ' ' (0 pixels wide)
 			0x00, //
@@ -5688,6 +5728,7 @@ const uint8_t S_consolas_16ptBitmaps[]={
 			0xE0, // ###
 };
 
+/*descriptionarray voor consolas standaard 16pt*/
 const int S_consolas_16ptDescriptors[TEKENS][GEGEVENS]={
 		{1,0}, //[0][ ]
 		{1,16}, //[1][!]
@@ -5785,6 +5826,7 @@ const int S_consolas_16ptDescriptors[TEKENS][GEGEVENS]={
 		{1,1568}, //[93][}]
 };
 
+/*bitmaparray voor consolas bold 16pt*/
 const uint8_t B_consolas_16ptBitmaps[]=
 {
 		// @0 ' ' (0 pixels wide)
@@ -7480,6 +7522,7 @@ const uint8_t B_consolas_16ptBitmaps[]=
 		0xE0, // ###
 };
 
+/*descriptionarray voor consolas bold 16pt*/
 const int B_consolas_16ptDescriptors[TEKENS][GEGEVENS]=
 {
 {1,0}, //[0][ ]
@@ -7578,6 +7621,7 @@ const int B_consolas_16ptDescriptors[TEKENS][GEGEVENS]=
 {1,1520}, //[93][}]
 };
 
+/*bitmaparray voor consolas cursief 16pt*/
 const uint8_t C_consolas_16ptBitmaps[] =
 {
 		// @0 ' ' (0 pixels wide)
@@ -9274,6 +9318,7 @@ const uint8_t C_consolas_16ptBitmaps[] =
 
 };
 
+/*descriptionarray voor consolas cursief 16pt*/
 const int C_consolas_16ptDescriptors[TEKENS][GEGEVENS]=
 {
 		{1,0}, //[0][ ]
@@ -9372,4 +9417,15 @@ const int C_consolas_16ptDescriptors[TEKENS][GEGEVENS]=
 		{1,1760}, //[93][}]
 };
 
-#endif
+/**
+  * @}
+  */
+
+#endif/*__CONSOLAS_H */
+
+/**
+  * @}
+  */
+/**
+  * @}
+  */

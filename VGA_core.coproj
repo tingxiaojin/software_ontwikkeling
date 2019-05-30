@@ -88,7 +88,6 @@
     <File name="ports/uart.h" path="ports/uart.h" type="1"/>
     <File name="ports/delay.c" path="ports/delay.c" type="1"/>
     <File name="bitmaps/smiley_boos.h" path="bitmaps/smiley_boos.h" type="1"/>
-    <File name="Arial.h" path="bitmaps/Arial.h" type="1"/>
     <File name="cmsis_boot" path="" type="2"/>
     <File name="cmsis_lib/include/stm32f4xx_syscfg.h" path="cmsis_lib/include/stm32f4xx_syscfg.h" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_usart.h" path="cmsis_lib/include/stm32f4xx_usart.h" type="1"/>
@@ -129,14 +128,18 @@
     <File name="tekst_bitmap_functions.c" path="tekst_bitmap_functions.c" type="1"/>
     <File name="bitmaps/pijl_links.h" path="bitmaps/pijl_links.h" type="1"/>
     <File name="ub_lib" path="" type="2"/>
+<<<<<<< HEAD
+=======
+    <File name="bitmaps/Consolas.h" path="bitmaps/Consolas.h" type="1"/>
+>>>>>>> 9fa6d06b74ec7cb8ac1c3e3c5739f8c894543937
     <File name="cmsis_lib/include/stm32f4xx_exti.h" path="cmsis_lib/include/stm32f4xx_exti.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_exti.c" path="cmsis_lib/source/stm32f4xx_exti.c" type="1"/>
     <File name="cmsis_boot/system_stm32f4xx.c" path="cmsis_boot/system_stm32f4xx.c" type="1"/>
     <File name="ports" path="" type="2"/>
     <File name="Consolas.h" path="Consolas.h" type="1"/>
     <File name="cmsis" path="" type="2"/>
-    <File name="bitmaps/pijl_omhoog.h" path="bitmaps/pijl_omhoog.h" type="1"/>
     <File name="cmsis_lib" path="" type="2"/>
+    <File name="bitmaps/pijl_omhoog.h" path="bitmaps/pijl_omhoog.h" type="1"/>
     <File name="ports/delay.h" path="ports/delay.h" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_dma.h" path="cmsis_lib/include/stm32f4xx_dma.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_tim.c" path="cmsis_lib/source/stm32f4xx_tim.c" type="1"/>
@@ -144,6 +147,7 @@
     <File name="cmsis_lib/include/stm32f4xx_gpio.h" path="cmsis_lib/include/stm32f4xx_gpio.h" type="1"/>
     <File name="ub_lib/stm32_ub_vga_screen.h" path="ub_lib/stm32_ub_vga_screen.h" type="1"/>
     <File name="syscalls" path="" type="2"/>
+    <File name="bitmaps/Arial.h" path="bitmaps/Arial.h" type="1"/>
     <File name="ports/includes.h" path="includes.h" type="1"/>
     <File name="cmsis_lib/include/misc.h" path="cmsis_lib/include/misc.h" type="1"/>
     <File name="tekst_bitmap_functions.h" path="tekst_bitmap_functions.h" type="1"/>

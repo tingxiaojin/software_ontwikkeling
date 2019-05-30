@@ -187,13 +187,24 @@ int main(void)
 
 	API_io_clearscherm(VGA_COL_WHITE);
 //	API_draw_line(200, 0, 0, 200, 50, 5, 0);
+<<<<<<< HEAD
 	API_draw_text(0,0,VGA_COL_RED, "klein S","arial",1,0, VGA_COL_RED);
 	API_draw_text(0,50,VGA_COL_RED, "groot S","consolas",2,0, VGA_COL_RED);
 	API_draw_text(0,100,VGA_COL_RED, "klein vet","arial",1,1, VGA_COL_RED);
 	API_draw_text(0,150,VGA_COL_RED, "groot vet","consolas",2,1, VGA_COL_RED);
 	API_draw_text(0,200,VGA_COL_RED, "klein cur","consolas",1,2, VGA_COL_RED);
 	API_draw_text(0,220,VGA_COL_RED, "groot cur","consolas",2,2, VGA_COL_RED);
+=======
+>>>>>>> 9fa6d06b74ec7cb8ac1c3e3c5739f8c894543937
 //	API_IO_clearscherm(VGA_COL_RED);
+	API_draw_text(10,0,VGA_COL_BLACK, "klein S", "consolas", 1, 0, VGA_COL_RED);
+	API_draw_text(10,20,VGA_COL_BLACK, "groot S", "consolas", 1, 1, VGA_COL_RED);
+	API_draw_text(10,40,VGA_COL_BLACK, "klein B", "consolas", 1, 2, VGA_COL_RED);
+	API_draw_text(10,60,VGA_COL_BLACK, "groot B", "consolas", 2, 0, VGA_COL_RED);
+	API_draw_text(10,70,VGA_COL_BLACK, "klein C", "consolas", 2, 1, VGA_COL_RED);
+	API_draw_text(10,80,VGA_COL_BLACK, "groot C", "consolas", 2, 2, VGA_COL_RED);
+
+
 
 //	API_IO_UART_puts("\n\rCode done\n\r");
 //	API_IO_line(0, 0, 319, 240, VGA_COL_BLUE, 1);
@@ -213,7 +224,7 @@ int main(void)
 //	API_DRAW_bitmap(API_IO_SMILY_BOOS, 175, 70, FALSE);
 ////	API_draw_line(0, 0, 200, 200, VGA_COL_BLUE, 5);
 
-char buffer[100];
+//char buffer[100];
 
 //API_IO_UART_putchar(buffer[0]);
 
