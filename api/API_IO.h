@@ -40,7 +40,7 @@
 //--------------------------------------------------------------
 // Defines
 //--------------------------------------------------------------
-/** @addtogroup API_IO_COLORS
+/** @addtogroup IO_kleuren
   * @{
   */
 #define  VGA_COL_BLACK          0  //0x00
@@ -63,10 +63,6 @@
 #define  VGA_COL_WHITE          0xFF
 /**
   * @}
-  */
-
-/** @addtogroup Exported functions
-  * @{
   */
 
 /* Exported macro ------------------------------------------------------------*/
@@ -104,9 +100,6 @@ extern void  API_io_bitmap	  		(int x, 	 int y, 	 unsigned char* bitmap, int bac
 extern void  API_io_clearscherm		(int kleur);
 extern int   API_io_line		  	(int startx, int starty, int eindx, 	 		int eindy, 		char kleur, int dikte);
 extern int   API_io_rechthoek  		(int x, 	 int y, 	 int breedte, 			int hoogte, 	int kleur,  int gevuld);
-/**
-  * @}
-  */
 
 //--------------------------------------------------------------
 #endif // __API_IO_H

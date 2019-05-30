@@ -22,33 +22,39 @@
 #ifndef API_DRAW_H
 #define API_DRAW_H
 
-/** @addtogroup API
+/**
+  * @addtogroup  API_DRAW
+  * @brief functions and errorhandling
   * @{
   */
 
+
 /**
-  * @defgroup  API_DRAW
+  * @ingroup  UI_error
   * @brief functions and errorhandling
   * @{
   */
 
 /**
-  * @defgroup  API_error_return
-  */
-enum
-{
-	FOUTX =1,
-	FOUTY,
-	FOUTOMVANG,
-	INPUTERROR,
-	STR_LEEG
-};
-/**
-  * @}
+  * @addtogroup error_waardes
+  * @brief functions and errorhandling
+  * @{
   */
 
+enum
+{
+	FOUTX =1,		/*!< x-waarde te groot */
+	FOUTY,			/*!< y-waarde te groot */
+	FOUTOMVANG,		/*!< Zowel x- als y-waarde te groot*/
+	INPUTERROR,		/*!< Input is invalide */
+	STR_LEEG		/*!< Lege string gedetecteerd*/
+};
+
+
 /**
-  * @defgroup  Exported functions
+  * @}
+  * @}
+  * @}
   */
 
 /* Deze functie kan een lijn tekenen op het VGA-scherm*/
@@ -61,15 +67,5 @@ extern int API_draw_clearscreen (int color);
 extern int API_draw_text		(int x_lup, int y_lup, int color, char* tekst, char* fontname, int fontsize, int fontstytle, int reserved);
 /* Deze functie kan een bitmap tekenen op het VGA-scherm*/
 extern int API_draw_bitmap		(int x_lup, int y_lup, int bm_nr, int reserved);
-/**
-  * @}
-  */
 
 #endif/*__API_DRAW_H */
-/**
-  * @}
-  */
-
-/**
-  * @}
-  */
