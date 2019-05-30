@@ -1,19 +1,18 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
    <processor signature="arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=VGA_Core.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\VGA_Core -TC:\CooCox\CoIDE\configuration\ProgramData\VGA_Core/arm-gcc-link.ld -g -L..\..\.. -lm -L..\..\.. -lvga_api">
-      <target file="VGA_Core.elf" lastModified="16afe42170c">
-         <source file="..\obj\UI.o" lastModified="16afe420e38"/>
-         <source file="..\obj\stm32f4xx_usart.o" lastModified="16afe420ee2"/>
-         <source file="..\obj\startup_stm32f4xx.o" lastModified="16afe420f36"/>
-         <source file="..\obj\LL.o" lastModified="16afe42101e"/>
-         <source file="..\obj\stm32f4xx_rcc.o" lastModified="16afe4210a1"/>
-         <source file="..\obj\stm32f4xx_gpio.o" lastModified="16afe42111c"/>
-         <source file="..\obj\system_stm32f4xx.o" lastModified="16afe421180"/>
-         <source file="..\obj\syscalls.o" lastModified="16afe4211f4"/>
-         <source file="..\obj\stm32f4xx_dma.o" lastModified="16afe421278"/>
-         <source file="..\obj\stm32_ub_vga_screen.o" lastModified="16afe4212eb"/>
-         <source file="..\obj\misc.o" lastModified="16afe421350"/>
-         <source file="..\obj\stm32f4xx_tim.o" lastModified="16afe421409"/>
+      <target file="VGA_Core.elf" lastModified="16b06402e5b">
+         <source file="..\obj\UI.o" lastModified="16b064022d2"/>
+         <source file="..\obj\stm32f4xx_usart.o" lastModified="16b064023be"/>
+         <source file="..\obj\startup_stm32f4xx.o" lastModified="16b0640244f"/>
+         <source file="..\obj\LL.o" lastModified="16b0640253d"/>
+         <source file="..\obj\stm32f4xx_rcc.o" lastModified="16b0640263b"/>
+         <source file="..\obj\stm32f4xx_gpio.o" lastModified="16b06402702"/>
+         <source file="..\obj\system_stm32f4xx.o" lastModified="16b064027ba"/>
+         <source file="..\obj\syscalls.o" lastModified="16b0640288a"/>
+         <source file="..\obj\stm32f4xx_dma.o" lastModified="16b0640295c"/>
+         <source file="..\obj\misc.o" lastModified="16b06402a1a"/>
+         <source file="..\obj\stm32f4xx_tim.o" lastModified="16b06402b65"/>
       </target>
    </processor>
 </history>
