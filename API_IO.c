@@ -583,8 +583,8 @@ int API_io_puts(char* zin, int x_lup, int y_lup, int kleur, char* font, int font
 void API_io_bitmap(int x, int y, unsigned char* bitmap, int background)
 {
 	int i,j;
-	unsigned int breedte = (unsigned int)(*(bitmap+0)|(*(bitmap+1)<<8)|(*(bitmap+2)<<16)|(*(bitmap+3)<<32));
-	unsigned int hoogte  = (unsigned int)(*(bitmap+4)|(*(bitmap+5)<<8)|(*(bitmap+6)<<16)|(*(bitmap+7)<<32));
+	unsigned int breedte = (unsigned int)(*(bitmap+0)|(*(bitmap+1)<<8)|(*(bitmap+2)<<16)|(*(bitmap+3)<<24));
+	unsigned int hoogte  = (unsigned int)(*(bitmap+4)|(*(bitmap+5)<<8)|(*(bitmap+6)<<16)|(*(bitmap+7)<<24));
 	for (j=0; j<hoogte; j++)
 		for(i=0; i<breedte; i++)
 			if((bitmap[j*breedte+i+8]!=0xFF) && (background == FALSE))

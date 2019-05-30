@@ -165,8 +165,8 @@ int API_draw_bitmap(int x_lup, int y_lup, int bm_nr, int reserved)
 	switch(bm_nr)
 	{
 	case API_IO_PIJL_LINKS:
-		breedte = (unsigned int)(*(pijl_links+0)|(*(pijl_links+1)<<8)|(*(pijl_links+2)<<16)|(*(pijl_links+3)<<32));
-		hoogte  = (unsigned int)(*(pijl_links+4)|(*(pijl_links+5)<<8)|(*(pijl_links+6)<<16)|(*(pijl_links+7)<<32));
+		breedte = (unsigned int)(*(pijl_links+0)|(*(pijl_links+1)<<8)|(*(pijl_links+2)<<16)|(*(pijl_links+3)<<24));
+		hoogte  = (unsigned int)(*(pijl_links+4)|(*(pijl_links+5)<<8)|(*(pijl_links+6)<<16)|(*(pijl_links+7)<<24));
 
 		if((x_lup+breedte)>VGA_DISPLAY_X)x_lup=VGA_DISPLAY_X-breedte;
 		else if((x_lup+breedte)<0)		 x_lup=0;
@@ -177,8 +177,8 @@ int API_draw_bitmap(int x_lup, int y_lup, int bm_nr, int reserved)
 		API_io_bitmap(x_lup, y_lup, &pijl_links[0], reserved);
 		break;
 	case API_IO_PIJL_RECHTS:
-		breedte = (unsigned int)(*(pijl_rechts+0)|(*(pijl_rechts+1)<<8)|(*(pijl_rechts+2)<<16)|(*(pijl_rechts+3)<<32));
-		hoogte  = (unsigned int)(*(pijl_rechts+4)|(*(pijl_rechts+5)<<8)|(*(pijl_rechts+6)<<16)|(*(pijl_rechts+7)<<32));
+		breedte = (unsigned int)(*(pijl_rechts+0)|(*(pijl_rechts+1)<<8)|(*(pijl_rechts+2)<<16)|(*(pijl_rechts+3)<<24));
+		hoogte  = (unsigned int)(*(pijl_rechts+4)|(*(pijl_rechts+5)<<8)|(*(pijl_rechts+6)<<16)|(*(pijl_rechts+7)<<24));
 
 		if((x_lup+breedte)>VGA_DISPLAY_X)x_lup=VGA_DISPLAY_X-breedte;
 		else if((x_lup+breedte)<0)		 x_lup=0;
@@ -188,8 +188,8 @@ int API_draw_bitmap(int x_lup, int y_lup, int bm_nr, int reserved)
 		API_io_bitmap(x_lup, y_lup, &pijl_rechts[0], reserved);
 		break;
 	case API_IO_PIJL_OMHOOG:
-		breedte = (unsigned int)(*(pijl_omhoog+0)|(*(pijl_omhoog+1)<<8)|(*(pijl_omhoog+2)<<16)|(*(pijl_omhoog+3)<<32));
-		hoogte  = (unsigned int)(*(pijl_omhoog+4)|(*(pijl_omhoog+5)<<8)|(*(pijl_omhoog+6)<<16)|(*(pijl_omhoog+7)<<32));
+		breedte = (unsigned int)(*(pijl_omhoog+0)|(*(pijl_omhoog+1)<<8)|(*(pijl_omhoog+2)<<16)|(*(pijl_omhoog+3)<<24));
+		hoogte  = (unsigned int)(*(pijl_omhoog+4)|(*(pijl_omhoog+5)<<8)|(*(pijl_omhoog+6)<<16)|(*(pijl_omhoog+7)<<24));
 
 		if((x_lup+breedte)>VGA_DISPLAY_X)x_lup=VGA_DISPLAY_X-breedte;
 		else if((x_lup+breedte)<0)		 x_lup=0;
@@ -199,8 +199,8 @@ int API_draw_bitmap(int x_lup, int y_lup, int bm_nr, int reserved)
 		API_io_bitmap(x_lup, y_lup, &pijl_omhoog[0], reserved);
 		break;
 	case API_IO_PIJL_OMLAAG:
-		breedte = (unsigned int)(*(pijl_omlaag+0)|(*(pijl_omlaag+1)<<8)|(*(pijl_omlaag+2)<<16)|(*(pijl_omlaag+3)<<32));
-		hoogte  = (unsigned int)(*(pijl_omlaag+4)|(*(pijl_omlaag+5)<<8)|(*(pijl_omlaag+6)<<16)|(*(pijl_omlaag+7)<<32));
+		breedte = (unsigned int)(*(pijl_omlaag+0)|(*(pijl_omlaag+1)<<8)|(*(pijl_omlaag+2)<<16)|(*(pijl_omlaag+3)<<24));
+		hoogte  = (unsigned int)(*(pijl_omlaag+4)|(*(pijl_omlaag+5)<<8)|(*(pijl_omlaag+6)<<16)|(*(pijl_omlaag+7)<<24));
 
 		if((x_lup+breedte)>VGA_DISPLAY_X)x_lup=VGA_DISPLAY_X-breedte;
 		else if((x_lup+breedte)<0)		 x_lup=0;
@@ -210,8 +210,8 @@ int API_draw_bitmap(int x_lup, int y_lup, int bm_nr, int reserved)
 		API_io_bitmap(x_lup, y_lup, &pijl_omlaag[0], reserved);
 		break;
 	case API_IO_SMILY_BLIJ:
-		breedte = (unsigned int)(*(smiley_blij+0)|(*(smiley_blij+1)<<8)|(*(smiley_blij+2)<<16)|(*(smiley_blij+3)<<32));
-		hoogte  = (unsigned int)(*(smiley_blij+4)|(*(smiley_blij+5)<<8)|(*(smiley_blij+6)<<16)|(*(smiley_blij+7)<<32));
+		breedte = (unsigned int)(*(smiley_blij+0)|(*(smiley_blij+1)<<8)|(*(smiley_blij+2)<<16)|(*(smiley_blij+3)<<24));
+		hoogte  = (unsigned int)(*(smiley_blij+4)|(*(smiley_blij+5)<<8)|(*(smiley_blij+6)<<16)|(*(smiley_blij+7)<<24));
 
 		if((x_lup+breedte)>VGA_DISPLAY_X)x_lup=VGA_DISPLAY_X-breedte;
 		else if((x_lup+breedte)<0)		 x_lup=0;
@@ -221,8 +221,8 @@ int API_draw_bitmap(int x_lup, int y_lup, int bm_nr, int reserved)
 		API_io_bitmap(x_lup, y_lup, &smiley_blij[0], reserved);
 		break;
 	case API_IO_SMILY_BOOS:
-		breedte = (unsigned int)(*(smiley_boos+0)|(*(smiley_boos+1)<<8)|(*(smiley_boos+2)<<16)|(*(smiley_boos+3)<<32));
-		hoogte  = (unsigned int)(*(smiley_boos+4)|(*(smiley_boos+5)<<8)|(*(smiley_boos+6)<<16)|(*(smiley_boos+7)<<32));
+		breedte = (unsigned int)(*(smiley_boos+0)|(*(smiley_boos+1)<<8)|(*(smiley_boos+2)<<16)|(*(smiley_boos+3)<<24));
+		hoogte  = (unsigned int)(*(smiley_boos+4)|(*(smiley_boos+5)<<8)|(*(smiley_boos+6)<<16)|(*(smiley_boos+7)<<24));
 
 		if((x_lup+breedte)>VGA_DISPLAY_X)x_lup=VGA_DISPLAY_X-breedte;
 		else if((x_lup+breedte)<0)		 x_lup=0;
